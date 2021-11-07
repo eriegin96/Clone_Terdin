@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faGlobeAmericas, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faAngry} from '@fortawesome/free-regular-svg-icons';
+import { AuthContext } from 'context/AuthProvider';
+import HomePage from 'features/Home/pages/HomePage';
+import SwipePage from 'features/Swipe/pages/SwipePage';
+
+library.add(fab, faGlobeAmericas, faCoffee, faAngry);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const {
+		user: { uid },
+	} = useContext(AuthContext);
+
+	return (
+		<React.Fragment>
+			{uid ? (
+				<Routes>
+					{/* <Route exact path="/app" component={ChatPage} />
+					<Route path="/login" component={LoginPage} /> */}
+					<Route path="/" element={<SwipePage />} />
+					<Route path="*" element={<Navigate to="/app" />} />
+				</Routes>
+			) : (
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					{/* <Route path="*" element={<Navigate to="/" />} /> */}
+				</Routes>
+			)}
+		</React.Fragment>
+	);
 }
 
 export default App;

@@ -1,0 +1,224 @@
+$color-hover: #d6002f;
+$color-coral: #ff6036;
+$color-hot-pink: #fd267a;
+
+.home-page {
+	width: 100%;
+
+	.home-page__bg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+		z-index: -1;
+		background: linear-gradient(180deg, #000 0, transparent 180px);
+
+		& > div {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.home-page__bg1 {
+			background-image: url('../../../resources/img/homepage/bg.webp');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			transform: scale(1.1);
+		}
+
+		.home-page__bg2 {
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+
+		.home-page__bg3 {
+			background: linear-gradient(180deg, #000 0, transparent 180px);
+		}
+	}
+
+	.home-page__main {
+		height: 100vh;
+		width: 100%;
+
+		.home-page__header {
+			position: sticky;
+			top: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+	
+			span {
+				color: #fff;
+				font-size: 18px;
+				font-weight: 500;
+			}
+	
+			li:hover > span {
+				color: #d6002f;
+			}
+	
+			span:hover {
+				cursor: pointer;
+			}
+	
+			& > div {
+				margin-left: 28px;
+				margin-right: 28px;
+			}
+	
+			& > div:first-child {
+				display: flex;
+				align-items: center;
+	
+				& > span:first-child:hover {
+					color: inherit;
+					text-decoration: none;
+				}
+	
+				.home-page__header__logo {
+					img {
+						display: inline-block;
+						width: 36px;
+						height: 36px;
+						color: #fff;
+					}
+	
+					font-size: 40px;
+					font-weight: 600;
+				}
+	
+				.home-page__header__nav {
+					display: inline-block;
+					padding-left: 40px;
+					margin: 16px 0;
+	
+					ul {
+						display: flex;
+						align-items: center;
+	
+						.home-page__header__nav__item {
+							height: 52px;
+							position: relative;
+							display: flex;
+	
+							& > span {
+								margin-right: 40px;
+							}
+	
+							&:hover > span {
+								text-decoration: underline;
+							}
+	
+							&:hover > .home-page__header__nav-list {
+								display: flex;
+							}
+	
+							.home-page__header__nav-list {
+								display: none;
+								position: absolute;
+								width: max-content;
+								top: 80%;
+								left: 0;
+								flex-flow: column;
+								align-items: start;
+	
+								& > ul {
+									padding-left: 35px;
+									display: flex;
+									flex-flow: column;
+									align-items: start;
+								}
+	
+								.home-page__header__nav-list__item {
+									padding: 3px 0;
+	
+									span {
+										display: block;
+										font-weight: 600;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+	
+			& > div:last-child {
+				display: flex;
+				align-items: center;
+	
+				.home-page__header__lang {
+					background-color: transparent;
+					text-transform: uppercase;
+					color: #fff;
+					padding: 0 12px;
+					font-size: 15px;
+					line-height: 1.5;
+				}
+	
+				.home-page__header__lang:hover {
+					text-decoration: none;
+				}
+	
+				.home-page__header__login {
+					outline: none;
+					border: none;
+					background-color: #fff;
+					color: #d6002f;
+					margin-left: 28px;
+					padding: 0 24px;
+					border-radius: 3px;
+					font-size: 18px;
+					line-height: 2.2;
+				}
+			}
+		}
+		
+		.home-page__content {
+			position: relative;
+			width: 100%;
+			height: calc(100% - 84px);
+			display: flex;
+			flex-flow: column;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+	
+			div:first-child {
+				font-size: 110px;
+				font-weight: 600;
+			}
+	
+			button {
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 16px;
+				font-weight: 600;
+				padding: 17px 50px;
+				border-radius: 30px;
+				cursor: pointer;
+				background: linear-gradient(to right, $color-hot-pink, $color-coral);
+			}
+	
+			div:last-child {
+				position: absolute;
+				font-size: 12px;
+				right: 20px;
+				bottom: 10px;
+			}
+		}
+	}
+
+	
+
+	.home-page__slider {
+		background-color: #fff;
+	}
+	.home-page__footer {
+		background-color: #fff;
+	}
+}
