@@ -1,14 +1,28 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faGlobeAmericas, faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faAngry} from '@fortawesome/free-regular-svg-icons';
+import {
+	faInstagram,
+	faTiktok,
+	faYoutube,
+	faTwitter,
+	faFacebookF,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
 import HomePage from 'features/Home/pages/HomePage';
 import SwipePage from 'features/Swipe/pages/SwipePage';
 
-library.add(fab, faGlobeAmericas, faCoffee, faAngry);
+library.add(
+	faInstagram,
+	faTwitter,
+	faTiktok,
+	faYoutube,
+	faFacebookF,
+	faEarthAmericas,
+	faAddressBook
+);
 
 function App() {
 	const {

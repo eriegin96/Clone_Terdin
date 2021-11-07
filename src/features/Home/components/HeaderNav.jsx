@@ -56,7 +56,7 @@ export default function HeaderNav() {
 					<span>Support</span>
 				</li>
 				<li className="home-page__header__nav__item">
-					<span>Swipe <br/> Night</span>
+					<span>Swipe Night</span>
 				</li>
 			</ul>
 		</nav>

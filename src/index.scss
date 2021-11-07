@@ -1,5 +1,4 @@
-// @import 'antd/dist/antd.css';
-
+@import 'antd/dist/antd.css';
 
 body {
   margin: 0;
@@ -33,4 +32,5 @@ ul {
 button {
   border: none;
   outline: none;
+  cursor: pointer;
 }
