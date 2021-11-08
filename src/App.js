@@ -8,7 +8,7 @@ import {
 	faTwitter,
 	faFacebookF,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
+import { faEarthAmericas, faCircleXmark, faComment } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
 import HomePage from 'features/Home/pages/HomePage';
@@ -21,6 +21,8 @@ library.add(
 	faYoutube,
 	faFacebookF,
 	faEarthAmericas,
+	faCircleXmark,
+	faComment,
 	faAddressBook
 );
 

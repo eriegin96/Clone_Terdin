@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './homePage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Logo from 'resources/img/homepage/logo.svg';
+import logoTinder from 'resources/img/homepage/logo-tinder.svg';
 import HeaderNav from '../components/HeaderNav';
 import HomeCarousel from '../components/HomeCarousel';
 import Footer from '../components/Footer';
+import LoginModal from '../components/LoginModal';
 
 export default function HomePage() {
 	const [pos, setPos] = useState(0);
 	const [mainOpacity, setMainOpacity] = useState(1);
+	const [hadAccount, setHadAccount] = useState(true);
+	const [loginModalOpen, setLoginModalOpen] = useState(false);
 
 	useEffect(() => {
 		const mainHeight = document.querySelector('.home-page__main').clientHeight - 310;
@@ -32,8 +35,7 @@ export default function HomePage() {
 				<header className="home-page__header">
 					<div>
 						<span className="home-page__header__logo">
-							<img src={Logo} alt="" />
-							terdin
+							<img src={logoTinder} alt="" />
 						</span>
 						<HeaderNav />
 					</div>
@@ -42,12 +44,28 @@ export default function HomePage() {
 							<FontAwesomeIcon icon="fa-solid fa-earth-americas" />
 							English
 						</span>
-						<button className="home-page__header__login">Log in</button>
+						<span className="home-page__header__login">
+							<button
+								onClick={() => {
+									setHadAccount(true);
+									setLoginModalOpen(true);
+								}}
+							>
+								Log in
+							</button>
+						</span>
 					</div>
 				</header>
 				<div className="home-page__content" style={{ opacity: mainOpacity }}>
 					<div>Swipe Right®</div>
-					<button>Create Account</button>
+					<button
+						onClick={() => {
+							setHadAccount(false);
+							setLoginModalOpen(true);
+						}}
+					>
+						Create Account
+					</button>
 					<div>All photos are of models and used for illustrative purposes only</div>
 				</div>
 			</div>
@@ -57,6 +75,11 @@ export default function HomePage() {
 			<footer className="home-page__footer">
 				<Footer />
 			</footer>
+			<LoginModal
+				hadAccount={hadAccount}
+				loginModalOpen={loginModalOpen}
+				setLoginModalOpen={setLoginModalOpen}
+			/>
 		</div>
 	);
 }
