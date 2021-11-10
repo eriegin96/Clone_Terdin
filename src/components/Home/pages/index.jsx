@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './homePage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import logoTinder from 'resources/img/homepage/logo-tinder.svg';
 import HeaderNav from '../components/HeaderNav';
 import HomeCarousel from '../components/HomeCarousel';
 import Footer from '../components/Footer';
 import LoginModal from '../components/LoginModal';
-import { TinderTextSvg } from 'utils/svg';
+import { TinderTextSvg } from 'utils/Svg';
 
 export default function HomePage() {
 	const [pos, setPos] = useState(0);

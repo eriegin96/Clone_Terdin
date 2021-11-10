@@ -4,10 +4,10 @@ import { CSSTransition } from 'react-transition-group';
 import { Avatar } from 'antd';
 import './nav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { TinderSvg } from 'utils/svg';
+import { TinderSvg } from 'utils/Svg';
 import { AuthContext } from 'context/AuthProvider';
-import NavTabs from './components/NavTabs';
-import NavSettings from './components/navSettings';
+import NavTabs from './components/NavTabs/index';
+import NavSettings from './components/NavSettings/index';
 
 export default function Nav() {
 	const { user } = useContext(AuthContext);

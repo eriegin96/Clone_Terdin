@@ -1,5 +1,5 @@
 import React from 'react'
-import { TinderSvg } from 'utils/svg'
+import { TinderSvg } from 'utils/Svg'
 
 export default function Auth() {
   return (

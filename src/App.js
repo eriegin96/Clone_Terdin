@@ -13,6 +13,8 @@ import {
 	faCircleXmark,
 	faComment,
 	faBriefcase,
+	faAngleRight,
+	faUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
@@ -33,7 +35,9 @@ library.add(
 	faCircleXmark,
 	faComment,
 	faAddressBook,
-	faBriefcase
+	faBriefcase,
+	faAngleRight,
+	faUpRightFromSquare
 );
 
 function App() {

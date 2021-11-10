@@ -12,7 +12,7 @@ import imgAS from 'resources/img/homepage/app-store.webp';
 import imgGP from 'resources/img/homepage/google-play.webp';
 import { auth } from 'firebase/config';
 import { addUser } from 'firebase/services';
-import { FacebookSvg, GoogleSvg, TinderSvg } from 'utils/svg';
+import { FacebookSvg, GoogleSvg, TinderSvg } from 'utils/Svg';
 
 export default function LoginModal(props) {
 	const { hadAccount, loginModalOpen, setLoginModalOpen } = props;
