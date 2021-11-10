@@ -59,7 +59,6 @@ export const createRooms = (uid, friendId) => {
 		});
 	}
 	asyncRoomData();
-	// }
 };
 
 export const getUserData = (uid) => {

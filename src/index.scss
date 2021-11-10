@@ -1,17 +1,15 @@
 @import 'antd/dist/antd.css';
 
 body {
-  margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 *,
@@ -22,19 +20,53 @@ code {
 }
 
 *::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 button {
-  border: none;
-  outline: none;
-  cursor: pointer;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+#auth {
+	height: 100vh;
+	background: linear-gradient(180deg, #fd267a, #ff6036);
+
+	@keyframes zoomInOut {
+		0% {
+			width: 80px;
+			height: 80px;
+		}
+
+		50% {
+			width: 100px;
+			height: 100px;
+		}
+
+		100% {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	svg {
+		position: relative;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		animation: zoomInOut 1s ease infinite;
+	}
+}
+
+.none {
+	display: none !important;
 }
 
 .firebase-emulator-warning {
-  display: none;
+	display: none;
 }

@@ -421,7 +421,6 @@ $color-text-secondary: #656e7b;
 .ant-modal {
 	text-align: center;
 	top: 0;
-	height: 100%;
 	padding-bottom: 0;
 
 	.ant-modal-close {
@@ -459,6 +458,15 @@ $color-text-secondary: #656e7b;
 		font-style: italic;
 		font-size: 23px;
 		text-transform: uppercase;
+	}
+
+	.home-page__modal__logo {
+		width: 36px;
+		height: 36px;
+
+		path {
+			fill: $color-hot-pink;
+		}
 	}
 
 	.home-page__modal__title {

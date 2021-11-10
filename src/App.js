@@ -8,11 +8,20 @@ import {
 	faTwitter,
 	faFacebookF,
 } from '@fortawesome/free-brands-svg-icons';
-import { faEarthAmericas, faCircleXmark, faComment } from '@fortawesome/free-solid-svg-icons';
+import {
+	faEarthAmericas,
+	faCircleXmark,
+	faComment,
+	faBriefcase,
+} from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
-import HomePage from 'features/Home/pages/HomePage';
-import SwipePage from 'features/Swipe/pages/SwipePage';
+import HomePage from 'components/Home/pages';
+import MainPage from 'routes';
+import RecsPage from 'routes/recs';
+import ProfilePage from 'routes/profile';
+import MessagesPage from 'routes/messages';
+import ProductPage from 'routes/product';
 
 library.add(
 	faInstagram,
@@ -23,7 +32,8 @@ library.add(
 	faEarthAmericas,
 	faCircleXmark,
 	faComment,
-	faAddressBook
+	faAddressBook,
+	faBriefcase
 );
 
 function App() {
@@ -35,15 +45,32 @@ function App() {
 		<React.Fragment>
 			{uid ? (
 				<Routes>
-					{/* <Route exact path="/app" component={ChatPage} />
-					<Route path="/login" component={LoginPage} /> */}
-					<Route path="/" element={<SwipePage />} />
-					<Route path="*" element={<Navigate to="/app" />} />
+					<Route path="app" element={<MainPage />}>
+						<Route path="recs" element={<RecsPage />} />
+						<Route path="matches" element={<ProfilePage />} />
+						<Route path="profile" element={<ProfilePage />} />
+						<Route path="messages">
+							<Route path=":id" element={<MessagesPage />} />
+						</Route>
+						<Route path="product">
+							<Route path="subscription" element={<ProductPage />}>
+								<Route path="platinum" element={<ProductPage />} />
+								<Route path="gold" element={<ProductPage />} />
+								<Route path="plus" element={<ProductPage />} />
+							</Route>
+						</Route>
+						<Route path="settings">
+							<Route path="platinum" element={<ProfilePage />} />
+							<Route path="gold" element={<ProfilePage />} />
+							<Route path="plus" element={<ProfilePage />} />
+						</Route>
+					</Route>
+					<Route path="*" element={<Navigate to="/app/recs" />} />
 				</Routes>
 			) : (
 				<Routes>
 					<Route path="/" element={<HomePage />} />
-					{/* <Route path="*" element={<Navigate to="/" />} /> */}
+					<Route path="*" element={<Navigate to="/" />} />
 				</Routes>
 			)}
 		</React.Fragment>

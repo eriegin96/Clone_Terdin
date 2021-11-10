@@ -8,13 +8,11 @@ import {
 import { Modal } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@fontsource/poppins/700-italic.css';
-import logo from 'resources/img/homepage/logo.svg';
 import imgAS from 'resources/img/homepage/app-store.webp';
 import imgGP from 'resources/img/homepage/google-play.webp';
-import logoGG from 'resources/img/homepage/google.svg';
-import logoFB from 'resources/img/homepage/facebook.svg';
 import { auth } from 'firebase/config';
 import { addUser } from 'firebase/services';
+import { FacebookSvg, GoogleSvg, TinderSvg } from 'utils/svg';
 
 export default function LoginModal(props) {
 	const { hadAccount, loginModalOpen, setLoginModalOpen } = props;
@@ -22,12 +20,12 @@ export default function LoginModal(props) {
 	const googleProvider = new GoogleAuthProvider();
 
 	const handleOk = () => {
-    setLoginModalOpen(false);
-  };
+		setLoginModalOpen(false);
+	};
 
-  const handleCancel = () => {
-    setLoginModalOpen(false);
-  };
+	const handleCancel = () => {
+		setLoginModalOpen(false);
+	};
 
 	const checkUserExist = (additionalUserInfo, user) => {
 		if (additionalUserInfo?.isNewUser) {
@@ -37,9 +35,6 @@ export default function LoginModal(props) {
 				photoURL: user.photoURL,
 				uid: user.uid,
 				providerId: additionalUserInfo.providerId,
-				gender: user?.gender || null,
-				date: user?.date || null,
-				phoneNumber: user.phoneNumber,
 			});
 			return;
 		}
@@ -78,9 +73,10 @@ export default function LoginModal(props) {
 			visible={loginModalOpen}
 			closeIcon={<FontAwesomeIcon icon="fa-solid fa-circle-xmark" />}
 			destroyOnClose={true}
-			onOk={handleOk} onCancel={handleCancel}
+			onOk={handleOk}
+			onCancel={handleCancel}
 		>
-			<img src={logo} alt="logo" className="home-page__modal__logo" />
+			<TinderSvg className="home-page__modal__logo" />
 			<h3 className="home-page__modal__title">{hadAccount ? 'Get Started' : 'Create Account'}</h3>
 			<div className="home-page__modal__des">
 				By clicking Log in, you agree to our{' '}
@@ -90,11 +86,11 @@ export default function LoginModal(props) {
 			</div>
 			<div className="home-page__modal__btns">
 				<button onClick={() => handleLogin(googleProvider)}>
-					<img src={logoGG} alt="" />
+					<GoogleSvg />
 					Log in with Google
 				</button>
 				<button onClick={() => handleLogin(facebookProvider)}>
-					<img src={logoFB} alt="" />
+					<FacebookSvg />
 					Log in with Facebook
 				</button>
 				<button>

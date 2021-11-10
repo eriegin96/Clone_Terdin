@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SwipePage() {
+export default function RecsWindow() {
   return (
     <div>
-      Swipe
+      Recs Window
     </div>
   )
 }

@@ -6,6 +6,7 @@ import HeaderNav from '../components/HeaderNav';
 import HomeCarousel from '../components/HomeCarousel';
 import Footer from '../components/Footer';
 import LoginModal from '../components/LoginModal';
+import { TinderTextSvg } from 'utils/svg';
 
 export default function HomePage() {
 	const [pos, setPos] = useState(0);
@@ -35,7 +36,7 @@ export default function HomePage() {
 				<header className="home-page__header">
 					<div>
 						<span className="home-page__header__logo">
-							<img src={logoTinder} alt="" />
+							<TinderTextSvg />
 						</span>
 						<HeaderNav />
 					</div>

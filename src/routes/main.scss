@@ -1,0 +1,9 @@
+.page {
+	display: flex;
+
+	.window {
+		background-color: #f0f2f4;
+		border-left: 1px solid #e9ebee;
+		flex-basis: 75%;
+	}
+}

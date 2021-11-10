@@ -1,9 +1,10 @@
 import React from 'react'
+import { TinderSvg } from 'utils/svg'
 
 export default function Auth() {
   return (
-    <div>
-      This is Auth
+    <div id='auth'>
+      <TinderSvg />
     </div>
   )
 }

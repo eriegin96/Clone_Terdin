@@ -1,0 +1,242 @@
+$color-hover: #d6002f;
+$color-coral: #ff6036;
+$color-brand-pink: #ff4458;
+$color-hot-pink: #fd267a;
+$color-divider-primary: #d4d8de;
+$color-text-primary: #3c444f;
+$color-text-secondary: #656e7b;
+
+.nav {
+	min-width: 325px;
+	max-width: 375px;
+	flex-basis: 25%;
+	height: 100%;
+
+	.nav__header {
+		height: 73px;
+		background: linear-gradient(225deg, $color-coral, $color-hot-pink);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& > a {
+			padding: 4px;
+			margin: 0 12px;
+			color: #fff;
+			border-radius: 100px;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+
+			.ant-avatar {
+				margin-right: 8px;
+			}
+
+			.ant-avatar + span {
+				margin: 0 4px;
+			}
+		}
+
+		& > a:hover,
+		& > a.nav__header--active {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		& > div {
+			margin: 0 12px;
+			display: flex;
+			justify-content: flex-end;
+
+			a {
+				width: 36px;
+				height: 36px;
+				padding: 4px;
+				margin: 0 8px 0 4px;
+				border-radius: 50%;
+				background-color: rgba(0, 0, 0, 0.1);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: all 0.2s ease;
+
+				svg {
+					width: 24px;
+					height: 24px;
+				}
+			}
+
+			button {
+				width: 36px;
+				height: 36px;
+				padding: 4px;
+				margin: 0 4px 0 8px;
+				background-color: rgba(0, 0, 0, 0.1);
+				color: #fff;
+				border-radius: 50%;
+				line-height: 36px;
+				transition: all 0.2s ease;
+
+				svg {
+					width: 20px;
+					height: 20px;
+				}
+			}
+
+			a:hover,
+			button:hover {
+				background-color: rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+
+	.nav__content {
+		.ant-tabs {
+			.ant-tabs-nav {
+				padding: 12px 20px;
+				margin-bottom: 0;
+
+				.ant-tabs-tab {
+					padding: 1px 8px;
+					font-weight: 700;
+				}
+
+				.ant-tabs-tab:hover,
+				.ant-tabs-tab-btn:focus,
+				.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+					color: $color-brand-pink;
+				}
+
+				.ant-tabs-tab + .ant-tabs-tab {
+					margin-left: 16px;
+				}
+
+				.ant-tabs-ink-bar {
+					background-color: $color-brand-pink;
+				}
+			}
+
+			.ant-tabs-tabpane {
+				display: block !important;
+				position: relative;
+				transition: all 0.2s;
+
+				.nav__message {
+					margin-right: 5px;
+					display: flex;
+					align-items: center;
+					border-color: transparent;
+					transition: border-color 0.2s, box-shadow 0.2s;
+
+					& > div:first-child {
+						padding: 12px 24px;
+					}
+
+					& > div:last-child {
+						flex-grow: 1;
+						color: $color-text-primary;
+
+						& > div:first-child {
+							font-size: 17px;
+							font-weight: 600;
+						}
+					}
+				}
+
+				.nav__message:first-child.nav__message--active,
+				.nav__message:first-child:hover {
+					box-shadow: 0 5px 15px -5px hsl(0deg 0% 51% / 22%);
+				}
+
+				.nav__message--active,
+				.nav__message:hover {
+					margin-right: 0;
+					border-right-width: 5px;
+					border-right-style: solid;
+					border-right-color: $color-brand-pink;
+					box-shadow: 0 0 15px 0 hsl(0deg 0% 51% / 22%);
+				}
+			}
+
+			.ant-tabs-tabpane:first-child {
+				right: 100%;
+				padding: 4px 16px 12px;
+
+				.ant-col {
+					padding: 8px 0;
+
+					.ant-card {
+						height: 120px;
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: cover;
+						display: flex;
+						flex-flow: column;
+						justify-content: flex-end;
+						border-radius: 4px;
+						transition: all 0.2s;
+
+						.ant-card-body {
+							padding: 0 0 4px 4px;
+
+							div {
+								color: #fff;
+								font-size: 15px;
+								font-weight: 600;
+							}
+						}
+					}
+
+					.ant-card-hoverable:hover {
+						box-shadow: none;
+						transform: scale(1.1);
+					}
+				}
+			}
+
+			.ant-tabs-tabpane:nth-child(2) {
+				right: 0;
+			}
+
+			.ant-tabs-tabpane:first-child.ant-tabs-tabpane-active {
+				right: 0;
+			}
+
+			.ant-tabs-tabpane:nth-child(2).ant-tabs-tabpane-active {
+				right: 100%;
+			}
+
+			.ant-tabs-tabpane.nav__tab-pane2--active {
+				background-color: #f8fbfb;
+				box-shadow: inset 0 0 25px 0 rgb(0 0 0 / 9%);
+			}
+		}
+
+		.nav__content__settings {
+			position: relative;
+			background-color: #333;
+			height: 600px;
+		}
+
+		.nav__settings-enter {
+			right: 100%;
+		}
+
+		.nav__settings-enter-active {
+			right: 0;
+			transition: right 0.2s;
+		}
+
+		.nav__settings-exit {
+			right: 0;
+		}
+
+		.nav__settings-exit-active {
+			right: 100%;
+			transition: all 0.2s;
+		}
+
+		.nav__settings {
+			background-color: #f0f2f4;
+		}
+	}
+}
