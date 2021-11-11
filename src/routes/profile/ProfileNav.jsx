@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Products from './Products';
+import Settings from './Settings';
 
 export default function ProfileNav() {
-  return (
-    <div>
-      Profile Nav
-    </div>
-  )
+	return (
+		<div className="nav__profile">
+			<Products />
+			<Settings />
+		</div>
+	);
 }

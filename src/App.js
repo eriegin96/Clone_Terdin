@@ -19,11 +19,18 @@ import {
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
 import HomePage from 'components/Home/pages';
-import MainPage from 'routes';
-import RecsPage from 'routes/recs';
-import ProfilePage from 'routes/profile';
-import MessagesPage from 'routes/messages';
-import ProductPage from 'routes/product';
+import Nav from 'routes/Nav';
+import Main from 'routes/Main';
+import RecsNav from 'routes/recs/RecsNav';
+import RecsMain from 'routes/recs/RecsMain';
+import ProfileNav from 'routes/profile/ProfileNav';
+import ProfileMain from 'routes/profile/ProfileMain';
+import MessagesNav from 'routes/messages/MessagesNav';
+import MessagesMain from 'routes/messages/MessagesMain';
+import ProductNav from 'routes/product/ProductNav';
+import ProductMain from 'routes/product/ProductMain';
+import SettingsNav from 'routes/settings/SettingsNav';
+import SettingsMain from 'routes/settings/SettingsMain';
 
 library.add(
 	faInstagram,
@@ -48,29 +55,56 @@ function App() {
 	return (
 		<React.Fragment>
 			{uid ? (
-				<Routes>
-					<Route path="app" element={<MainPage />}>
-						<Route path="recs" element={<RecsPage />} />
-						<Route path="matches" element={<ProfilePage />} />
-						<Route path="profile" element={<ProfilePage />} />
-						<Route path="messages">
-							<Route path=":id" element={<MessagesPage />} />
-						</Route>
-						<Route path="product">
-							<Route path="subscription" element={<ProductPage />}>
-								<Route path="platinum" element={<ProductPage />} />
-								<Route path="gold" element={<ProductPage />} />
-								<Route path="plus" element={<ProductPage />} />
+				<div className="page">
+					<>
+						<Routes>
+							<Route path="app" element={<Nav />}>
+								<Route path="recs" element={<RecsNav />} />
+								<Route path="matches" element={<ProfileNav />} />
+								<Route path="profile" element={<ProfileNav />} />
+								<Route path="messages">
+									<Route path=":id" element={<MessagesNav />} />
+								</Route>
+								<Route path="product">
+									<Route path="subscription" element={<ProductNav />}>
+										<Route path="platinum" element={<ProductNav />} />
+										<Route path="gold" element={<ProductNav />} />
+										<Route path="plus" element={<ProductNav />} />
+									</Route>
+								</Route>
+								<Route path="settings">
+									<Route path="plus/passport" element={<SettingsNav />} />
+									<Route path="*" element={<SettingsNav />} />
+								</Route>
 							</Route>
-						</Route>
-						<Route path="settings">
-							<Route path="platinum" element={<ProfilePage />} />
-							<Route path="gold" element={<ProfilePage />} />
-							<Route path="plus" element={<ProfilePage />} />
-						</Route>
-					</Route>
-					<Route path="*" element={<Navigate to="/app/recs" />} />
-				</Routes>
+							<Route path="*" element={<Navigate to="/app/recs" />} />
+						</Routes>
+					</>
+					<>
+						<Routes>
+							<Route path="app" element={<Main />}>
+								<Route path="recs" element={<RecsMain />} />
+								<Route path="matches" element={<ProfileMain />} />
+								<Route path="profile" element={<ProfileMain />} />
+								<Route path="messages">
+									<Route path=":id" element={<MessagesMain />} />
+								</Route>
+								<Route path="product">
+									<Route path="subscription" element={<ProductMain />}>
+										<Route path="platinum" element={<ProductMain />} />
+										<Route path="gold" element={<ProductMain />} />
+										<Route path="plus" element={<ProductMain />} />
+									</Route>
+								</Route>
+								<Route path="settings" element={<ProfileMain />}>
+									<Route path="plus/passport" element={<ProfileMain />} />
+									<Route path="*" element={<ProfileMain />} />
+								</Route>
+								<Route path="*" element={<Navigate to="/app/recs" />} />
+							</Route>
+						</Routes>
+					</>
+				</div>
 			) : (
 				<Routes>
 					<Route path="/" element={<HomePage />} />
