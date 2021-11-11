@@ -219,6 +219,7 @@ $color-text-secondary: #656e7b;
 		}
 
 		.nav__settings {
+			position: relative;
 			background-color: #f0f2f4;
 			padding-bottom: 50px;
 
@@ -391,6 +392,77 @@ $color-text-secondary: #656e7b;
 						}
 					}
 
+					.nav__settings__setting__distance,
+					.nav__settings__setting__gender {
+						flex-flow: column;
+						cursor: default !important;
+
+						& > div:not(.ant-slider) {
+							width: 100%;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						}
+
+						& > div:first-child {
+							cursor: default;
+
+							span {
+								padding: 12px 0;
+							}
+						}
+
+						.ant-slider {
+							width: 100%;
+							cursor: default;
+							margin-top: 0;
+							margin-bottom: 24px;
+
+							.ant-slider-track {
+								background-color: $color-brand-pink;
+							}
+
+							.ant-slider-handle {
+								cursor: grab;
+								width: 28px;
+								height: 28px;
+								margin-top: -12px;
+								border-color: $color-brand-pink;
+							}
+						}
+
+						& > div:last-child {
+							cursor: pointer;
+
+							span {
+								padding: 12px 0;
+							}
+						}
+					}
+
+					.ant-switch {
+						width: 50px;
+						height: 30px;
+
+						.ant-switch-handle {
+							width: 26px;
+							height: 26px;
+							transition-duration: 0.1s;
+						}
+
+						.ant-switch-handle::before {
+							border-radius: 50%;
+						}
+					}
+
+					.ant-switch-checked {
+						background-color: $color-brand-pink;
+
+						.ant-switch-handle {
+							left: calc(100% - 26px - 2px);
+						}
+					}
+
 					.nav__settings__setting__btn {
 						justify-content: center !important;
 					}
@@ -411,7 +483,7 @@ $color-text-secondary: #656e7b;
 
 		.nav__settings-enter-active {
 			right: 0;
-			transition: right 0.2s;
+			transition: right 0.5s;
 		}
 
 		.nav__settings-exit {
@@ -420,7 +492,7 @@ $color-text-secondary: #656e7b;
 
 		.nav__settings-exit-active {
 			right: 100%;
-			transition: all 0.2s;
+			transition: all 0.3s;
 		}
 
 		.nav__settings__info {

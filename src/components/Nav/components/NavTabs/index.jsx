@@ -25,7 +25,7 @@ export default function NavTabs() {
 	const { pathname } = useLocation();
 
 	function handleChange(key) {
-		console.log(key);
+		console.log('NavTabs', key);
 	}
 
 	function handleClickMessage(i) {

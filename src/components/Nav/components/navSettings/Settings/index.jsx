@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Switch } from 'antd';
 import AccountSettings from './AccountSetting';
 import DiscoverySettings from './DiscoverySettings';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +13,10 @@ export default function Settings() {
 			<DiscoverySettings />
 			<div className="nav__settings__setting">
 				<div className="nav__settings__setting__container">
-					<div>Show me on Tinder</div>
+					<div>
+						<span>Show me on Terdin</span>
+						<Switch />
+					</div>
 				</div>
 				<div className="nav__settings__setting__sub">
 					While turned off, you will not be shown in the card stack. You can still see and chat with
@@ -31,7 +35,7 @@ export default function Settings() {
 					</Link>
 				</div>
 				<div className="nav__settings__setting__sub">
-					Select people from your contact list that you don’t want to see or be seen by on Tinder.
+					Select people from your contact list that you don’t want to see or be seen by on Terdin.
 				</div>
 			</div>
 			<div className="nav__settings__setting">
@@ -49,7 +53,7 @@ export default function Settings() {
 				</div>
 				<div className="nav__settings__setting__sub">
 					Create a username. Share your username. Have people all over the world match with you
-					right on Tinder.
+					right on Terdin.
 				</div>
 			</div>
 			<div className="nav__settings__setting">
@@ -175,7 +179,7 @@ export default function Settings() {
 			</div>
 			<div className="nav__settings__setting">
 				<div className="nav__settings__setting__container">
-					<div className="nav__settings__setting__btn">Share Tinder</div>
+					<div className="nav__settings__setting__btn">Share Terdin</div>
 				</div>
 			</div>
 			<div className="nav__settings__setting">
