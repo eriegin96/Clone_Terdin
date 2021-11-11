@@ -218,12 +218,12 @@ $color-text-secondary: #656e7b;
 			}
 		}
 
-		.nav__settings {
+		.nav__profile {
 			position: relative;
 			background-color: #f0f2f4;
 			padding-bottom: 50px;
 
-			.nav__settings__product {
+			.nav__profile__product {
 				padding: 24px 24px 0;
 
 				a {
@@ -246,7 +246,7 @@ $color-text-secondary: #656e7b;
 				}
 			}
 
-			.nav__settings__product__extra {
+			.nav__profile__product__extra {
 				margin-top: 36px;
 				display: flex;
 
@@ -313,7 +313,7 @@ $color-text-secondary: #656e7b;
 				}
 			}
 
-			.nav__settings__setting {
+			.nav__profile__setting {
 				margin-top: 20px;
 
 				h3 {
@@ -324,13 +324,13 @@ $color-text-secondary: #656e7b;
 					font-weight: 600;
 				}
 
-				.nav__settings__setting__container {
+				.nav__profile__setting__container {
 					background-color: #fff;
 					border-top: 1px solid $color-divider-primary;
 					border-bottom: 1px solid $color-divider-primary;
 
 					a > div,
-					& > div:not(.nav__settings__setting__sub) {
+					& > div:not(.nav__profile__setting__sub) {
 						display: flex;
 						justify-content: space-between;
 						align-items: center;
@@ -359,12 +359,12 @@ $color-text-secondary: #656e7b;
 					}
 
 					a:last-child > div,
-					& > div:not(.nav__settings__setting__sub):last-child {
+					& > div:not(.nav__profile__setting__sub):last-child {
 						border-color: transparent;
 					}
 
 					a > div:hover > span:nth-child(2),
-					& > div:not(.nav__settings__setting__sub):hover > span:nth-child(2) {
+					& > div:not(.nav__profile__setting__sub):hover > span:nth-child(2) {
 						color: $color-brand-pink;
 
 						svg {
@@ -382,8 +382,8 @@ $color-text-secondary: #656e7b;
 						}
 					}
 
-					& > div:not(.nav__settings__setting__sub) {
-						.nav__settings__setting__link {
+					& > div:not(.nav__profile__setting__sub) {
+						.nav__profile__setting__link {
 							svg {
 								width: 20px;
 								height: 20px;
@@ -392,8 +392,8 @@ $color-text-secondary: #656e7b;
 						}
 					}
 
-					.nav__settings__setting__distance,
-					.nav__settings__setting__gender {
+					.nav__profile__setting__distance,
+					.nav__profile__setting__gender {
 						flex-flow: column;
 						cursor: default !important;
 
@@ -463,12 +463,12 @@ $color-text-secondary: #656e7b;
 						}
 					}
 
-					.nav__settings__setting__btn {
+					.nav__profile__setting__btn {
 						justify-content: center !important;
 					}
 				}
 
-				.nav__settings__setting__sub {
+				.nav__profile__setting__sub {
 					margin: 12px 0;
 					padding: 0 16px;
 					color: $color-text-secondary;
@@ -477,25 +477,25 @@ $color-text-secondary: #656e7b;
 			}
 		}
 
-		.nav__settings-enter {
-			right: 100%;
+		.nav__left-enter {
+			left: -100%;
 		}
 
-		.nav__settings-enter-active {
-			right: 0;
-			transition: right 0.5s;
+		.nav__left-enter-active {
+			left: 0;
+			transition: left 0.5s;
 		}
 
-		.nav__settings-exit {
-			right: 0;
+		.nav__left-exit {
+			left: 0;
 		}
 
-		.nav__settings-exit-active {
-			right: 100%;
+		.nav__left-exit-active {
+			left: -100%;
 			transition: all 0.3s;
 		}
 
-		.nav__settings__info {
+		.nav__profile__info {
 			margin: 16px;
 			display: flex;
 			flex-flow: column;

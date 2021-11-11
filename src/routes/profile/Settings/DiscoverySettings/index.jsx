@@ -9,10 +9,10 @@ export default function DiscoverySettings() {
 
 	return (
 		<>
-			<div className="nav__settings__setting">
+			<div className="nav__profile__setting">
 				<h3>Discovery Settings</h3>
-				<div className="nav__settings__setting__container">
-					<Link to="settings/plus/passport">
+				<div className="nav__profile__setting__container">
+					<Link to="/app/settings/plus/passport">
 						<div>
 							<span>Location</span>
 							<span>
@@ -21,7 +21,7 @@ export default function DiscoverySettings() {
 							</span>
 						</div>
 					</Link>
-					<div className="nav__settings__setting__distance">
+					<div className="nav__profile__setting__distance">
 						<div>
 							<span>Distance Preference</span>
 							<span>{distance} km.</span>
@@ -38,7 +38,7 @@ export default function DiscoverySettings() {
 							<Switch />
 						</div>
 					</div>
-					<Link to="settings/gender">
+					<Link to="/app/settings/gender">
 						<div>
 							<span>Looking for</span>
 							<span>
@@ -47,7 +47,7 @@ export default function DiscoverySettings() {
 							</span>
 						</div>
 					</Link>
-					<div className="nav__settings__setting__gender">
+					<div className="nav__profile__setting__gender">
 						<div>
 							<span>Age Preference</span>
 							<span>{age[0]} - {age[1] === 100 ? '100+' : age[1]}</span>
@@ -63,7 +63,7 @@ export default function DiscoverySettings() {
 						<Switch />
 					</div>
 				</div>
-				<div className="nav__settings__setting__sub">
+				<div className="nav__profile__setting__sub">
 					Going global will allow you to see people from around the world after you’ve run out of
 					profiles nearby.
 				</div>

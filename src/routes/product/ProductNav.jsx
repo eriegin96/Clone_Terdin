@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function MessagesPage() {
+export default function ProductNav() {
   return (
     <div>
-      Messages
+      Product Nav
     </div>
   )
 }

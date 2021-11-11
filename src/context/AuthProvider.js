@@ -22,8 +22,9 @@ export default function AuthProvider({ children }) {
 		// 		setIsAuthLoading(false);
 		// 	}
 		// });
+				setUser({});
 
-				setUser({uid: 1, displayName: 'a'});
+				// setUser({uid: 1, displayName: 'a'});
 
 
 		// return () => {

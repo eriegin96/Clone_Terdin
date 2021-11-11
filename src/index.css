@@ -1,4 +1,17 @@
+:root {
+	--color-hover: #d6002f;
+	--color-coral: #ff6036;
+	--color-brand-pink: #ff4458;
+	--color-hot-pink: #fd267a;
+	--color-divider-primary: #d4d8de;
+	--color-text-primary: #3c444f;
+	--color-text-secondary: #656e7b;
+}
+
 @import 'antd/dist/antd.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
 	margin: 0;
@@ -34,34 +47,8 @@ button {
 	cursor: pointer;
 }
 
-#auth {
-	height: 100vh;
-	background: linear-gradient(180deg, #fd267a, #ff6036);
-
-	@keyframes zoomInOut {
-		0% {
-			width: 80px;
-			height: 80px;
-		}
-
-		50% {
-			width: 100px;
-			height: 100px;
-		}
-
-		100% {
-			width: 80px;
-			height: 80px;
-		}
-	}
-
-	svg {
-		position: relative;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		animation: zoomInOut 1s ease infinite;
-	}
+#auth svg path {
+	fill: #fff;
 }
 
 .none {

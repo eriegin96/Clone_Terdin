@@ -8,25 +8,25 @@ import { BoostSvg, StarSvg } from 'utils/Svg';
 export default function Products() {
 	return (
 		<>
-			<div className="nav__settings__product">
-				<Link to="product/subscription/platinum">
+			<div className="nav__profile__product">
+				<Link to="/app/product/subscription/platinum">
 					<img src={imgPlatinum} alt="" />
 					<div>Priority Likes, See who Likes you & More</div>
 				</Link>
 			</div>
-			<div className="nav__settings__product">
-				<Link to="product/subscription/gold">
+			<div className="nav__profile__product">
+				<Link to="/app/product/subscription/gold">
 					<img src={imgGold} alt="" />
 					<div>See Who Likes You & More!</div>
 				</Link>
 			</div>
-			<div className="nav__settings__product">
-				<Link to="product/subscription/plus">
+			<div className="nav__profile__product">
+				<Link to="/app/product/subscription/plus">
 					<img src={imgPlus} alt="" />
 					<div>See Who Likes You & More!</div>
 				</Link>
 			</div>
-			<div className="nav__settings__product__extra">
+			<div className="nav__profile__product__extra">
 				<div>
 					<span>
 						<BoostSvg />

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ProfileWindow() {
+export default function ProductMain() {
   return (
     <div>
-      Profile Window
+      Product Main
     </div>
   )
 }

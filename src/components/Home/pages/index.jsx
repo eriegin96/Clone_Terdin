@@ -25,11 +25,11 @@ export default function HomePage() {
 	}, [pos]);
 
 	return (
-		<div className="home-page">
-			<div className="home-page__bg">
-				<div className="home-page__bg1"></div>
-				<div className="home-page__bg2"></div>
-				<div className="home-page__bg3"></div>
+		<div className="w-full overflow-hidden">
+			<div className="home-page__bg fixed inset-0 -z-1 bg-gradient-to-b from-black to-transparent">
+				<div className="home-page__bg1 absolute w-full h-full"></div>
+				<div className="absolute w-full h-full bg-bg2"></div>
+				<div className="home-page__bg3 absolute w-full h-full"></div>
 			</div>
 			<div className="home-page__main">
 				<header className="home-page__header">

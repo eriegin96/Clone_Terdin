@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import { Avatar } from 'antd';
 import './nav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TinderSvg } from 'utils/Svg';
 import { AuthContext } from 'context/AuthProvider';
-import NavTabs from './components/NavTabs/index';
-import NavSettings from './components/NavSettings/index';
 
 export default function Nav() {
 	const { user } = useContext(AuthContext);
@@ -32,15 +30,9 @@ export default function Nav() {
 				</div>
 			</div>
 			<div className="nav__content">
-				<CSSTransition
-					in={pathname === '/app/profile'}
-					timeout={300}
-					classNames="nav__settings"
-					unmountOnExit
-				>
-					<NavSettings />
+				<CSSTransition in={pathname === '/app/profile'} timeout={300} classNames="nav__left">
+					<Outlet />
 				</CSSTransition>
-				{pathname === '/app/recs' && <NavTabs />}
 			</div>
 		</aside>
 	);
