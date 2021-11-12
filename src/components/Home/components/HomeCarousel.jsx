@@ -14,14 +14,19 @@ export default function HomeCarousel() {
 	};
 
 	return (
-		<div className="home-page__slider__container">
+		<div className="max-w-9/10 m-auto">
 			<Slider {...settings}>
 				{HOME_TESTIMONIALS.map((item, i) => (
-					<div key={i} className="home-page__slider__item">
-						<span>“</span>
-						<div className="home-page__slider__item__title">{item.title}</div>
-						<hr />
-						<div className="home-page__slider__item__content">{item.content}</div>
+					<div
+						key={i}
+						className="w-full h-full p-6 relative border border-solid border-divider-primary rounded-lg shadow-1"
+					>
+						<span className="absolute top-0 right-0 h-1/2 text-180 mr-2 text-divider-primary leading-none">
+							“
+						</span>
+						<div className="home-page__slider__item__title text-base font-semibold text-text-primary mb-2">{item.title}</div>
+						<hr className='w-4/5 border-divider-primary'/>
+						<div className="my-3 border-text-secondary text-text-secondary whitespace-pre-wrap">{item.content}</div>
 					</div>
 				))}
 			</Slider>

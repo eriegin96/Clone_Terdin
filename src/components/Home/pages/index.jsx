@@ -26,26 +26,27 @@ export default function HomePage() {
 
 	return (
 		<div className="w-full overflow-hidden">
-			<div className="home-page__bg fixed inset-0 -z-1 bg-gradient-to-b from-black to-transparent">
-				<div className="home-page__bg1 absolute w-full h-full"></div>
-				<div className="absolute w-full h-full bg-bg2"></div>
-				<div className="home-page__bg3 absolute w-full h-full"></div>
+			<div className="fixed inset-0 -z-1">
+				<div className="absolute w-full h-full bg-main-background bg-center bg-no-repeat bg-cover transform scale-110"></div>
+				<div className="absolute w-full h-full bg-bg4"></div>
+				<div className="h-45 absolute w-full bg-gradient-to-b from-black"></div>
 			</div>
-			<div className="home-page__main">
-				<header className="home-page__header">
-					<div>
-						<span className="home-page__header__logo">
+			<div className="home-page__main h-screen w-full">
+				<header className="sticky top-0 w-full flex justify-between items-center z-1">
+					<div className="flex items-center mx-7">
+						<span className="cursor-pointer">
 							<TinderTextSvg />
 						</span>
 						<HeaderNav />
 					</div>
-					<div>
-						<span className="home-page__header__lang">
-							<FontAwesomeIcon icon="fa-solid fa-earth-americas" />
+					<div className="flex items-center">
+						<span className="cursor-pointer bg-transparent uppercase text-white px-3 text-15 flex items-center">
+							<FontAwesomeIcon icon="fa-solid fa-earth-americas" className="mr-2" />
 							English
 						</span>
-						<span className="home-page__header__login">
+						<span className="px-7">
 							<button
+								className="w-26 outline-none bg-white text-hover px-6 rounded-3 text-17 font-semibold leading-loose tracking-1"
 								onClick={() => {
 									setHadAccount(true);
 									setLoginModalOpen(true);
@@ -56,9 +57,13 @@ export default function HomePage() {
 						</span>
 					</div>
 				</header>
-				<div className="home-page__content" style={{ opacity: mainOpacity }}>
-					<div>Swipe Right®</div>
+				<div
+					className="relative w-full flex flex-col justify-center items-center text-white"
+					style={{ opacity: mainOpacity, height: 'calc(100% - 84px)' }}
+				>
+					<div className="text-110 font-semibold">Swipe Right®</div>
 					<button
+						className="uppercase text-white text-base font-semibold py-4.25 px-12.5 rounded-7.5 bg-gradient-to-r from-hot-pink to-coral"
 						onClick={() => {
 							setHadAccount(false);
 							setLoginModalOpen(true);
@@ -66,13 +71,15 @@ export default function HomePage() {
 					>
 						Create Account
 					</button>
-					<div>All photos are of models and used for illustrative purposes only</div>
+					<div className="absolute text-xs right-5 bottom-2.5">
+						All photos are of models and used for illustrative purposes only
+					</div>
 				</div>
 			</div>
-			<div className="home-page__slider">
+			<div className="pt-5 pb-4 bg-white">
 				<HomeCarousel />
 			</div>
-			<footer className="home-page__footer">
+			<footer className="bg-white">
 				<Footer />
 			</footer>
 			<LoginModal

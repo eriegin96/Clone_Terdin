@@ -1,7 +1,39 @@
+export const HOME_NAVS = [
+	{
+		title: 'Products',
+		list: [
+			{ title: 'Premium Features' },
+			{ title: 'Subscription Tiers' },
+			{
+				subList: [
+					{ title: 'Tinder Plus®' },
+					{ title: 'Tinder Gold™' },
+					{ title: 'Tinder Platinum™' },
+				],
+			},
+			{ title: 'Download' },
+		],
+	},
+	{ title: 'Learn' },
+	{
+		title: 'Safety',
+		list: [
+			{ title: 'Community Guidlines' },
+			{ title: 'Safety Tips' },
+			{ title: 'Safety & Policy' },
+			{ title: 'Safety & Reporting' },
+			{ title: 'Security' },
+		],
+	},
+	{ title: 'Support' },
+	{ title: 'Swipe Night' },
+];
+
 export const HOME_TESTIMONIALS = [
 	{
 		title: 'Shannon & Julian',
-		content: 'I was feeling lonely back in my hometown because most of my friends had started romantic relationships while I was abroad. We both decided to download Tinder and see what happened.\n\nWithout the app we may have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other couples together around the world. I will forever be grateful.',
+		content:
+			'I was feeling lonely back in my hometown because most of my friends had started romantic relationships while I was abroad. We both decided to download Tinder and see what happened.\n\nWithout the app we may have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other couples together around the world. I will forever be grateful.',
 	},
 	{
 		title: 'Courtney & Miranda',

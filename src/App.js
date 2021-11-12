@@ -55,7 +55,7 @@ function App() {
 	return (
 		<React.Fragment>
 			{uid ? (
-				<div className="page">
+				<div className="h-screen flex">
 					<>
 						<Routes>
 							<Route path="app" element={<Nav />}>

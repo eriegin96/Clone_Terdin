@@ -1,6 +1,12 @@
-export function FacebookSvg() {
+export function FacebookSvg({ className }) {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="18"
+			height="18"
+			viewBox="0 0 18 18"
+			className={className}
+		>
 			<path
 				fill="#298CFA"
 				fillRule="evenodd"
@@ -10,9 +16,15 @@ export function FacebookSvg() {
 	);
 }
 
-export function GoogleSvg() {
+export function GoogleSvg({ className }) {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="18"
+			height="18"
+			viewBox="0 0 18 18"
+			className={className}
+		>
 			<g fill="none" fillRule="nonzero">
 				<path
 					fill="#4285F4"
@@ -67,6 +79,27 @@ export function TinderSvg({ className }) {
 	);
 }
 
+export function TinderWhiteSvg({ className }) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			focusable="false"
+			aria-hidden="true"
+			role="presentation"
+			className={className}
+		>
+			<path
+				d="M8.21 10.08c-.02 0-.04 0-.06-.02-.67-.9-.84-2.44-.89-3.03 0-.11-.13-.18-.23-.12C4.93 8.08 3 10.86 3 13.54 3 18.14 6.2 22 11.7 22c5.15 0 8.7-3.98 8.7-8.46 0-5.87-4.2-9.77-7.93-11.53a.13.13 0 0 0-.19.14c.48 3.16-.18 6.6-4.07 7.93z"
+				fill="#fff"
+				fillRule="nonzero"
+			></path>
+		</svg>
+	);
+}
+
 export function TinderTextSvg() {
 	return (
 		<svg xmlns="http://www.w3.org/2000/svg" width="150" viewBox="0 0 519 123">
@@ -84,7 +117,7 @@ export function TinderTextSvg() {
 	);
 }
 
-export function BoostSvg() {
+export function BoostSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -93,6 +126,7 @@ export function BoostSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -115,7 +149,7 @@ export function BoostSvg() {
 	);
 }
 
-export function StarSvg() {
+export function StarSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -124,6 +158,7 @@ export function StarSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -146,7 +181,7 @@ export function StarSvg() {
 	);
 }
 
-export function ControlSvg() {
+export function ControlSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -155,6 +190,7 @@ export function ControlSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -183,7 +219,7 @@ export function ControlSvg() {
 	);
 }
 
-export function HideSvg() {
+export function HideSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -192,6 +228,7 @@ export function HideSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -215,7 +252,7 @@ export function HideSvg() {
 	);
 }
 
-export function KeySvg() {
+export function KeySvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -224,6 +261,7 @@ export function KeySvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -247,7 +285,7 @@ export function KeySvg() {
 	);
 }
 
-export function Like1Svg() {
+export function Like1Svg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -256,6 +294,7 @@ export function Like1Svg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -280,7 +319,7 @@ export function Like1Svg() {
 	);
 }
 
-export function Like2Svg() {
+export function Like2Svg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -289,6 +328,7 @@ export function Like2Svg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -311,7 +351,7 @@ export function Like2Svg() {
 	);
 }
 
-export function LocationSvg() {
+export function LocationSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -320,6 +360,7 @@ export function LocationSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -342,7 +383,7 @@ export function LocationSvg() {
 	);
 }
 
-export function RewindSvg() {
+export function RewindSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -351,6 +392,7 @@ export function RewindSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient

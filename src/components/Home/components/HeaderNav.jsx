@@ -1,63 +1,46 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { HOME_NAVS } from 'utils/constants';
 
 export default function HeaderNav() {
+	const navList = useMemo(() => HOME_NAVS, []);
+
 	return (
-		<nav className="home-page__header__nav">
-			<ul>
-				<li className="home-page__header__nav__item">
-					<span>Products</span>
-					<ul className="home-page__header__nav-list">
-						<li className="home-page__header__nav-list__item">
-							<span>Premium Features</span>
-						</li>
-						<li className="home-page__header__nav-list__item">
-							<span>Subscription Tiers</span>
-						</li>
-						<ul>
-							<li className="home-page__header__nav-list__item">
-								<span>Tinder Plus®</span>
-							</li>
-							<li className="home-page__header__nav-list__item">
-								<span>Tinder Gold™</span>
-							</li>
-							<li className="home-page__header__nav-list__item">
-								<span>Tinder Platinum™</span>
-							</li>
-						</ul>
-						<li className="home-page__header__nav-list__item">
-							<span>Download</span>
-						</li>
-					</ul>
-				</li>
-				<li className="home-page__header__nav__item">
-					<span>Learn</span>
-				</li>
-				<li className="home-page__header__nav__item">
-					<span>Safety</span>
-					<ul className="home-page__header__nav-list">
-						<li className="home-page__header__nav-list__item">
-							<span>Community Guidlines</span>
-						</li>
-						<li className="home-page__header__nav-list__item">
-							<span>Safety Tips</span>
-						</li>
-						<li className="home-page__header__nav-list__item">
-							<span>Safety & Policy</span>
-						</li>
-						<li className="home-page__header__nav-list__item">
-							<span>Safety & Reporting</span>
-						</li>
-						<li className="home-page__header__nav-list__item">
-							<span>Security</span>
-						</li>
-					</ul>
-				</li>
-				<li className="home-page__header__nav__item">
-					<span>Support</span>
-				</li>
-				<li className="home-page__header__nav__item">
-					<span>Swipe Night</span>
-				</li>
+		<nav className="inline-block pl-10">
+			<ul className="flex items-center my-4">
+				{navList.map((item, i) => (
+					<li key={i} className="group relative h-13 flex items-center">
+						<span className="group-hover:underline group-hover:text-hover text-white text-lg font-medium cursor-pointer mr-10">
+							{item.title}
+						</span>
+						{item.list && (
+							<ul className="group-hover:flex hidden absolute w-max top-4/5 left-0 flex-col items-start">
+								{item.list.map((listItem, li) => {
+									if (listItem.title) {
+										return (
+											<li key={li} className="py-0.75">
+												<span className="text-white text-lg font-medium cursor-pointer hover:text-hover block font-semibold">
+													{listItem.title}
+												</span>
+											</li>
+										);
+									} else {
+										return (
+											<ul key={li} className="pl-9 flex flex-col items-start">
+												{listItem.subList.map((subListItem, sli) => (
+													<li key={sli} className="py-0.75">
+														<span className="text-white text-lg font-medium cursor-pointer hover:text-hover block font-semibold">
+															{subListItem.title}
+														</span>
+													</li>
+												))}
+											</ul>
+										);
+									}
+								})}
+							</ul>
+						)}
+					</li>
+				))}
 			</ul>
 		</nav>
 	);

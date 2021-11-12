@@ -44,7 +44,7 @@ export default function RecsNav() {
 								hoverable
                 style={{backgroundImage: `url(https://picsum.photos/id/${i * 100}/100/120)`}}
 							>
-								<div>{item.displayName}</div>
+								<div className='text-white font-semibold'>{item.displayName}</div>
 							</Card>
 						</Col>
 					))}
@@ -59,14 +59,14 @@ export default function RecsNav() {
 					<Link
 						key={i}
 						to={`/app/messages/${i + 1}`}
-						className="nav__message"
+						className="nav__message mr-1.25 flex items-center border-transparent transition-all duration-200"
 						onClick={() => handleClickMessage(i)}
 					>
-						<div>
+						<div className='py-3 px-6'>
 							<Avatar size={74}>{item.displayName.charAt(0)}</Avatar>
 						</div>
-						<div>
-							<div>{item.displayName}</div>
+						<div className='flex-grow text-text-primary'>
+							<div className='text-17 font-semibold'>{item.displayName}</div>
 							<div>{item.message}</div>
 						</div>
 					</Link>

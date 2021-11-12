@@ -9,22 +9,27 @@ export default function DiscoverySettings() {
 
 	return (
 		<>
-			<div className="nav__profile__setting">
-				<h3>Discovery Settings</h3>
-				<div className="nav__profile__setting__container">
+			<div className="mt-5">
+				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">
+					Discovery Settings
+				</h3>
+				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
 					<Link to="/app/settings/plus/passport">
-						<div>
-							<span>Location</span>
-							<span>
+						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
+							<span className="py-3">Location</span>
+							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
 								Phường 15, VietNam
-								<FontAwesomeIcon icon="fa-solid fa-angle-right" />
+								<FontAwesomeIcon
+									icon="fa-solid fa-angle-right"
+									className="ml-2 transition-all duration-200 w-3.5 h-3.5 text-divider-primary group-hover:text-brand-pink"
+								/>
 							</span>
 						</div>
 					</Link>
-					<div className="nav__profile__setting__distance">
-						<div>
-							<span>Distance Preference</span>
-							<span>{distance} km.</span>
+					<div className="flex-col cursor-default flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
+						<div className="w-full flex justify-between items-center cursor-default">
+							<span className="py-3">Distance Preference</span>
+							<span className="py-3">{distance} km.</span>
 						</div>
 						<Slider
 							min={2}
@@ -33,37 +38,49 @@ export default function DiscoverySettings() {
 							tooltipVisible={false}
 							onChange={(value) => setDistance(value)}
 						/>
-						<div>
-							<span>Only show people in this range</span>
+						<div className="w-full flex justify-between items-center cursor-pointer">
+							<span className="py-3">Only show people in this range</span>
 							<Switch />
 						</div>
 					</div>
 					<Link to="/app/settings/gender">
-						<div>
-							<span>Looking for</span>
-							<span>
+						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
+							<span className="py-3">Looking for</span>
+							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
 								Women
-								<FontAwesomeIcon icon="fa-solid fa-angle-right" />
+								<FontAwesomeIcon
+									icon="fa-solid fa-angle-right"
+									className="ml-2 transition-all duration-200 w-3.5 h-3.5 text-divider-primary group-hover:text-brand-pink"
+								/>
 							</span>
 						</div>
 					</Link>
-					<div className="nav__profile__setting__gender">
-						<div>
-							<span>Age Preference</span>
-							<span>{age[0]} - {age[1] === 100 ? '100+' : age[1]}</span>
+					<div className="flex-col cursor-default flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
+						<div className="w-full flex justify-between items-center cursor-default">
+							<span className="py-3">Age Preference</span>
+							<span className="py-3">
+								{age[0]} - {age[1] === 100 ? '100+' : age[1]}
+							</span>
 						</div>
-						<Slider range min={18} max={100} defaultValue={age} tooltipVisible={false} onChange={(value) => setAge(value)} />
-						<div>
-							<span>Only show people in this range</span>
+						<Slider
+							range
+							min={18}
+							max={100}
+							defaultValue={age}
+							tooltipVisible={false}
+							onChange={(value) => setAge(value)}
+						/>
+						<div className="w-full flex justify-between items-center cursor-pointer">
+							<span className="py-3">Only show people in this range</span>
 							<Switch />
 						</div>
 					</div>
-					<div>
-						<span>Global</span>
+					<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
+						<span className="py-3">Global</span>
 						<Switch />
 					</div>
 				</div>
-				<div className="nav__profile__setting__sub">
+				<div className="my-3 px-4 text-text-secondary text-13">
 					Going global will allow you to see people from around the world after you’ve run out of
 					profiles nearby.
 				</div>
