@@ -12,7 +12,7 @@ export default function Settings() {
 			<AccountSettings />
 			<DiscoverySettings />
 			<div className="mt-5">
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
 					<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
 						<span className="py-3">Show me on Terdin</span>
 						<Switch />
@@ -24,8 +24,8 @@ export default function Settings() {
 				</div>
 			</div>
 			<div className="mt-5">
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/block-contacts/tab-contacts">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
+					<Link to="/app/settings/block-contacts/tab-contacts" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Block Contacts</span>
 							<span className="py-3 text-text-secondary transition-all duration-200">
@@ -45,8 +45,8 @@ export default function Settings() {
 				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">
 					Web Profile
 				</h3>
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/web-profile">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
+					<Link to="/app/settings/web-profile" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Username</span>
 							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
@@ -68,8 +68,8 @@ export default function Settings() {
 				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">
 					Read Receipts
 				</h3>
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/read-receipts">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
+					<Link to="/app/settings/read-receipts" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Manage Read Receipts</span>
 							<span className="py-3 text-text-secondary transition-all duration-200">
@@ -86,8 +86,8 @@ export default function Settings() {
 				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">
 					Activity Status
 				</h3>
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/recently-active">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
+					<Link to="/app/settings/recently-active" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Recently Active Status</span>
 							<span className="py-3 text-text-secondary transition-all duration-200">
@@ -105,7 +105,7 @@ export default function Settings() {
 					Notifications
 				</h3>
 				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/email">
+					<Link to="/app/settings/email" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Email</span>
 							<span className="py-3 text-text-secondary transition-all duration-200">
@@ -116,7 +116,7 @@ export default function Settings() {
 							</span>
 						</div>
 					</Link>
-					<Link to="/app/settings/push">
+					<Link to="/app/settings/push" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Push Notifications</span>
 							<span className="py-3 text-text-secondary transition-all duration-200">
@@ -131,8 +131,8 @@ export default function Settings() {
 			</div>
 			<div className="mt-5">
 				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">Language</h3>
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/languages">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
+					<Link to="/app/settings/languages" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Language</span>
 							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
@@ -150,7 +150,7 @@ export default function Settings() {
 				<h3 className="py-2 px-4 text-text-secondary uppercase font-semibold text-13">
 					Help & Support
 				</h3>
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
 					<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 						<span className="py-3">Help & Support</span>
 						<span className="py-3">
@@ -230,14 +230,14 @@ export default function Settings() {
 				</div>
 			</div>
 			<div className="mt-5">
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
 					<div className="flex items-center justify-center min-h-50 cursor-pointer">
 						Share Terdin
 					</div>
 				</div>
 			</div>
 			<div className="mt-5">
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
 					<div className="flex items-center justify-center min-h-50 cursor-pointer">Logout</div>
 				</div>
 			</div>
@@ -246,7 +246,7 @@ export default function Settings() {
 				<p className="text-15 mt-3 mb-4">Version 3.4.0</p>
 			</div>
 			<div className="mt-5">
-				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
+				<div className="bg-white border-t border-b border-solid border-divider-primary">
 					<div className="flex items-center justify-center min-h-50 cursor-pointer">
 						Delete Account
 					</div>

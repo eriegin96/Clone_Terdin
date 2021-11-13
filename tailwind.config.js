@@ -26,7 +26,9 @@ module.exports = {
 			},
 			colors: {
 				'bg-secondary': 'var(--color-bg-secondary)',
+				'blue-50': 'var(--color-blue-50)',
 				'gray-15': 'var(--color-gray-15)',
+				'red-60': 'var(--color-red-60)',
 				coral: 'var(--color-coral)',
 				hover: 'var(--color-hover)',
 				boost: 'var(--color-boost)',
@@ -48,6 +50,7 @@ module.exports = {
 				13: '.8125rem',
 				15: '.9375rem',
 				17: '1.0625rem',
+				24: '1.5rem',
 				110: '6.875rem',
 				180: '11.25rem',
 			},
@@ -71,15 +74,20 @@ module.exports = {
 			},
 			minHeight: {
 				50: '50px',
+				54: '54px',
 			},
 			minWidth: {
 				325: '325px',
 			},
 			maxWidth: {
+				'3/5': '60%',
 				'9/10': '90%',
+				315: '315px',
 				375: '375px',
 			},
 			spacing: {
+				'3/10': '30%',
+				'85/100': '85%',
 				0.75: '0.1875rem',
 				1.25: '0.3125rem',
 				4.25: '1.0625rem',

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PromoModal from './PromoModal';
+import { AppContext } from 'context/AppProvider';
 
 export default function AccountSettings() {
+	const { email, phoneNumber, preferGender } = useContext(AppContext);
+	const [promoModalOpen, setPromoModalOpen] = useState(false);
+
 	return (
 		<>
 			<div className="mt-5">
@@ -10,7 +15,7 @@ export default function AccountSettings() {
 					Account Settings
 				</h3>
 				<div className="divide-y divide-divider-primary bg-white border-t border-b border-solid border-divider-primary">
-					<Link to="/app/settings/account">
+					<Link to="/app/settings/account" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Manage Payment Account</span>
 							<span className="py-3 text-text-secondary transition-all duration-200 ">
@@ -24,11 +29,11 @@ export default function AccountSettings() {
 					<div className="flex justify-between items-center  text-text-primary px-4 cursor-pointer min-h-50">
 						<span className="py-3">Restore Purchases</span>
 					</div>
-					<Link to="/app/settings/email-account">
+					<Link to="/app/settings/email-account" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Email</span>
 							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
-								tritintruong@gmail.com
+								{email}
 								<FontAwesomeIcon
 									icon="fa-solid fa-angle-right"
 									className="ml-2 transition-all duration-200 w-3.5 h-3.5 text-divider-primary group-hover:text-brand-pink"
@@ -36,11 +41,11 @@ export default function AccountSettings() {
 							</span>
 						</div>
 					</Link>
-					<Link to="/app/settings/phone-account">
+					<Link to="/app/settings/phone-account" className="w-full">
 						<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50 group">
 							<span className="py-3">Phone Number</span>
 							<span className="py-3 text-text-secondary transition-all duration-200 group-hover:text-brand-pink">
-								84907607638
+								{phoneNumber}
 								<FontAwesomeIcon
 									icon="fa-solid fa-angle-right"
 									className="ml-2 transition-all duration-200 w-3.5 h-3.5 text-divider-primary group-hover:text-brand-pink"
@@ -48,7 +53,10 @@ export default function AccountSettings() {
 							</span>
 						</div>
 					</Link>
-					<div className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
+					<div
+						className="flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50"
+						onClick={() => setPromoModalOpen(true)}
+					>
 						<span className="py-3">Promo Code</span>
 					</div>
 				</div>
@@ -56,6 +64,7 @@ export default function AccountSettings() {
 					Verified Phone Number and Email help secure your account.
 				</div>
 			</div>
+			<PromoModal promoModalOpen={promoModalOpen} setPromoModalOpen={setPromoModalOpen} />
 		</>
 	);
 }

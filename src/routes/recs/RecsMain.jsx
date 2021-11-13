@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function RecsWindow() {
+export default function RecsMain() {
   return (
     <div>
-      Recs Window
+      Recs Main
     </div>
   )
 }

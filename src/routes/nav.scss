@@ -119,6 +119,10 @@ $color-text-secondary: #656e7b;
 		}
 	}
 
+	.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+		border-color: $color-brand-pink;
+	}
+
 	.ant-switch {
 		width: 50px;
 		height: 30px;
@@ -158,5 +162,23 @@ $color-text-secondary: #656e7b;
 
 .nav__left-exit-active {
 	left: -100%;
+	transition: all 0.3s;
+}
+
+.nav__right-enter {
+	right: 100%;
+}
+
+.nav__right-enter-active {
+	right: 0;
+	transition: right 0.5s;
+}
+
+.nav__right-exit {
+	right: 0;
+}
+
+.nav__right-exit-active {
+	right: 100%;
 	transition: all 0.3s;
 }

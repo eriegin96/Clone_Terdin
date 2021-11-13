@@ -12,7 +12,7 @@ export default function Nav() {
 	const { pathname } = useLocation();
 
 	return (
-		<aside className="nav min-w-325 max-w-375 h-full w-1/4">
+		<aside className="nav min-w-325 max-w-375 h-full w-1/4 bg-bg-secondary">
 			<div className="h-18.25 flex justify-between items-center bg-gradient-to-l from-coral to-hot-pink">
 				<Link
 					to="profile"
@@ -43,10 +43,10 @@ export default function Nav() {
 					</button>
 				</div>
 			</div>
-			<div className="overflow-auto" style={{height: 'calc(100% - 73px)'}}>
-				<CSSTransition in={pathname === '/app/profile'} timeout={300} classNames="nav__left">
+			<div className="overflow-auto" style={{ height: 'calc(100% - 73px)' }}>
+				{/* <CSSTransition in={pathname === '/app/profile'} timeout={300} classNames="nav__left"> */}
 					<Outlet />
-				</CSSTransition>
+				{/* </CSSTransition> */}
 			</div>
 		</aside>
 	);

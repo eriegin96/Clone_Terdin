@@ -15,6 +15,7 @@ import {
 	faBriefcase,
 	faAngleRight,
 	faUpRightFromSquare,
+	faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
@@ -44,7 +45,8 @@ library.add(
 	faAddressBook,
 	faBriefcase,
 	faAngleRight,
-	faUpRightFromSquare
+	faUpRightFromSquare,
+	faCheck
 );
 
 function App() {
@@ -59,23 +61,21 @@ function App() {
 					<>
 						<Routes>
 							<Route path="app" element={<Nav />}>
-								<Route path="recs" element={<RecsNav />} />
+								<Route index path="recs" element={<RecsNav />} />
 								<Route path="matches" element={<ProfileNav />} />
 								<Route path="profile" element={<ProfileNav />} />
-								<Route path="messages">
-									<Route path=":id" element={<MessagesNav />} />
+								<Route path="messages" element={<RecsNav />}>
+									<Route path=":id" />
 								</Route>
 								<Route path="product">
-									<Route path="subscription" element={<ProductNav />}>
-										<Route path="platinum" element={<ProductNav />} />
-										<Route path="gold" element={<ProductNav />} />
-										<Route path="plus" element={<ProductNav />} />
+									<Route path="subscription">
+										<Route path="platinum" />
+										<Route path="gold" />
+										<Route path="plus" />
 									</Route>
 								</Route>
-								<Route path="settings">
-									<Route path="plus/passport" element={<SettingsNav />} />
-									<Route path="*" element={<SettingsNav />} />
-								</Route>
+								<Route path="settings/*" element={<SettingsNav />} />
+								<Route path="settings/plus/passport" element={<ProfileNav />} />
 							</Route>
 							<Route path="*" element={<Navigate to="/app/recs" />} />
 						</Routes>
@@ -96,8 +96,8 @@ function App() {
 										<Route path="plus" element={<ProductMain />} />
 									</Route>
 								</Route>
-								<Route path="settings" element={<ProfileMain />}>
-									<Route path="plus/passport" element={<ProfileMain />} />
+								<Route path="settings">
+									<Route path="plus/passport" element={<SettingsMain />} />
 									<Route path="*" element={<ProfileMain />} />
 								</Route>
 								<Route path="*" element={<Navigate to="/app/recs" />} />
