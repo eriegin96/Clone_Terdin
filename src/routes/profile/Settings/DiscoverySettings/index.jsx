@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Slider, Switch } from 'antd';
@@ -30,7 +30,7 @@ export default function DiscoverySettings() {
 					<div className="flex-col cursor-default flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
 						<div className="w-full flex justify-between items-center cursor-default">
 							<span className="py-3">Distance Preference</span>
-							<span className="py-3">{preferDistance} km.</span>
+							<span className="py-3 text-text-secondary">{preferDistance} km.</span>
 						</div>
 						<Slider
 							min={2}
@@ -59,7 +59,7 @@ export default function DiscoverySettings() {
 					<div className="flex-col cursor-default flex justify-between items-center text-text-primary px-4 cursor-pointer min-h-50">
 						<div className="w-full flex justify-between items-center cursor-default">
 							<span className="py-3">Age Preference</span>
-							<span className="py-3">
+							<span className="py-3 text-text-secondary">
 								{preferAge[0]} - {preferAge[1] === 100 ? '100+' : preferAge[1]}
 							</span>
 						</div>

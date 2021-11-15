@@ -5,7 +5,7 @@ import PromoModal from './PromoModal';
 import { AppContext } from 'context/AppProvider';
 
 export default function AccountSettings() {
-	const { email, phoneNumber, preferGender } = useContext(AppContext);
+	const { email, phoneNumber } = useContext(AppContext);
 	const [promoModalOpen, setPromoModalOpen] = useState(false);
 
 	return (
@@ -64,7 +64,7 @@ export default function AccountSettings() {
 					Verified Phone Number and Email help secure your account.
 				</div>
 			</div>
-			<PromoModal promoModalOpen={promoModalOpen} setPromoModalOpen={setPromoModalOpen} />
+			<PromoModal open={promoModalOpen} setOpen={setPromoModalOpen} />
 		</>
 	);
 }

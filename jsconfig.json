@@ -2,7 +2,9 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es6",
-		"baseUrl": "./src"
+		"baseUrl": "./src",
+		"noEmit": true
 	},
-	"include": ["src/**/*"]
+	"include": ["src/**/*", "tailwind/var.js"],
+	"exclude": ["node_modules"]
 }

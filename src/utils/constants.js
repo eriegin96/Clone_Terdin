@@ -1,3 +1,19 @@
+import {
+	MessagePlaSvg,
+	Like1PlaSvg,
+	Like2PlaSvg,
+	MorePlaSvg,
+	Like1Svg,
+	Like2Svg,
+	BoostSvg,
+	ControlSvg,
+	KeySvg,
+	LocationSvg,
+	StarSvg,
+	RewindSvg,
+	HideSvg,
+} from './Svg';
+
 export const HOME_NAVS = [
 	{
 		title: 'Products',
@@ -76,3 +92,187 @@ export const HOME_TESTIMONIALS = [
 			'For all the single people out there, especially introverted ones like us: do not be afraid to travel outside of your comfort zone. That’s where you’ll make a genuine connection. Tinder brought us together and for that, I am forever grateful. ❤',
 	},
 ];
+
+export const PRODUCT = {
+	platinum: {
+		features: [
+			{
+				title: 'Message before Matching',
+				content: 'Add a message for free with every Super Like you send.',
+				svg: MessagePlaSvg,
+				color: 'text-primary',
+			},
+			{
+				title: 'Prioritized Likes',
+				content: 'Everyone you like will see you sooner',
+				svg: Like1PlaSvg,
+				color: 'text-primary',
+			},
+			{
+				title: 'See Who Likes You',
+				content: 'Match instantly with people who already like you',
+				svg: Like2PlaSvg,
+				color: 'text-primary',
+			},
+			{
+				title: 'And Much More!',
+				content:
+					'Including Top Picks, Unlimited Likes, 1 free Boost a month, 5 Super Likes a week, Rewind & Passport™',
+				svg: MorePlaSvg,
+				color: 'text-primary',
+			},
+		],
+		get: {
+			title: 'Platinum',
+			titleColor: 'text-secondary',
+			sub: 'A First Class Dating Experience',
+			tagColor: 'black',
+			tagBg: 'divider-primary',
+			priceColor: 'white',
+			priceHoverColor: 'gray-15',
+			priceBg: 'text-primary',
+			priceBorderColor: 'divider-primary',
+			checkoutBg: 'checkout-platinum',
+			checkoutShadow: 'checkout-platinum'
+		},
+		prices: [
+			{ month: '12 months', price: '₫84,939', save: '69%', tag: 'Best Value' },
+			{ month: '6 months', price: '₫120,791.33', save: '56%', tag: 'Most Popular' },
+			{ month: '1 month', price: '₫237,656' },
+		],
+	},
+	gold: {
+		features: [
+			{
+				title: 'Likes You',
+				content: 'See Who Likes You & More!',
+				svg: Like1Svg,
+				color: 'text-gold',
+			},
+			{
+				title: 'Unlimited Likes',
+				content: 'Send as many Likes as you want.',
+				svg: Like2Svg,
+				color: 'green-20',
+			},
+			{
+				title: '1 free Boost a month',
+				content: 'Be a top profile in your area for 30 minutes to get more matches.',
+				svg: BoostSvg,
+				color: 'purple-60',
+			},
+			{
+				title: 'Control Your Profile',
+				content: 'Limit what others see about you',
+				svg: ControlSvg,
+				color: 'yellow-orange-60',
+			},
+			{
+				title: 'Control Who Sees You',
+				content: 'Only be shown to people you have liked',
+				svg: KeySvg,
+				color: 'text-brand-normal',
+			},
+			{
+				title: 'Like Profiles Around the World',
+				content: 'Passport™ To Any Location',
+				svg: LocationSvg,
+				color: 'blue-80',
+			},
+			{
+				title: '5 Super Likes a week',
+				content: 'Get 5 Super Likes a week and increase your chance at a match by 3x',
+				svg: StarSvg,
+				color: 'blue-40',
+			},
+			{
+				title: 'Unlimited Rewinds',
+				content: 'Go back and try again!',
+				svg: RewindSvg,
+				color: 'text-gold',
+			},
+			{
+				title: 'Hide Advertisements',
+				content: 'Enjoy a completely ad free experience',
+				svg: HideSvg,
+				color: 'gray-60',
+			},
+		],
+		get: {
+			title: 'Gold',
+			titleColor: 'text-gold',
+			sub: 'See Who Likes You & More!',
+			tagColor: 'white',
+			tagBg: 'gold-30',
+			priceColor: 'text-gold',
+			priceHoverColor: 'text-gold',
+			priceBg: 'gold-5',
+			priceBorderColor: 'gold-30',
+			checkoutBg: 'gold-30',
+			checkoutShadow: 'checkout-gold'
+		},
+		prices: [
+			{ month: '12 months', price: '₫55,675.75', save: '69%', tag: 'Best Value' },
+			{ month: '6 months', price: '₫81,144.33', save: '55%', tag: 'Most Popular' },
+			{ month: '1 month', price: '₫158,362' },
+		],
+	},
+	plus: {
+		features: [
+			{
+				title: 'Unlimited Likes',
+				content: 'Send as many Likes as you want.',
+				svg: Like2Svg,
+				color: 'green-20',
+			},
+			{
+				title: 'Control Your Profile',
+				content: 'Limit what others see about you',
+				svg: ControlSvg,
+				color: 'yellow-orange-60',
+			},
+			{
+				title: 'Control Who Sees You',
+				content: 'Only be shown to people you have liked',
+				svg: KeySvg,
+				color: 'text-brand-normal',
+			},
+			{
+				title: 'Like Profiles Around the World',
+				content: 'Passport™ To Any Location',
+				svg: LocationSvg,
+				color: 'blue-80',
+			},
+			{
+				title: 'Unlimited Rewinds',
+				content: 'Go back and try again!',
+				svg: RewindSvg,
+				color: 'text-gold',
+			},
+			{
+				title: 'Hide Advertisements',
+				content: 'Enjoy a completely ad free experience',
+				svg: HideSvg,
+				color: 'gray-60',
+			},
+		],
+		get: {
+			title: 'Plus',
+			titleColor: 'text-brand-normal',
+			sub: 'Unlimited Likes & More!',
+			tagColor: 'white',
+			tagBg: 'pink',
+			priceColor: 'text-brand-normal',
+			priceHoverColor: 'text-brand-normal',
+			priceBg: 'pink-5',
+			priceBorderColor: 'border-brand',
+			checkoutBg: 'checkout-plus',
+			checkoutShadow: 'checkout-plus'
+		},
+		prices: [
+			{ month: '12 months', price: '₫33,964.33', save: '70%', tag: 'Best Value' },
+			{ month: '6 months', price: '₫50,937', save: '55%', tag: 'Most Popular' },
+			{ month: '1 month', price: '₫101,723' },
+		],
+	},
+};

@@ -1,19 +1,4 @@
-:root {
-	--color-bg-secondary: #f0f2f4;
-	--color-blue-50: #1786ff;
-	--color-gray-15: #e9ebee;
-	--color-red-60: #c62c1e;
-	--color-hover: #d6002f;
-	--color-coral: #ff6036;
-	--color-boost: #9908e8;
-	--color-star: #106bd5;
-	--color-brand-pink: #ff4458;
-	--color-hot-pink: #fd267a;
-	--color-divider-primary: #d4d8de;
-	--color-text-primary: #21262e;
-	--color-text-secondary: #505965;
-}
-
+@import url('resources/css/var.css');
 @import 'antd/dist/antd.css';
 @tailwind base;
 @tailwind components;
@@ -43,7 +28,8 @@ code {
 	display: none;
 }
 
-*:active, *:focus {
+*:active,
+*:focus {
 	outline: none;
 }
 
@@ -56,7 +42,7 @@ a:hover {
 }
 
 button {
-	border: none;
+	border-width: 0;
 	outline: none;
 	cursor: pointer;
 }

@@ -1,4 +1,5 @@
 $color-divider-primary: #d4d8de;
+$color-brand-pink: #ff4458;
 
 .ant-modal-root {
 	.ant-modal-mask {
@@ -6,16 +7,15 @@ $color-divider-primary: #d4d8de;
 	}
 
 	.ant-modal-wrap {
-		display:flex ;
+		display: flex;
 		align-items: center;
-		
+
 		.ant-modal {
 			text-align: center;
 			top: 0;
 			padding-bottom: 0;
 
 			.ant-modal-content {
-				width: 440px;
 				margin: auto;
 				height: 100%;
 				border-radius: 8px;
@@ -23,17 +23,6 @@ $color-divider-primary: #d4d8de;
 				.ant-modal-close {
 					cursor: default;
 					color: $color-divider-primary;
-
-					svg {
-						width: 30px;
-						height: 30px;
-						cursor: pointer;
-						transition: transform 0.1s ease-in;
-					}
-
-					svg:hover {
-						transform: rotate(-90deg);
-					}
 				}
 
 				.ant-modal-close:hover {
@@ -41,9 +30,55 @@ $color-divider-primary: #d4d8de;
 				}
 
 				.ant-modal-body {
-					padding: 20px 44px 0;
+					padding: 0;
 				}
 			}
 		}
+	}
+}
+
+.ant-slider {
+	width: 100%;
+	cursor: default;
+	margin-top: 0;
+	margin-bottom: 24px;
+
+	.ant-slider-track {
+		background-color: $color-brand-pink;
+	}
+
+	.ant-slider-handle {
+		cursor: grab;
+		width: 28px;
+		height: 28px;
+		margin-top: -12px;
+		border-color: $color-brand-pink;
+	}
+}
+
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+	border-color: $color-brand-pink;
+}
+
+.ant-switch {
+	width: 50px;
+	height: 30px;
+
+	.ant-switch-handle {
+		width: 26px;
+		height: 26px;
+		transition-duration: 0.1s;
+	}
+
+	.ant-switch-handle::before {
+		border-radius: 50%;
+	}
+}
+
+.ant-switch-checked {
+	background-color: $color-brand-pink;
+
+	.ant-switch-handle {
+		left: calc(100% - 26px - 2px);
 	}
 }

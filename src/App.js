@@ -16,6 +16,9 @@ import {
 	faAngleRight,
 	faUpRightFromSquare,
 	faCheck,
+	faLocationDot,
+	faPlane,
+	faCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
@@ -46,7 +49,10 @@ library.add(
 	faBriefcase,
 	faAngleRight,
 	faUpRightFromSquare,
-	faCheck
+	faCheck,
+	faLocationDot,
+	faPlane,
+	faCircle
 );
 
 function App() {
@@ -67,13 +73,7 @@ function App() {
 								<Route path="messages" element={<RecsNav />}>
 									<Route path=":id" />
 								</Route>
-								<Route path="product">
-									<Route path="subscription">
-										<Route path="platinum" />
-										<Route path="gold" />
-										<Route path="plus" />
-									</Route>
-								</Route>
+								<Route path="product/subscription/*" element={<ProfileNav />} />
 								<Route path="settings/*" element={<SettingsNav />} />
 								<Route path="settings/plus/passport" element={<ProfileNav />} />
 							</Route>
@@ -89,17 +89,15 @@ function App() {
 								<Route path="messages">
 									<Route path=":id" element={<MessagesMain />} />
 								</Route>
-								<Route path="product">
-									<Route path="subscription" element={<ProductMain />}>
+								<Route path="product/subscription/*" element={<ProductMain />} />
+								{/* <Route path="subscription/platinum/*" element={<ProductMain />}>
 										<Route path="platinum" element={<ProductMain />} />
 										<Route path="gold" element={<ProductMain />} />
 										<Route path="plus" element={<ProductMain />} />
 									</Route>
-								</Route>
-								<Route path="settings">
-									<Route path="plus/passport" element={<SettingsMain />} />
-									<Route path="*" element={<ProfileMain />} />
-								</Route>
+								</Route> */}
+								<Route path="settings/*" element={<ProfileMain />} />
+								<Route path="settings/plus/passport" element={<SettingsMain />} />
 								<Route path="*" element={<Navigate to="/app/recs" />} />
 							</Route>
 						</Routes>

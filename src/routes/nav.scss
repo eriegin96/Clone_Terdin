@@ -99,54 +99,6 @@ $color-text-secondary: #656e7b;
 	}
 }
 
-.nav__profile {
-	.ant-slider {
-		width: 100%;
-		cursor: default;
-		margin-top: 0;
-		margin-bottom: 24px;
-
-		.ant-slider-track {
-			background-color: $color-brand-pink;
-		}
-
-		.ant-slider-handle {
-			cursor: grab;
-			width: 28px;
-			height: 28px;
-			margin-top: -12px;
-			border-color: $color-brand-pink;
-		}
-	}
-
-	.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
-		border-color: $color-brand-pink;
-	}
-
-	.ant-switch {
-		width: 50px;
-		height: 30px;
-
-		.ant-switch-handle {
-			width: 26px;
-			height: 26px;
-			transition-duration: 0.1s;
-		}
-
-		.ant-switch-handle::before {
-			border-radius: 50%;
-		}
-	}
-
-	.ant-switch-checked {
-		background-color: $color-brand-pink;
-
-		.ant-switch-handle {
-			left: calc(100% - 26px - 2px);
-		}
-	}
-}
-
 .nav__left-enter {
 	left: -100%;
 }

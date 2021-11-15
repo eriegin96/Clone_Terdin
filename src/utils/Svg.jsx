@@ -246,7 +246,7 @@ export function HideSvg({ className }) {
 			<path
 				d="M12.17 2.171c-5.497 0-9.941 4.503-9.941 9.942 0 5.556 4.444 10.058 9.941 10.058 5.497 0 9.942-4.502 9.942-9.941 0-5.556-4.445-10.059-9.942-10.059zm5.146 12.866L9.831 6.85a5.848 5.848 0 0 1 2.34-.585c3.274 0 5.847 2.69 5.847 5.848 0 1.17-.234 2.105-.702 2.924zM6.322 12.113c.014-.852.213-1.69.585-2.456l7.251 8.07c-.637.231-1.31.35-1.988.35-3.216 0-5.848-2.63-5.848-5.847v-.117z"
 				fill="url(#svg-fill-linear__hide-ads)"
-				fill-rule="evenodd"
+				fillRule="evenodd"
 			></path>
 		</svg>
 	);
@@ -277,7 +277,6 @@ export function KeySvg({ className }) {
 				</linearGradient>
 			</defs>
 			<path
-				class=""
 				fill="url(#svg-fill-linear__control-visibility)"
 				d="M21.556 19.558c.326-.322.513-.76.513-1.219 0-.46-.187-.892-.513-1.218l-6.855-6.878c.786-2.338.067-4.632-1.665-6.355a6.476 6.476 0 0 0-9.14 0 6.513 6.513 0 0 0-.982 7.922 6.502 6.502 0 0 0 7.418 2.945l1.312 1.326c.053.044.125.08.196.08a.276.276 0 0 0 .188-.08l.937-.937a.267.267 0 0 1 .192-.08.26.26 0 0 1 .187.075l.835.848a.264.264 0 0 1-.004.375l-.938.937a.251.251 0 0 0-.09.188c0 .071.037.143.09.192l1.45 1.437a.275.275 0 0 0 .188.076.26.26 0 0 0 .192-.08l.937-.938a.251.251 0 0 1 .188-.09.26.26 0 0 1 .192.09l.919.915a.26.26 0 0 1 .09.192.267.267 0 0 1-.09.187l-.924.938a.231.231 0 0 0-.08.178c0 .076.027.147.08.196l.7.706a1.765 1.765 0 0 0 2.473.017l2-1.963.004.018zM9.166 7.508a2.228 2.228 0 0 1-1.548 1.606 2.237 2.237 0 0 1-2.187-.527 2.278 2.278 0 0 1-.625-2.155 2.252 2.252 0 0 1 2.696-1.59c1.178.296 1.92 1.474 1.651 2.656h.01l.004.01z"
 			></path>
@@ -313,7 +312,7 @@ export function Like1Svg({ className }) {
 				d="M2.16 7.354h6.37a5.947 5.947 0 00-.894 2.084H2.16c-.406.04-.8-.15-1.015-.49a1.04 1.04 0 010-1.114c.215-.341.61-.532 1.015-.491v.01zm1.68 6.263c-.406.04-.8-.15-1.015-.49a1.04 1.04 0 010-1.114c.215-.34.61-.531 1.015-.49h3.796c.077.375.186.751.35 1.106l.021.043.022.043.546.902H3.84zm2.476 4.18c-.59 0-1.069-.472-1.069-1.053 0-.582.479-1.053 1.07-1.053h3.49l1.266 2.106H6.316zm13.746-1.837l-6.36 2.89a.495.495 0 01-.611-.183l-3.971-6.5a4.132 4.132 0 01-.185-3.02C9.556 7.183 11.127 6 12.949 6c.404 0 .818.064 1.233.183 1.222.365 1.745.999 2.476 2.299a5.271 5.271 0 012.346-.73c.327 0 .665.064 1.047.171 2.29.677 3.382 2.901 2.618 5.297a4.287 4.287 0 01-1.909 2.396l-.153.086-.152.075-.393.183z"
 				fill="url(#svg-fill-linear__light__gradient--gold)"
 				stroke=""
-				stroke-width=""
+				strokeWidth=""
 			></path>
 		</svg>
 	);
@@ -415,7 +414,7 @@ export function RewindSvg({ className }) {
 	);
 }
 
-export function Like1PlaSvg() {
+export function Like1PlaSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -424,6 +423,7 @@ export function Like1PlaSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient x1="100%" y1="100%" x2="2.058%" y2="9.36%" id="priorityLikesGradientA">
@@ -453,15 +453,15 @@ export function Like1PlaSvg() {
 				</linearGradient>
 				<path d="M9.03 18a9 9 0 100-18 9 9 0 000 18z" id="priorityLikesPathC"></path>
 			</defs>
-			<g fill="none" fill-rule="evenodd">
+			<g fill="none" fillRule="evenodd">
 				<path
 					d="M9 17.474a8.5 8.5 0 100-17 8.5 8.5 0 000 17z"
 					transform="translate(3 3)"
 					fill="url(#priorityLikesGradientA)"
 					stroke="url(#priorityLikesGradientB)"
-					stroke-width="3"
+					strokeWidth="3"
 				></path>
-				<g transform="translate(2.97 3)" fill-rule="nonzero">
+				<g transform="translate(2.97 3)" fillRule="nonzero">
 					<use fill="#2E2E2E" href="#priorityLikesPathC"></use>
 					<use fill="url(#priorityLikesGradientD)" href="#priorityLikesPathC"></use>
 				</g>
@@ -470,7 +470,7 @@ export function Like1PlaSvg() {
 					<path
 						d="M15.789 11.55c0-1.355-.92-2.34-2.19-2.34-.679 0-1.045.249-1.633.81-.588-.562-.955-.81-1.635-.81-1.268 0-2.189.983-2.189 2.338 0 .569.207 1.106.586 1.53l3.069 2.76a.26.26 0 00.339 0l2.767-2.47.17-.152.063-.066.064-.066c.381-.426.589-.964.589-1.534"
 						fill="#000"
-						fill-rule="nonzero"
+						fillRule="nonzero"
 					></path>
 					<path
 						d="M16 11.448c0-1.417-.963-2.447-2.29-2.447-.711 0-1.094.26-1.71.846C11.386 9.26 11.003 9 10.29 9 8.963 9 8 10.029 8 11.447c0 .595.216 1.157.613 1.601l3.21 2.886a.272.272 0 00.355 0l2.895-2.584.178-.158.066-.07.067-.069A2.39 2.39 0 0016 11.448"
@@ -482,7 +482,7 @@ export function Like1PlaSvg() {
 	);
 }
 
-export function Like2PlaSvg() {
+export function Like2PlaSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -491,6 +491,7 @@ export function Like2PlaSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient x1="100%" y1="100%" x2="2.058%" y2="9.36%" id="platinumLikesYouGradientA">
@@ -520,15 +521,15 @@ export function Like2PlaSvg() {
 				</linearGradient>
 				<path d="M9.03 18a9 9 0 100-18 9 9 0 000 18z" id="platinumLikesYouPathC"></path>
 			</defs>
-			<g fill="none" fill-rule="evenodd">
+			<g fill="none" fillRule="evenodd">
 				<path
 					d="M9 17.474a8.5 8.5 0 100-17 8.5 8.5 0 000 17z"
 					transform="translate(3 3)"
 					fill="url(#platinumLikesYouGradientA)"
 					stroke="url(#platinumLikesYouGradientB)"
-					stroke-width="3"
+					strokeWidth="3"
 				></path>
-				<g transform="translate(2.97 3)" fill-rule="nonzero">
+				<g transform="translate(2.97 3)" fillRule="nonzero">
 					<use fill="#2E2E2E" href="#platinumLikesYouPathC"></use>
 					<use fill="url(#platinumLikesYouGradientD)" href="#platinumLikesYouPathC"></use>
 				</g>
@@ -536,7 +537,7 @@ export function Like2PlaSvg() {
 					<path
 						d="M12.573 9.06c.208 0 .42.027.634.083.63.164.897.451 1.279 1.043.485-.211.83-.33 1.203-.33.17 0 .346.025.542.077 1.174.306 1.742 1.316 1.35 2.401-.165.457-.513.838-.989 1.087l-.078.038-.078.037-.2.08-3.276 1.311a.268.268 0 01-.1.02.262.262 0 01-.213-.102l-2.042-2.95a1.668 1.668 0 01-.1-1.367c.32-.888 1.139-1.428 2.068-1.428zm-1.928 4.312l.646.934H8.843c-.303 0-.55-.209-.55-.467s.247-.467.55-.467h1.802zM9.52 11.516c.04.168.099.333.183.492l.01.019.012.018.28.405h-2.44c-.304 0-.55-.209-.55-.467s.246-.467.55-.467H9.52zm.466-1.856c-.17.212-.306.453-.402.718a2.09 2.09 0 00-.064.216H6.7c-.304 0-.55-.209-.55-.467s.246-.467.55-.467h3.287z"
 						fill="#000"
-						fill-rule="nonzero"
+						fillRule="nonzero"
 					></path>
 					<path
 						d="M12.573 9.06c.208 0 .42.027.634.083.63.164.897.451 1.279 1.043.485-.211.83-.33 1.203-.33.17 0 .346.025.542.077 1.174.306 1.742 1.316 1.35 2.401-.165.457-.513.838-.989 1.087l-.078.038-.078.037-.2.08-3.276 1.311a.268.268 0 01-.1.02.262.262 0 01-.213-.102l-2.042-2.95a1.668 1.668 0 01-.1-1.367c.32-.888 1.139-1.428 2.068-1.428zm-1.928 4.312l.646.934H8.843c-.303 0-.55-.209-.55-.467s.247-.467.55-.467h1.802zM9.52 11.516c.04.168.099.333.183.492l.01.019.012.018.28.405h-2.44c-.304 0-.55-.209-.55-.467s.246-.467.55-.467H9.52zm.466-1.856c-.17.212-.306.453-.402.718a2.09 2.09 0 00-.064.216H6.7c-.304 0-.55-.209-.55-.467s.246-.467.55-.467h3.287z"
@@ -548,7 +549,7 @@ export function Like2PlaSvg() {
 	);
 }
 
-export function MessagePlaSvg() {
+export function MessagePlaSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -557,6 +558,7 @@ export function MessagePlaSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -628,9 +630,9 @@ export function MessagePlaSvg() {
 			<g
 				id="Platinum-attach-a-message"
 				stroke="none"
-				stroke-width="1"
+				strokeWidth="1"
 				fill="none"
-				fill-rule="evenodd"
+				fillRule="evenodd"
 			>
 				<g id="platinum-attach-a-message" transform="translate(2.000000, 3.000000)">
 					<g id="Oval-740-Copy-4">
@@ -638,7 +640,7 @@ export function MessagePlaSvg() {
 							id="attachAMessagePathA-link"
 							transform="translate(1.000000, 0.000000)"
 							stroke="url(#attachAMessageGradientB)"
-							stroke-width="3"
+							strokeWidth="3"
 						>
 							<path
 								d="M9,17.4736842 C13.6944204,17.4736842 17.5,13.6681046 17.5,8.97368421 C17.5,4.27926384 13.6944204,0.473684211 9,0.473684211 C4.30557963,0.473684211 0.5,4.27926384 0.5,8.97368421 C0.5,13.6681046 4.30557963,17.4736842 9,17.4736842 Z"
@@ -648,7 +650,7 @@ export function MessagePlaSvg() {
 						<g
 							id="attachAMessagePathA-link"
 							transform="translate(0.970588, 0.000000)"
-							fill-rule="nonzero"
+							fillRule="nonzero"
 						>
 							<g id="attachAMessagePathA">
 								<use fill="#2E2E2E" href="#attachAMessagePathC"></use>
@@ -662,7 +664,7 @@ export function MessagePlaSvg() {
 							id="Fill-2"
 							transform="translate(2.000000, 2.000000)"
 							fill="#FFFFFF"
-							fill-rule="nonzero"
+							fillRule="nonzero"
 						>
 							<path
 								d="M5,0 C2.23856544,0 0,1.60652276 0,3.58795665 C0,5.56966282 2.23856544,7.17591287 5,7.17591287 L5.11615615,7.17591287 C5.1961161,7.17100529 5.27114194,7.17018751 5.34484922,7.16636992 L5.92365834,7.4256714 L7.07568192,7.94182008 C7.39420809,8.08442242 7.65482007,7.95572605 7.65482007,7.65579758 L7.65482007,6.62786338 C9.06317832,5.99337905 10,4.86946704 10,3.58795665 C10,1.60652276 7.76143455,0 5,0 Z"
@@ -676,7 +678,7 @@ export function MessagePlaSvg() {
 	);
 }
 
-export function MorePlaSvg() {
+export function MorePlaSvg({ className }) {
 	return (
 		<svg
 			viewBox="0 0 24 24"
@@ -685,6 +687,7 @@ export function MorePlaSvg() {
 			focusable="false"
 			aria-hidden="true"
 			role="presentation"
+			className={className}
 		>
 			<defs>
 				<linearGradient
@@ -754,23 +757,23 @@ export function MorePlaSvg() {
 				></path>
 			</defs>
 			s
-			<g fill="none" fill-rule="evenodd">
+			<g fill="none" fillRule="evenodd">
 				<path
 					d="M11.91 21.82c5.473 0 9.91-4.437 9.91-9.91S17.382 2 11.91 2 2 6.437 2 11.91s4.437 9.91 9.91 9.91z"
 					fill="#000"
-					fill-rule="nonzero"
+					fillRule="nonzero"
 				></path>
 				<path
 					d="M9.91 19.82c5.473 0 9.91-4.437 9.91-9.91S15.382 0 9.91 0 0 4.437 0 9.91s4.437 9.91 9.91 9.91z"
 					fill="url(#platinumAllGoldIconA)"
-					fill-rule="nonzero"
+					fillRule="nonzero"
 					transform="translate(2 2)"
 				></path>
 				<path d="M6.002 6.002h12.81v12.81H6.001z"></path>
 				<path
 					d="M10.95 11.1c1.455-.506 1.702-1.825 1.517-3.038 0-.044.037-.075.074-.056 1.393.68 2.959 2.175 2.959 4.425 0 1.726-1.325 3.25-3.25 3.25-2.055 0-3.25-1.48-3.25-3.25 0-1.031.724-2.094 1.504-2.544.038-.025.087 0 .087.044.019.231.08.819.334 1.162.006.007.019.007.025.007z"
 					fill="#FFF"
-					fill-rule="nonzero"
+					fillRule="nonzero"
 				></path>
 			</g>
 		</svg>
