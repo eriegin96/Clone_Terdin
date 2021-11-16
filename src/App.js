@@ -23,6 +23,8 @@ import {
 	faGraduationCap,
 	faHouse,
 	faUser,
+	faCirclePlus,
+	faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
@@ -38,6 +40,7 @@ import MessagesMain from 'routes/messages/MessagesMain';
 import ProductMain from 'routes/product/ProductMain';
 import SettingsNav from 'routes/settings/SettingsNav';
 import SettingsMain from 'routes/settings/SettingsMain';
+import DevelopmentModal from 'components/DevelopmentModal';
 
 library.add(
 	faInstagram,
@@ -59,7 +62,9 @@ library.add(
 	faCircle,
 	faGraduationCap,
 	faHouse,
-	faUser
+	faUser,
+	faCirclePlus,
+	faPlus
 );
 
 function App() {
@@ -103,6 +108,7 @@ function App() {
 							</Route>
 						</Routes>
 					</>
+					<DevelopmentModal />
 				</div>
 			) : (
 				<Routes>

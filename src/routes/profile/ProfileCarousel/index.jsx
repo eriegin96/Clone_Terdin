@@ -1,4 +1,5 @@
-import React from 'react';
+import { AppContext } from 'context/AppProvider';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 
 function NextArrow(props) {
@@ -12,6 +13,8 @@ function PrevArrow(props) {
 }
 
 export default function ProfileCarousel() {
+	const { photos } = useContext(AppContext);
+
 	const settings = {
 		arrows: true,
 		className: 'max-h-profile',
@@ -39,22 +42,19 @@ export default function ProfileCarousel() {
 		),
 	};
 
-	const imgs = [
-		'https://picsum.photos/id/111/640/800',
-		'https://picsum.photos/id/112/640/800',
-		'https://picsum.photos/id/113/640/800',
-	];
-
 	return (
 		<>
 			<Slider {...settings}>
-				{imgs.map((item, i) => (
-					<img
-						key={i}
-						src={item}
-						className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
-					></img>
-				))}
+				{photos.map((item, i) => {
+					if (item !== '')
+						return (
+							<img
+								key={i}
+								src={item}
+								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
+							></img>
+						);
+				})}
 			</Slider>
 		</>
 	);
