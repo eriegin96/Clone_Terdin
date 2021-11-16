@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './homePage.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeaderNav from '../components/HeaderNav';
 import HomeCarousel from '../components/HomeCarousel';
@@ -25,7 +24,7 @@ export default function HomePage() {
 	}, [pos]);
 
 	return (
-		<div className="w-full overflow-hidden">
+		<div className="home-page w-full overflow-hidden">
 			<div className="fixed inset-0 -z-1">
 				<div className="absolute w-full h-full bg-main-background bg-center bg-no-repeat bg-cover transform scale-110"></div>
 				<div className="absolute w-full h-full bg-bg4"></div>

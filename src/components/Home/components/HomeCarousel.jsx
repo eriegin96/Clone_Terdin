@@ -1,7 +1,5 @@
 import React from 'react';
 import { HOME_TESTIMONIALS } from 'utils/constants';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
 export default function HomeCarousel() {

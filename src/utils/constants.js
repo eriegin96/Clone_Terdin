@@ -133,7 +133,7 @@ export const PRODUCT = {
 			priceBg: 'text-primary',
 			priceBorderColor: 'divider-primary',
 			checkoutBg: 'checkout-platinum',
-			checkoutShadow: 'checkout-platinum'
+			checkoutShadow: 'checkout-platinum',
 		},
 		prices: [
 			{ month: '12 months', price: '₫84,939', save: '69%', tag: 'Best Value' },
@@ -209,7 +209,7 @@ export const PRODUCT = {
 			priceBg: 'gold-5',
 			priceBorderColor: 'gold-30',
 			checkoutBg: 'gold-30',
-			checkoutShadow: 'checkout-gold'
+			checkoutShadow: 'checkout-gold',
 		},
 		prices: [
 			{ month: '12 months', price: '₫55,675.75', save: '69%', tag: 'Best Value' },
@@ -266,8 +266,8 @@ export const PRODUCT = {
 			priceHoverColor: 'text-brand-normal',
 			priceBg: 'pink-5',
 			priceBorderColor: 'border-brand',
-			checkoutBg: 'checkout-plus',
-			checkoutShadow: 'checkout-plus'
+			checkoutBg: 'brand-btn',
+			checkoutShadow: 'checkout-plus',
 		},
 		prices: [
 			{ month: '12 months', price: '₫33,964.33', save: '70%', tag: 'Best Value' },

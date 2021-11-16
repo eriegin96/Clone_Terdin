@@ -19,8 +19,8 @@ module.exports = {
 				'main-background': "url('./resources/img/homepage/bg.webp')",
 				'checkout-platinum':
 					'linear-gradient(86deg,var(--color-gray-95) 20%,var(--color-gray-70),var(--color-gray-95) 80%)',
-				'checkout-plus':
-					'linear-gradient(225deg,var(--color-brand-coral),var(--color-brand-hot-pink))',
+				'brand-btn': 'linear-gradient(225deg,var(--color-brand-coral),var(--color-brand-hot-pink))',
+				'bottom-blur': 'linear-gradient(180deg,transparent,var(--color-white))',
 			},
 			borderRadius: {
 				3: '0.1875rem',
@@ -33,6 +33,7 @@ module.exports = {
 			boxShadow: {
 				1: '0 2px 6px 0 rgb(101 110 123 / 14%)',
 				2: '0 5px 13px 1px rgb(0 0 0 / 9%)',
+				profile: '0 2px 6px 0 rgb(124 133 145 / 77%)',
 				'checkout-platinum': '0 1px 20px 0 #999',
 				'checkout-gold': '0 1px 20px 0 #e9aa43',
 				'checkout-plus': '0 1px 20px 0 rgb(255 67 92 / 38%)',
@@ -46,6 +47,7 @@ module.exports = {
 				3: 3,
 			},
 			fontSize: {
+				11: '.6875rem',
 				13: '.8125rem',
 				15: '.9375rem',
 				17: '1.0625rem',
@@ -77,6 +79,10 @@ module.exports = {
 				54: '54px',
 				320: '320px',
 			},
+			maxHeight: {
+				'y-12': 'calc(100vh - 48px)',
+				'profile': 'calc(375px / 0.8)',
+			},
 			minWidth: {
 				200: '200px',
 				325: '325px',
@@ -94,6 +100,8 @@ module.exports = {
 			spacing: {
 				'3/10': '30%',
 				'85/100': '85%',
+				'9/10': '90%',
+				'95/100': '95%',
 				0.75: '0.1875rem',
 				1.25: '0.3125rem',
 				4.25: '1.0625rem',
@@ -108,6 +116,7 @@ module.exports = {
 				45: '11.25rem',
 				93.75: '23.4375rem',
 				110: '27.5rem',
+				167: '41.75rem',
 			},
 			zIndex: {
 				1: 1,

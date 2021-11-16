@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal } from 'antd';
-import './modal.scss';
 
 export default function DeleteModal(props) {
 	const { open, setOpen } = props;

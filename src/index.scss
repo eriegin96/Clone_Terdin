@@ -1,6 +1,23 @@
 $color-divider-primary: #d4d8de;
 $color-brand-pink: #ff4458;
 
+.home-page {
+	.slick-slider {
+		.slick-track {
+			display: flex;
+
+			.slick-slide {
+				padding: 0 8px;
+				height: unset;
+
+				& > div {
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+
 .ant-modal-root {
 	.ant-modal-mask {
 		background-color: rgba(0, 0, 0, 0.7);
@@ -32,6 +49,30 @@ $color-brand-pink: #ff4458;
 				.ant-modal-body {
 					padding: 0;
 				}
+			}
+		}
+
+		.login-modal {
+			.ant-modal-content {
+				width: 440px;
+			}
+		}
+
+		.promo-modal {
+			.ant-modal-content {
+				width: 440px;
+			}
+		}
+
+		.delete-modal {
+			.ant-modal-content {
+				width: 392px;
+			}
+		}
+
+		.logout-modal {
+			.ant-modal-content {
+				width: 392px;
 			}
 		}
 	}

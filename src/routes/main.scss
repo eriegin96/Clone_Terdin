@@ -1,1 +1,58 @@
+.profile-main {
+	.slick-slider {
+		.slick-arrow {
+			width: 50%;
+			height: calc(100% - 12px);
+			top: 12px;
+			transform: none;
 
+			&::before {
+				position: absolute;
+				font-size: 30px;
+				top: 50%;
+				transform: translateY(-50%);
+				opacity: 0;
+			}
+		}
+
+		.slick-prev {
+			left: 0;
+			z-index: 1;
+
+			&::before {
+				left: 8px;
+			}
+		}
+
+		.slick-next {
+			right: 0;
+
+			&::before {
+				right: 8px;
+			}
+		}
+
+		.slick-dots {
+			li {
+				width: unset;
+				height: 12px;
+				flex-grow: 1;
+			}
+
+			li.slick-active {
+				> div {
+					opacity: 1;
+					div {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	.slick-slider:hover {
+		> .slick-arrow:not(.slick-disabled)::before {
+			opacity: 1;
+		}
+	}
+}

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Modal } from 'antd';
 import { TinderSvg } from 'utils/Svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './modal.scss';
 
 export default function PromoModal(props) {
 	const { open, setOpen } = props;

@@ -13,12 +13,16 @@ import {
 	faCircleXmark,
 	faComment,
 	faBriefcase,
+	faAngleLeft,
 	faAngleRight,
 	faUpRightFromSquare,
 	faCheck,
 	faLocationDot,
 	faPlane,
 	faCircle,
+	faGraduationCap,
+	faHouse,
+	faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
@@ -31,7 +35,6 @@ import ProfileNav from 'routes/profile/ProfileNav';
 import ProfileMain from 'routes/profile/ProfileMain';
 import MessagesNav from 'routes/messages/MessagesNav';
 import MessagesMain from 'routes/messages/MessagesMain';
-import ProductNav from 'routes/product/ProductNav';
 import ProductMain from 'routes/product/ProductMain';
 import SettingsNav from 'routes/settings/SettingsNav';
 import SettingsMain from 'routes/settings/SettingsMain';
@@ -47,12 +50,16 @@ library.add(
 	faComment,
 	faAddressBook,
 	faBriefcase,
+	faAngleLeft,
 	faAngleRight,
 	faUpRightFromSquare,
 	faCheck,
 	faLocationDot,
 	faPlane,
-	faCircle
+	faCircle,
+	faGraduationCap,
+	faHouse,
+	faUser
 );
 
 function App() {
@@ -69,7 +76,7 @@ function App() {
 							<Route path="app" element={<Nav />}>
 								<Route index path="recs" element={<RecsNav />} />
 								<Route path="matches" element={<ProfileNav />} />
-								<Route path="profile" element={<ProfileNav />} />
+								<Route path="profile/*" element={<ProfileNav />} />
 								<Route path="messages" element={<RecsNav />}>
 									<Route path=":id" />
 								</Route>
@@ -85,17 +92,11 @@ function App() {
 							<Route path="app" element={<Main />}>
 								<Route path="recs" element={<RecsMain />} />
 								<Route path="matches" element={<ProfileMain />} />
-								<Route path="profile" element={<ProfileMain />} />
+								<Route path="profile/*" element={<ProfileMain />} />
 								<Route path="messages">
 									<Route path=":id" element={<MessagesMain />} />
 								</Route>
 								<Route path="product/subscription/*" element={<ProductMain />} />
-								{/* <Route path="subscription/platinum/*" element={<ProductMain />}>
-										<Route path="platinum" element={<ProductMain />} />
-										<Route path="gold" element={<ProductMain />} />
-										<Route path="plus" element={<ProductMain />} />
-									</Route>
-								</Route> */}
 								<Route path="settings/*" element={<ProfileMain />} />
 								<Route path="settings/plus/passport" element={<SettingsMain />} />
 								<Route path="*" element={<Navigate to="/app/recs" />} />
