@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Switch, Row, Col } from 'antd';
 import About from './About';
@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AppContext } from 'context/AppProvider';
 
 export default function Edit() {
-	const { photos, setPhotos, setDevModalOpen } = useContext(AppContext);
+	const { photos, setDevModalOpen } = useContext(AppContext);
 
 	return (
 		<>

@@ -780,7 +780,7 @@ export function MorePlaSvg({ className }) {
 	);
 }
 
-export function VerifiedSvg({ className }) {
+export function VerifyingSvg({ className }) {
 	return (
 		<svg
 			className={className}
@@ -804,6 +804,124 @@ export function VerifiedSvg({ className }) {
 					<rect width="24" height="24" fill="white"></rect>
 				</clipPath>
 			</defs>
+		</svg>
+	);
+}
+
+export function VerifiedSvg({ className }) {
+	return (
+		<svg
+			className={className}
+			viewBox="0 0 24 24"
+			width="24px"
+			height="24px"
+			focusable="false"
+			aria-hidden="false"
+			aria-labelledby="f07693c9b8a58c75"
+			role="img"
+			strokeLinecap="round"
+		>
+			<g>
+				<path
+					d="M3.206 8.732l-.562.308a1.24 1.24 0 00-.615.814c-.077.345 0 .705.211.991l.382.507a1.204 1.204 0 010 1.431l-.382.528c-.427.595-.224 1.453.427 1.783l.562.309c.471.242.741.77.651 1.276l-.112.617c-.063.35.032.708.26.983.23.274.568.438.93.448l.65.022c.54.022 1.012.375 1.146.881l.18.617c.203.703 1.012 1.078 1.707.792l.607-.242a1.296 1.296 0 011.438.308l.426.485c.241.265.587.414.949.41.361-.004.703-.162.938-.432l.427-.485a1.27 1.27 0 011.414-.33l.607.242c.332.138.709.127 1.032-.03.323-.156.561-.442.652-.785l.179-.616a1.243 1.243 0 011.146-.903l.652-.044c.358-.024.69-.195.912-.472.223-.277.315-.634.254-.98l-.11-.617a1.233 1.233 0 01.628-1.299l.561-.308a1.24 1.24 0 00.616-.814c.077-.345 0-.706-.211-.992l-.382-.507a1.204 1.204 0 010-1.43l.382-.528c.426-.595.224-1.453-.427-1.785l-.562-.308a1.22 1.22 0 01-.651-1.276l.112-.617a1.203 1.203 0 00-.26-.983 1.254 1.254 0 00-.93-.448l-.651-.022a1.222 1.222 0 01-1.146-.88l-.18-.617c-.202-.705-1.01-1.078-1.706-.793l-.674.243a1.296 1.296 0 01-1.437-.308l-.427-.485a1.255 1.255 0 00-.942-.39 1.253 1.253 0 00-.923.434l-.426.484a1.27 1.27 0 01-1.415.33l-.606-.241a1.264 1.264 0 00-1.033.03 1.222 1.222 0 00-.652.784l-.18.617a1.243 1.243 0 01-1.144.902l-.652.043c-.36.024-.692.196-.914.473a1.228 1.228 0 00-.254.982l.112.616c.134.484-.112 1.013-.584 1.277z"
+					fill="#1786ff"
+				></path>
+				<path
+					stroke="#1786ff"
+					d="M16.902 8.38a1.296 1.296 0 00-.94-.38c-.34 0-.682.126-.916.38l-4.184 3.934-1.622-1.4a1.282 1.282 0 00-.917-.38c-.34 0-.682.126-.939.38-.255.252-.384.57-.384.908 0 .337.129.676.384.908l2.562 2.944c.255.252.575.379.916.379.342 0 .684-.127.918-.38l5.1-5.456c.256-.253.406-.592.406-.93 0-.336-.128-.675-.385-.908h.001z"
+					fill="#fff"
+				></path>
+			</g>
+			<title id="f07693c9b8a58c75">Verified!</title>
+		</svg>
+	);
+}
+
+export function EnterSvg({ className }) {
+	return (
+		<svg
+			className={className}
+			viewBox="0 0 32 24"
+			width="32"
+			height="24"
+			focusable="false"
+			aria-hidden="false"
+			aria-labelledby="6e7e4fd30c745792"
+			role="img"
+		>
+			<g fill="none" fillRule="evenodd">
+				<path
+					d="M25.397 13.98H11.12v1.437c0 .575-.375.767-.939.384l-.94-.959-1.878-1.246-.94-.958c-.563-.383-.563-.958 0-1.342l.94-.958 1.879-1.342.939-.958c.564-.384.94-.288.94.383v1.533h14.277v-5.75c0-1.15.94-2.204 2.255-2.204C29.06 2 30 2.958 30 4.3v7.571c0 1.246-.94 2.3-2.254 2.3h-2.16l-.189-.191z"
+					fill="currentColor"
+					fill-rule="nonzero"
+				></path>
+				<path
+					d="M2.21 5.243C2.21 3.405 3.475 2 5.159 2h13.684C20.526 2 22 3.405 22 5.243v13.514C22 20.487 20.526 22 18.842 22H5.158C3.474 22 2 20.486 2 18.757V5.243h.21z"
+					stroke="currentColor"
+					strokeWidth="2.5"
+				></path>
+			</g>
+			<title id="6e7e4fd30c745792">Enter</title>
+		</svg>
+	);
+}
+
+export function SpacebarSvg({ className }) {
+	return (
+		<svg
+			className={className}
+			viewBox="0 0 74 24"
+			width="74"
+			height="24"
+			focusable="false"
+			aria-hidden="false"
+			aria-labelledby="3bf820457fa403c4"
+			role="img"
+		>
+			<rect
+				stroke="currentColor"
+				strokeWidth="2.5"
+				transform="rotate(-90 37 12)"
+				x="27"
+				y="-23"
+				width="20"
+				height="70"
+				rx="3"
+				fill="none"
+			></rect>
+			<title id="3bf820457fa403c4">Space</title>
+		</svg>
+	);
+}
+
+export function NopeSvg({ className }) {
+	return (
+		<svg
+			className={className}
+			viewBox="0 0 24 24"
+			width="24px"
+			height="24px"
+			focusable="false"
+			aria-hidden="true"
+			role="presentation"
+		>
+			<defs>
+				<linearGradient
+					id="svg-fill-linear__light__gradient--nope"
+					x1="0.14644660940672627"
+					x2="0.8535533905932737"
+					y1="0.8535533905932737"
+					y2="0.1464466094067262"
+					spreadMethod="pad"
+				>
+					<stop offset="0%" stopColor="#fd267a"></stop>
+					<stop offset="100%" stopColor="#ff6036"></stop>
+				</linearGradient>
+			</defs>
+			<path
+				d="M14.926 12.56v-1.14l5.282 5.288c1.056.977 1.056 2.441 0 3.499-.813 1.057-2.438 1.057-3.413 0L11.512 15h1.138l-5.363 5.125c-.975 1.058-2.438 1.058-3.495 0-1.056-.813-1.056-2.44 0-3.417l5.201-5.288v1.14L3.873 7.27c-1.137-.976-1.137-2.44 0-3.417a1.973 1.973 0 0 1 3.251 0l5.282 5.207H11.27l5.444-5.207c.975-1.139 2.438-1.139 3.413 0 1.057.814 1.057 2.44 0 3.417l-5.2 5.288z"
+				fill="url(#svg-fill-linear__light__gradient--nope)"
+			></path>
 		</svg>
 	);
 }

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import { VerifiedSvg } from 'utils/Svg';
+import { VerifyingSvg } from 'utils/Svg';
 import ProfileCarousel from './ProfileCarousel';
 import Edit from './edit';
 
@@ -15,7 +15,7 @@ function Main() {
 						<div className="min-h-40 flex items-center text-text-primary">
 							<div className="pr-2 text-3xl font-semibold">Trương</div>
 							<div className="text-2xl">25</div>
-							<VerifiedSvg className="ml-1 mb-0.5" />
+							<VerifyingSvg className="ml-1 mb-0.5" />
 						</div>
 						<div className="flex">
 							<div>

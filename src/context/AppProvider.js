@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AuthContext } from 'context/AuthProvider';
+import axios from 'axios';
 
 export const AppContext = createContext();
 
@@ -22,6 +23,14 @@ export default function AppProvider({ children }) {
 		'',
 		'',
 	]);
+	const [userPhotos, setUserPhotos] = useState([
+		'https://picsum.photos/id/121/640/800',
+		'https://picsum.photos/id/122/640/800',
+		'https://picsum.photos/id/123/640/800',
+	]);
+	useEffect(() => {
+		axios.get('https://loripsum.net/api/1/short/plaintext').then((res) => console.log(res.data));
+	}, []);
 
 	const value = {
 		devModalOpen,
@@ -38,6 +47,7 @@ export default function AppProvider({ children }) {
 		setPreferGender,
 		photos,
 		setPhotos,
+		userPhotos, setUserPhotos
 	};
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

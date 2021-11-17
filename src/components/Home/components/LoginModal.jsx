@@ -111,20 +111,20 @@ export default function LoginModal(props) {
 				</div>
 				<div className="">
 					<button
-						className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-12.5 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary"
+						className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-50 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary"
 						onClick={() => handleLogin(googleProvider)}
 					>
 						<GoogleSvg className="w-6 h-6 absolute left-4 top-1/2 transition-all duration-200 ease-linear transform -translate-y-1/2 text-text-secondary" />
 						Log in with Google
 					</button>
 					<button
-						className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-12.5 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary"
+						className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-50 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary"
 						onClick={() => handleLogin(facebookProvider)}
 					>
 						<FacebookSvg className="w-6 h-6 absolute left-4 top-1/2 transition-all duration-200 ease-linear transform -translate-y-1/2 text-text-secondary" />
 						Log in with Facebook
 					</button>
-					<button className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-12.5 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary group">
+					<button className="relative w-full border-2 border-solid border-text-secondary px-12 mb-5 rounded-25 uppercase bg-white text-15 font-semibold tracking-1 text-text-secondary leading-50 transition-all duration-200 ease-linear hover:border-text-primary hover:text-text-primary group">
 						<FontAwesomeIcon
 							icon="fa-solid fa-comment"
 							className="w-6 h-6 absolute left-4 top-1/2 transition-all duration-200 ease-linear transform -translate-y-1/2 text-text-secondary group-hover:text-text-primary"

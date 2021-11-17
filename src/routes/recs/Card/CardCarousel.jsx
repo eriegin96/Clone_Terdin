@@ -1,6 +1,6 @@
-import { AppContext } from 'context/AppProvider';
 import React, { useContext } from 'react';
 import Slider from 'react-slick';
+import { AppContext } from 'context/AppProvider';
 
 function NextArrow(props) {
 	const { className, style, onClick } = props;
@@ -12,12 +12,11 @@ function PrevArrow(props) {
 	return <div className={className} style={{ ...style }} onClick={onClick} />;
 }
 
-export default function ProfileCarousel() {
-	const { photos } = useContext(AppContext);
+export default function CardCarousel() {
+	const { userPhotos } = useContext(AppContext);
 
 	const settings = {
 		arrows: true,
-		className: 'max-h-profile',
 		dots: true,
 		infinite: false,
 		useCSS: false,
@@ -37,26 +36,18 @@ export default function ProfileCarousel() {
 		),
 		customPaging: () => (
 			<div className="w-full h-full py-1 opacity-20">
-				<div className="h-1 bg-gray-80  rounded-25"></div>
+				<div className="h-1 bg-gray-80 rounded-25"></div>
 			</div>
 		),
 	};
 
 	return (
-		<>
+		<div className="h-full">
 			<Slider {...settings}>
-				{photos.map((item, i) => {
-					if (item !== '')
-						return (
-							<img
-								key={i}
-								src={item}
-								alt=""
-								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
-							></img>
-						);
-				})}
+				{userPhotos.map((item, i) => (
+					<img key={i} src={item} alt="" className="w-full h-105 bg-center bg-cover bg-no-repeat" />
+				))}
 			</Slider>
-		</>
+		</div>
 	);
 }

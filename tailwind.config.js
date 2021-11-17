@@ -17,6 +17,7 @@ module.exports = {
 			}),
 			backgroundImage: {
 				'main-background': "url('./resources/img/homepage/bg.webp')",
+				'dark-gradient': 'linear-gradient(0deg,var(--color-black,inherit),hsla(0,0%,100%,0))',
 				'checkout-platinum':
 					'linear-gradient(86deg,var(--color-gray-95) 20%,var(--color-gray-70),var(--color-gray-95) 80%)',
 				'brand-btn': 'linear-gradient(225deg,var(--color-brand-coral),var(--color-brand-hot-pink))',
@@ -29,6 +30,7 @@ module.exports = {
 			},
 			borderWidth: {
 				3: '3px',
+				25: '100px',
 			},
 			boxShadow: {
 				1: '0 2px 6px 0 rgb(101 110 123 / 14%)',
@@ -72,7 +74,8 @@ module.exports = {
 				1: '1px',
 			},
 			lineHeight: {
-				12.5: '3.125rem',
+				50: '50px',
+				55: '55px',
 			},
 			minHeight: {
 				40: '40px',
@@ -83,6 +86,7 @@ module.exports = {
 			maxHeight: {
 				'y-12': 'calc(100vh - 48px)',
 				profile: 'calc(375px / 0.8)',
+				recs: 'calc(100vh - 103px)',
 			},
 			minWidth: {
 				200: '200px',
@@ -98,6 +102,7 @@ module.exports = {
 				375: '375px',
 				420: '420px',
 				667: '667px',
+				730: '730px',
 			},
 			spacing: {
 				'3/10': '30%',
@@ -110,16 +115,21 @@ module.exports = {
 				5.5: '22px',
 				6.5: '26px',
 				7.5: '30px',
+				8.5: '34px',
 				12.5: '50px',
 				13: '52px',
 				15: '60px',
+				17.5: '70px',
 				18: '72px',
 				18.25: '73px',
+				22: '88px',
+				25: '100px',
 				26: '104px',
 				42: '168px',
 				45: '180px',
 				81.25: '325px',
 				93.75: '375px',
+				105: '420px',
 				110: '440px',
 				126: '504px',
 				167: '668px',
@@ -136,6 +146,7 @@ module.exports = {
 			backgroundImage: ['hover', 'focus'],
 			cursor: ['hover'],
 			display: ['group-hover'],
+			scale: ['group-hover'],
 		},
 	},
 	plugins: [],

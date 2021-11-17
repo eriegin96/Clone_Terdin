@@ -25,8 +25,15 @@ import {
 	faUser,
 	faCirclePlus,
 	faPlus,
+	faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
-import { faAddressBook } from '@fortawesome/free-regular-svg-icons';
+import {
+	faAddressBook,
+	faSquareCaretLeft,
+	faSquareCaretRight,
+	faSquareCaretUp,
+	faSquareCaretDown,
+} from '@fortawesome/free-regular-svg-icons';
 import { AuthContext } from 'context/AuthProvider';
 import HomePage from 'components/Home/pages';
 import Nav from 'routes/Nav';
@@ -64,7 +71,12 @@ library.add(
 	faHouse,
 	faUser,
 	faCirclePlus,
-	faPlus
+	faPlus,
+	faSquareCaretLeft,
+	faSquareCaretRight,
+	faSquareCaretUp,
+	faSquareCaretDown,
+	faCircleInfo
 );
 
 function App() {
