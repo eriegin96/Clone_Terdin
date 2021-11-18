@@ -1,4 +1,5 @@
 .recs-main,
+.messages-main,
 .profile-main {
 	.slick-slider {
 		.slick-arrow {
@@ -54,6 +55,26 @@
 	.slick-slider:hover {
 		> .slick-arrow:not(.slick-disabled)::before {
 			opacity: 1;
+		}
+	}
+}
+
+.recs-main {
+	.slick-slider {
+		height: 100%;
+
+		.slick-list {
+			height: 100%;
+		}
+	}
+}
+
+.messages-main {
+	.slick-slider {
+		height: 100%;
+
+		.slick-list {
+			height: 100%;
 		}
 	}
 }

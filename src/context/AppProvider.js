@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AuthContext } from 'context/AuthProvider';
 import axios from 'axios';
+import { CHAT_USER as chatUser } from 'utils/constants';
 
 export const AppContext = createContext();
 
@@ -28,6 +29,7 @@ export default function AppProvider({ children }) {
 		'https://picsum.photos/id/122/640/800',
 		'https://picsum.photos/id/123/640/800',
 	]);
+
 	useEffect(() => {
 		axios.get('https://loripsum.net/api/1/short/plaintext').then((res) => console.log(res.data));
 	}, []);
@@ -47,7 +49,9 @@ export default function AppProvider({ children }) {
 		setPreferGender,
 		photos,
 		setPhotos,
-		userPhotos, setUserPhotos
+		userPhotos,
+		setUserPhotos,
+		chatUser,
 	};
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

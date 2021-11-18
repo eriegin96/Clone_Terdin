@@ -47,9 +47,11 @@ module.exports = {
 				white: '#fff',
 			},
 			flexGrow: {
+				2: 2,
 				3: 3,
 			},
 			fontSize: {
+				10: '.625rem',
 				11: '.6875rem',
 				13: '.8125rem',
 				15: '.9375rem',
@@ -81,6 +83,7 @@ module.exports = {
 				40: '40px',
 				50: '50px',
 				54: '54px',
+				72: '72px',
 				320: '320px',
 			},
 			maxHeight: {
@@ -91,7 +94,8 @@ module.exports = {
 			minWidth: {
 				200: '200px',
 				325: '325px',
-				364: '364',
+				340: '340px',
+				364: '364px',
 			},
 			maxWidth: {
 				'3/5': '60%',
@@ -105,6 +109,7 @@ module.exports = {
 				730: '730px',
 			},
 			spacing: {
+				'x-5': 'calc(100% - 20px)',
 				'3/10': '30%',
 				'85/100': '85%',
 				'9/10': '90%',

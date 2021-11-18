@@ -26,6 +26,7 @@ import {
 	faCirclePlus,
 	faPlus,
 	faCircleInfo,
+	faCheckDouble,
 } from '@fortawesome/free-solid-svg-icons';
 import {
 	faAddressBook,
@@ -42,7 +43,6 @@ import RecsNav from 'routes/recs/RecsNav';
 import RecsMain from 'routes/recs/RecsMain';
 import ProfileNav from 'routes/profile/ProfileNav';
 import ProfileMain from 'routes/profile/ProfileMain';
-import MessagesNav from 'routes/messages/MessagesNav';
 import MessagesMain from 'routes/messages/MessagesMain';
 import ProductMain from 'routes/product/ProductMain';
 import SettingsNav from 'routes/settings/SettingsNav';
@@ -76,7 +76,8 @@ library.add(
 	faSquareCaretRight,
 	faSquareCaretUp,
 	faSquareCaretDown,
-	faCircleInfo
+	faCircleInfo,
+	faCheckDouble
 );
 
 function App() {

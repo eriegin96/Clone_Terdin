@@ -276,3 +276,62 @@ export const PRODUCT = {
 		],
 	},
 };
+
+export const CHAT_USER = [
+	{
+		id: '123',
+		photos: ['https://picsum.photos/id/141/640/800', 'https://picsum.photos/id/142/640/800'],
+		displayName: 'Tyra',
+		verified: false,
+		age: 25,
+		displayInfo: {
+			school: 'Đại Học Quốc Gia Tp. Hồ Chí Minh',
+			gender: 'Woman',
+			distance: '3 kilometers away',
+		},
+		passions: ['Travel', 'Foodie', 'Language Exchange', 'Libra', 'Trying New Things'],
+		messages: ['Hé lô nè'],
+	},
+	{
+		id: 'abc',
+		photos: [
+			'https://picsum.photos/id/151/640/800',
+			'https://picsum.photos/id/152/640/800',
+			'https://picsum.photos/id/153/640/800',
+			'https://picsum.photos/id/154/640/800',
+			'https://picsum.photos/id/155/640/800',
+			'https://picsum.photos/id/156/640/800',
+		],
+		displayName: 'Hân',
+		verified: true,
+		age: 22,
+		displayInfo: {
+			location: 'Lives in Ho Chi Minh City',
+			distance: '5 kilometers away',
+		},
+		status: `là chái bơ thích ún cf đen 🥑 và tin vào câu chuyện đi tìm một nửa mặt trăng 🌗… 
+		/instagram/. @bo.wxxan_`,
+		passions: ['Grab a drink', 'Brunch', '90s Kid', 'Instagram'],
+		messages: ['Chịu đấy'],
+	},
+	{
+		id: 'dr6',
+		photos: [
+			'https://picsum.photos/id/161/640/800',
+			'https://picsum.photos/id/162/640/800',
+			'https://picsum.photos/id/163/640/800',
+		],
+		displayName: 'Linh',
+		verified: false,
+		age: 27,
+		displayInfo: [],
+		status: `Tên - Tuổi có để, làm về giáo dục
+		Khá dam và hư
+		
+		Thích kể chuyện dam ^^
+		
+		@callmejasmint`,
+		passions: ['Board Games', "Chatting When I'm Bored", 'Intimate Chat'],
+		messages: ['Oh ^^'],
+	},
+];

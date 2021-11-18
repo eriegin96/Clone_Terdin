@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Avatar, Card, Col, Row, Tabs } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
+import { AppContext } from 'context/AppProvider';
 
 const matchList = [
 	{ displayName: '1 Like' },
@@ -14,15 +15,18 @@ const matchList = [
 	{ displayName: 'Thuy' },
 ];
 
-const messageList = [
-	{ displayName: 'Linh', message: 'Oh ^^' },
-	{ displayName: 'Minnie', message: 'Chịu đấy' },
-	{ displayName: 'Embe', message: 'Yub' },
-	{ displayName: 'Nhi', message: 'Liked your message' },
-];
-
 export default function RecsNav() {
 	const { pathname } = useLocation();
+	const messageList = [];
+	const { chatUser } = useContext(AppContext);
+	chatUser.forEach((item) => {
+		messageList.push({
+			id: item.id,
+			displayName: item.displayName,
+			message: item.messages[0],
+			photoURL: item.photos[0],
+		});
+	});
 
 	function handleChange(key) {
 		console.log('NavTabs', key);
@@ -42,9 +46,9 @@ export default function RecsNav() {
 						<Col key={i} span={8}>
 							<Card
 								hoverable
-                style={{backgroundImage: `url(https://picsum.photos/id/${i * 100}/100/120)`}}
+								style={{ backgroundImage: `url(https://picsum.photos/id/${i * 100}/100/120)` }}
 							>
-								<div className='text-white font-semibold'>{item.displayName}</div>
+								<div className="text-white font-semibold">{item.displayName}</div>
 							</Card>
 						</Col>
 					))}
@@ -58,15 +62,17 @@ export default function RecsNav() {
 				{messageList.map((item, i) => (
 					<Link
 						key={i}
-						to={`/app/messages/${i + 1}`}
+						to={`/app/messages/${item.id}`}
 						className="nav__message mr-1.25 flex items-center border-transparent transition-all duration-200"
 						onClick={() => handleClickMessage(i)}
 					>
-						<div className='py-3 px-6'>
-							<Avatar size={74}>{item.displayName.charAt(0)}</Avatar>
+						<div className="py-3 px-6">
+							<Avatar src={item.photoURL} size={74}>
+								{item.displayName.charAt(0)}
+							</Avatar>
 						</div>
-						<div className='flex-grow text-text-primary'>
-							<div className='text-17 font-semibold'>{item.displayName}</div>
+						<div className="flex-grow text-text-primary">
+							<div className="text-17 font-semibold">{item.displayName}</div>
 							<div>{item.message}</div>
 						</div>
 					</Link>

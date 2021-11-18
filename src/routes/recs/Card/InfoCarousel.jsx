@@ -12,7 +12,7 @@ function PrevArrow(props) {
 	return <div className={className} style={{ ...style }} onClick={onClick} />;
 }
 
-export default function CardCarousel() {
+export default function InfoCarousel() {
 	const { userPhotos } = useContext(AppContext);
 
 	const settings = {
@@ -45,7 +45,12 @@ export default function CardCarousel() {
 		<div className="h-full">
 			<Slider {...settings}>
 				{userPhotos.map((item, i) => (
-					<img key={i} src={item} alt="" className="w-full h-105 bg-center bg-cover bg-no-repeat" />
+					<img
+						key={i}
+						src={item}
+						alt=""
+						className="w-full h-105 bg-center bg-cover bg-no-repeat rounded-t-lg"
+					/>
 				))}
 			</Slider>
 		</div>

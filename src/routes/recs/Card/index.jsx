@@ -3,7 +3,7 @@ import { Avatar } from 'antd';
 import { RewindSvg, NopeSvg, StarSvg, Like2Svg, BoostSvg } from 'utils/Svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VerifiedSvg } from 'utils/Svg';
-import CardCarousel from './CardCarousel';
+import CardCarousel from './InfoCarousel';
 
 export default function RecsCard() {
 	return (
