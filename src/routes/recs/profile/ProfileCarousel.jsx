@@ -1,4 +1,5 @@
-import React from 'react';
+import { AppContext } from 'context/AppProvider';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 
 function NextArrow(props) {
@@ -11,9 +12,10 @@ function PrevArrow(props) {
 	return <div className={className} style={{ ...style }} onClick={onClick} />;
 }
 
-export default function InfoCarousel({ photos }) {
+export default function ProfileCarousel({ photos }) {
 	const settings = {
 		arrows: true,
+		className: 'max-h-profile',
 		dots: true,
 		infinite: false,
 		useCSS: false,
@@ -39,17 +41,20 @@ export default function InfoCarousel({ photos }) {
 	};
 
 	return (
-		<div className="h-full">
+		<>
 			<Slider {...settings}>
-				{photos.map((item, i) => (
-					<img
-						key={i}
-						src={item}
-						alt=""
-						className="w-full h-105 bg-center bg-cover bg-no-repeat rounded-t-lg"
-					/>
-				))}
+				{photos.map(
+					(item, i) =>
+						item !== '' && (
+							<img
+								key={i}
+								src={item}
+								alt=""
+								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
+							></img>
+						)
+				)}
 			</Slider>
-		</div>
+		</>
 	);
 }

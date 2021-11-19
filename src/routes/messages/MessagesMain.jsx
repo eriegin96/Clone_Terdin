@@ -5,14 +5,14 @@ import Chat from './Chat';
 import InfoBoard from './InfoBoard';
 
 export default function MessagesMain() {
-	const { chatUser } = useContext(AppContext);
+	const { chatPartner } = useContext(AppContext);
 	const params = useParams();
-	const user = chatUser.find((item) => item.id === params.id);
+	const partner = chatPartner.find((item) => item.id === params.id);
 
 	return (
 		<div className="messages-main h-screen flex bg-white">
-			<Chat user={user} />
-			<InfoBoard user={user} />
+			<Chat partner={partner} />
+			<InfoBoard partner={partner} />
 		</div>
 	);
 }

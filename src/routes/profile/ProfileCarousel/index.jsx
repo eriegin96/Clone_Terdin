@@ -37,7 +37,7 @@ export default function ProfileCarousel() {
 		),
 		customPaging: () => (
 			<div className="w-full h-full py-1 opacity-20">
-				<div className="h-1 bg-gray-80  rounded-25"></div>
+				<div className="h-1 bg-gray-80 rounded-25"></div>
 			</div>
 		),
 	};
@@ -45,17 +45,17 @@ export default function ProfileCarousel() {
 	return (
 		<>
 			<Slider {...settings}>
-				{photos.map((item, i) => {
-					if (item !== '')
-						return (
+				{photos.map(
+					(item, i) =>
+						item !== '' && (
 							<img
 								key={i}
 								src={item}
 								alt=""
 								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
 							></img>
-						);
-				})}
+						)
+				)}
 			</Slider>
 		</>
 	);

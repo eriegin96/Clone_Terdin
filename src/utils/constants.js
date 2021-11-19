@@ -277,23 +277,19 @@ export const PRODUCT = {
 	},
 };
 
-export const CHAT_USER = [
+export const USER = [
 	{
-		id: '123',
-		photos: ['https://picsum.photos/id/141/640/800', 'https://picsum.photos/id/142/640/800'],
-		displayName: 'Tyra',
+		id: '101',
+		photos: ['https://picsum.photos/id/171/640/800', 'https://picsum.photos/id/172/640/800'],
+		displayName: 'nttramy',
 		verified: false,
-		age: 25,
-		displayInfo: {
-			school: 'Đại Học Quốc Gia Tp. Hồ Chí Minh',
-			gender: 'Woman',
-			distance: '3 kilometers away',
-		},
-		passions: ['Travel', 'Foodie', 'Language Exchange', 'Libra', 'Trying New Things'],
-		messages: ['Hé lô nè'],
+		age: 18,
+		displayInfo: {},
+		passions: ['Travel', 'Movies', "Chatting When I'm Bored", 'Esports', 'Street Food'],
+		messages: [],
 	},
 	{
-		id: 'abc',
+		id: '102',
 		photos: [
 			'https://picsum.photos/id/151/640/800',
 			'https://picsum.photos/id/152/640/800',
@@ -312,10 +308,30 @@ export const CHAT_USER = [
 		status: `là chái bơ thích ún cf đen 🥑 và tin vào câu chuyện đi tìm một nửa mặt trăng 🌗… 
 		/instagram/. @bo.wxxan_`,
 		passions: ['Grab a drink', 'Brunch', '90s Kid', 'Instagram'],
-		messages: ['Chịu đấy'],
+		messages: [],
+	},
+];
+
+export const CHAT_USER = [
+	{
+		id: '103',
+		photos: ['https://picsum.photos/id/141/640/800', 'https://picsum.photos/id/142/640/800'],
+		displayName: 'Tyra',
+		verified: false,
+		age: 25,
+		displayInfo: {
+			school: 'Đại Học Quốc Gia Tp. Hồ Chí Minh',
+			gender: 'Woman',
+			distance: '3 kilometers away',
+		},
+		passions: ['Travel', 'Foodie', 'Language Exchange', 'Libra', 'Trying New Things'],
+		messages: [
+			{ id: '103', message: 'Hé lô nè' },
+			{ id: 'aaa', message: '^^' },
+		],
 	},
 	{
-		id: 'dr6',
+		id: '104',
 		photos: [
 			'https://picsum.photos/id/161/640/800',
 			'https://picsum.photos/id/162/640/800',
@@ -324,7 +340,7 @@ export const CHAT_USER = [
 		displayName: 'Linh',
 		verified: false,
 		age: 27,
-		displayInfo: [],
+		displayInfo: {},
 		status: `Tên - Tuổi có để, làm về giáo dục
 		Khá dam và hư
 		
@@ -332,6 +348,9 @@ export const CHAT_USER = [
 		
 		@callmejasmint`,
 		passions: ['Board Games', "Chatting When I'm Bored", 'Intimate Chat'],
-		messages: ['Oh ^^'],
+		messages: [
+			{ id: 'aaa', message: 'hi' },
+			{ id: '104', message: 'Oh ^^' },
+		],
 	},
 ];

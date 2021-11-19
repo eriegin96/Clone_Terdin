@@ -92,7 +92,7 @@ function App() {
 					<>
 						<Routes>
 							<Route path="app" element={<Nav />}>
-								<Route index path="recs" element={<RecsNav />} />
+								<Route index path="recs/*" element={<RecsNav />} />
 								<Route path="matches" element={<ProfileNav />} />
 								<Route path="profile/*" element={<ProfileNav />} />
 								<Route path="messages" element={<RecsNav />}>
@@ -108,7 +108,7 @@ function App() {
 					<>
 						<Routes>
 							<Route path="app" element={<Main />}>
-								<Route path="recs" element={<RecsMain />} />
+								<Route path="recs/*" element={<RecsMain />} />
 								<Route path="matches" element={<ProfileMain />} />
 								<Route path="profile/*" element={<ProfileMain />} />
 								<Route path="messages">

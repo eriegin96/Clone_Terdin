@@ -11,7 +11,7 @@ function PrevArrow(props) {
 	return <div className={className} style={{ ...style }} onClick={onClick} />;
 }
 
-export default function CardCarousel({ list }) {
+export default function CardCarousel({ photos }) {
 	const settings = {
 		arrows: true,
 		dots: true,
@@ -39,12 +39,10 @@ export default function CardCarousel({ list }) {
 	};
 
 	return (
-		<div className="h-full">
-			<Slider {...settings}>
-				{list.map((item, i) => (
-					<img key={i} src={item} alt="" className="w-full h-105 bg-center bg-cover bg-no-repeat" />
-				))}
-			</Slider>
-		</div>
+		<Slider {...settings}>
+			{photos.map((item, i) => (
+				<img key={i} src={item} alt="" className="w-full h-105 bg-center bg-cover bg-no-repeat" />
+			))}
+		</Slider>
 	);
 }

@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { RewindSvg, NopeSvg, StarSvg, Like2Svg, BoostSvg } from 'utils/Svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VerifiedSvg } from 'utils/Svg';
-import CardCarousel from './InfoCarousel';
+import InfoCarousel from './InfoCarousel';
 
-export default function RecsCard() {
+export default function RecsCard({ partner }) {
+	const { displayInfo } = partner;
+
 	return (
 		<div className="max-w-375 max-h-recs h-167 w-full mt-auto flex-grow">
 			<div className="relative h-full w-full flex">
@@ -15,14 +18,14 @@ export default function RecsCard() {
 					</Avatar>
 				</div>
 				<div className="absolute w-full h-full inset-0 border-b-25 border-transparent bg-black shadow-profile rounded-lg ">
-					<CardCarousel />
+					<InfoCarousel photos={partner.photos} />
 					<div className="bg-dark-gradient h-3/10 absolute bottom-0 left-0 right-0"></div>
 					<div className="absolute w-full bottom-0 p-4 flex items-end">
 						<div className="flex-grow text-white">
-							<div className="max-w-4/5 absolute bottom-0 flex items-center  transform -translate-y-24">
-								<div className="text-3xl font-semibold">Ai Duyen</div>
-								<div className="text-2xl ml-2">19</div>
-								<VerifiedSvg className="ml-2" />
+							<div className="max-w-4/5 flex items-center">
+								<div className="text-3xl font-semibold">{partner.displayName}</div>
+								<div className="text-2xl ml-2">{partner.age}</div>
+								{partner.verified && <VerifiedSvg className="ml-2" />}
 							</div>
 							<div>
 								{/* <div className="mb-1 flex items-center">
@@ -32,31 +35,56 @@ export default function RecsCard() {
 								<div className="text-17 whitespace-pre-line">
 									Minh kha la nhat nheooo ✨ ig: _hellomimi18
 								</div> */}
-								<div className="text-17">
-									<div className="w-full">
-										<FontAwesomeIcon
-											icon="fa-solid fa-graduation-cap"
-											className="text-white w-4 h-4 mr-1"
-										/>
-										<span>Trường Đại học Văn Hiến</span>
+								{Object.keys(displayInfo).length === 0 ? (
+									<div className="pt-4 text-13">
+										{partner.passions.map((item, i) => (
+											<div
+												key={i}
+												className="inline-block px-2 py-1 mb-2 mr-2 rounded-25 backdrop-filter backdrop-blur-sm bg-bg3"
+											>
+												{item}
+											</div>
+										))}
 									</div>
-									<div className="w-full">
-										<FontAwesomeIcon icon="fa-solid fa-house" className="text-white w-4 h-4 mr-1" />
-										<span>Lives in Hồ Chí Minh</span>
+								) : (
+									<div className="text-17">
+										{displayInfo.school && (
+											<div className="w-full">
+												<FontAwesomeIcon
+													icon="fa-solid fa-graduation-cap"
+													className="text-white w-4 h-4 mr-1"
+												/>
+												<span>{displayInfo.school}</span>
+											</div>
+										)}
+										{displayInfo.location && (
+											<div className="w-full">
+												<FontAwesomeIcon
+													icon="fa-solid fa-house"
+													className="text-white w-4 h-4 mr-1"
+												/>
+												<span>{displayInfo.location}</span>
+											</div>
+										)}
+										{displayInfo.distance && (
+											<div className="w-full">
+												<FontAwesomeIcon
+													icon="fa-solid fa-location-dot"
+													className="text-white w-4 h-4 mr-1"
+												/>
+												<span>{displayInfo.distance}</span>
+											</div>
+										)}
 									</div>
-									<div className="w-full">
-										<FontAwesomeIcon
-											icon="fa-solid fa-location-dot"
-											className="text-white w-4 h-4 mr-1"
-										/>
-										<span>19 kilometers away</span>
-									</div>
-								</div>
+								)}
 							</div>
 						</div>
-						<button className="mb-3 w-7 h-7">
-							<FontAwesomeIcon icon="fa-solid fa-circle-info" className="text-white w-7 h-7" />
-						</button>
+						<Link to="profile" className="mb-3 w-7 h-7">
+							<FontAwesomeIcon
+								icon="fa-solid fa-circle-info"
+								className="text-white w-6 h-6 transform hover:scale-110 transition-all ease-in"
+							/>
+						</Link>
 					</div>
 				</div>
 				<div className="absolute bottom-0 left-0 right-0 w-full">

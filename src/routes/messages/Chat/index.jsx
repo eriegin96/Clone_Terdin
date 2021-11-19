@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChatContactSvg, ChatGifSvg, ChatStickerSvg, ChatMusicSvg, ChatEmojiSvg } from 'utils/Svg';
-import ChatMessages from './ChatMessages';
+import NewConv from './NewConv';
+import OldConv from './OldConv';
 
-export default function Chat({ user }) {
+export default function Chat({ partner }) {
 	const [textValue, setTextValue] = useState('');
 
 	const handleTextChange = (e) => {
@@ -16,11 +17,11 @@ export default function Chat({ user }) {
 		<div className="h-full flex-grow relative flex flex-col">
 			<div className="py-5 px-6 border-b border-divider-primary flex items-center justify-between">
 				<div className="py-1 flex-grow flex items-center">
-					<Avatar src={user.photos[0]} size={50}>
-						{user.displayName}
+					<Avatar src={partner.photos[0]} size={50}>
+						{partner.displayName}
 					</Avatar>
 					<div className="pl-6 text-text-secondary text-base font-medium">
-						You matched with {user.displayName} on 11/17/2021
+						You matched with {partner.displayName} on 11/17/2021
 					</div>
 				</div>
 				<Link to="/app/matches">
@@ -30,7 +31,7 @@ export default function Chat({ user }) {
 					/>
 				</Link>
 			</div>
-			<ChatMessages user={user}/>
+			{partner.messages.length === 0 ? <NewConv partner={partner} /> : <OldConv partner={partner} />}
 			<div className="border-t border-divider-primary flex">
 				<div className="px-3 flex items-center justify-center items-center">
 					<button className="w-10 cursor-pointer">

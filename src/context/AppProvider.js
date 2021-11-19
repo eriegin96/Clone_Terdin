@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { AuthContext } from 'context/AuthProvider';
 import axios from 'axios';
-import { CHAT_USER as chatUser } from 'utils/constants';
+import { CHAT_USER as chatPartner, USER as swipePartner } from 'utils/constants';
 
 export const AppContext = createContext();
 
@@ -51,7 +51,8 @@ export default function AppProvider({ children }) {
 		setPhotos,
 		userPhotos,
 		setUserPhotos,
-		chatUser,
+		chatPartner,
+		swipePartner,
 	};
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

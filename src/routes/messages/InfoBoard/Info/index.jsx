@@ -3,18 +3,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { VerifiedSvg } from 'utils/Svg';
 import CardCarousel from './CardCarousel';
 
-export default function Info({ user }) {
-	const { displayInfo } = user;
+export default function Info({ partner }) {
+	const { displayInfo } = partner;
 
 	return (
 		<div className="max-h-y-12 min-h-375 w-full h-full overflow-scroll bg-white">
-			<CardCarousel list={user.photos} />
+			<CardCarousel photos={partner.photos} />
 			<div className="w-full pb-4 divide-y divide-divider-primary">
 				<div className="py-2.5 px-4 text-text-secondary text-17">
 					<div className="max-w-9/10 my-0.5 flex items-baseline text-text-primary">
-						<div className="pr-2 text-3xl font-semibold">{user.displayName}</div>
-						<div className="text-2xl">{user.age}</div>
-						<VerifiedSvg className="w-7.5 h-7.5 ml-1 self-center" />
+						<div className="pr-2 text-3xl font-semibold">{partner.displayName}</div>
+						<div className="text-2xl">{partner.age}</div>
+						{partner.verified && <VerifiedSvg className="w-7.5 h-7.5 ml-1 self-center" />}
 					</div>
 					<div className="w-full">
 						{displayInfo.school && (
@@ -49,7 +49,7 @@ export default function Info({ user }) {
 				<div className="py-2.5 px-4 text-text-secondary text-17">
 					<h4 className="mb-1 text-text-primary font-medium">Passions</h4>
 					<div className="pt-4 text-13">
-						{user.passions.map((item, i) => (
+						{partner.passions.map((item, i) => (
 							<div
 								key={i}
 								className="inline-block px-2 py-1 mb-2 mr-2 border border-text-secondary rounded-25"

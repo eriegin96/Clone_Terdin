@@ -1,8 +1,8 @@
-import { Avatar } from 'antd';
 import React from 'react';
+import { Avatar } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function ChatMessages({ user }) {
+export default function NewConv({ user }) {
 	return (
 		<div className="py-2.5 px-5 flex-grow-2 overflow-scroll">
 			<div className="w-full flex justify-center items-center">

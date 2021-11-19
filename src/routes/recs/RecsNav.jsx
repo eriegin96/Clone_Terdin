@@ -17,13 +17,13 @@ const matchList = [
 
 export default function RecsNav() {
 	const { pathname } = useLocation();
-	const messageList = [];
-	const { chatUser } = useContext(AppContext);
-	chatUser.forEach((item) => {
-		messageList.push({
+	const chatList = [];
+	const { chatPartner } = useContext(AppContext);
+	chatPartner.forEach((item) => {
+		chatList.push({
 			id: item.id,
 			displayName: item.displayName,
-			message: item.messages[0],
+			messages: item.messages,
 			photoURL: item.photos[0],
 		});
 	});
@@ -59,7 +59,7 @@ export default function RecsNav() {
 				key="2"
 				className={pathname.slice(5, 13) === 'messages' ? 'nav__tab-pane2--active' : ''}
 			>
-				{messageList.map((item, i) => (
+				{chatList.map((item, i) => (
 					<Link
 						key={i}
 						to={`/app/messages/${item.id}`}
@@ -73,7 +73,7 @@ export default function RecsNav() {
 						</div>
 						<div className="flex-grow text-text-primary">
 							<div className="text-17 font-semibold">{item.displayName}</div>
-							<div>{item.message}</div>
+							<div>{item.messages[item.messages.length - 1].message}</div>
 						</div>
 					</Link>
 				))}
