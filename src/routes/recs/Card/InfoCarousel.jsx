@@ -41,14 +41,17 @@ export default function InfoCarousel({ photos }) {
 	return (
 		<div className="h-full">
 			<Slider {...settings}>
-				{photos.map((item, i) => (
-					<img
-						key={i}
-						src={item}
-						alt=""
-						className="w-full h-105 bg-center bg-cover bg-no-repeat rounded-t-lg"
-					/>
-				))}
+				{photos.map(
+					(item, i) =>
+						item !== '' && (
+							<img
+								key={i}
+								src={item}
+								alt=''
+								className="w-full h-105 bg-gray-30 bg-center bg-cover bg-no-repeat rounded-t-lg"
+							/>
+						)
+				)}
 			</Slider>
 		</div>
 	);

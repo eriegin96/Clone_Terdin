@@ -7,13 +7,21 @@ import RecsProfileCard from './profile';
 import { AppContext } from 'context/AppProvider';
 
 export default function RecsMain() {
-	const { swipePartner } = useContext(AppContext);
+	const { suggestList } = useContext(AppContext);
 
 	return (
 		<div className="recs-main h-full flex flex-col items-center">
 			<Routes>
-				<Route path="/" element={<RecsCard partner={swipePartner[0]} />}></Route>
-				<Route path="/profile" element={<RecsProfileCard partner={swipePartner[0]} />}></Route>
+				<Route
+					path="/"
+					element={
+						<RecsCard partner={suggestList[suggestList.length - 1]} suggestList={suggestList} />
+					}
+				></Route>
+				<Route
+					path="/profile"
+					element={<RecsProfileCard partner={suggestList[suggestList.length - 1]} />}
+				></Route>
 			</Routes>
 			<div className="invisible lg:visible w-full py-4 mt-auto flex justify-center items-center text-xs font-semibold overflow-hidden">
 				<button className="mx-1 py-1 px-4 bg-text-secondary uppercase text-white rounded-25 font-bold opacity-40 hover:opacity-100">

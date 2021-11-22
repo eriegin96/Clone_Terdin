@@ -1,27 +1,38 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ChatContactSvg, ChatGifSvg, ChatStickerSvg, ChatMusicSvg, ChatEmojiSvg } from 'utils/Svg';
 import NewConv from './NewConv';
 import OldConv from './OldConv';
+import { addMessage } from 'firebase/services';
+import { AuthContext } from 'context/AuthProvider';
+import { format } from 'date-fns';
 
-export default function Chat({ partner }) {
+export default function Chat({ partner, room }) {
+	const { user } = useContext(AuthContext);
+	const params = useParams();
 	const [textValue, setTextValue] = useState('');
 
 	const handleTextChange = (e) => {
 		setTextValue(e.target.value);
 	};
 
+	const handleSubmit = () => {
+		addMessage(params.id, { text: textValue, sentBy: user.displayName, sentId: user.uid });
+		setTextValue('');
+	};
+
 	return (
 		<div className="h-full flex-grow relative flex flex-col">
 			<div className="py-5 px-6 border-b border-divider-primary flex items-center justify-between">
 				<div className="py-1 flex-grow flex items-center">
-					<Avatar src={partner.photos[0]} size={50}>
-						{partner.displayName}
+					<Avatar src={partner?.photos[0]} size={50}>
+						{partner?.displayName}
 					</Avatar>
 					<div className="pl-6 text-text-secondary text-base font-medium">
-						You matched with {partner.displayName} on 11/17/2021
+						You matched with {partner?.displayName} on{' '}
+						{format(room?.createdAt?.seconds * 1000 || 0, 'dd/MM/yyyy')}
 					</div>
 				</div>
 				<Link to="/app/matches">
@@ -31,7 +42,11 @@ export default function Chat({ partner }) {
 					/>
 				</Link>
 			</div>
-			{partner.messages.length === 0 ? <NewConv partner={partner} /> : <OldConv partner={partner} />}
+			{room?.messagesCount === 0 ? (
+				<NewConv partner={partner} room={room} />
+			) : (
+				<OldConv partner={partner} />
+			)}
 			<div className="border-t border-divider-primary flex">
 				<div className="px-3 flex items-center justify-center items-center">
 					<button className="w-10 cursor-pointer">
@@ -51,6 +66,12 @@ export default function Chat({ partner }) {
 					<textarea
 						value={textValue}
 						onChange={handleTextChange}
+						onKeyPress={(e) => {
+							if (e.key === 'Enter') {
+								e.preventDefault();
+								handleSubmit();
+							}
+						}}
 						placeholder="Type a message"
 						name=""
 						id="messases-main-textarea"
@@ -61,9 +82,7 @@ export default function Chat({ partner }) {
 						<ChatEmojiSvg className="w-10 h-10 my-2" />
 					</button>
 					<button
-						onClick={(e) => {
-							e.preventDefault();
-						}}
+						onClick={handleSubmit}
 						className={`px-6 mb-4 min-h-40 self-end flex items-center justify-center rounded-25 ${
 							textValue !== ''
 								? 'text-white bg-brand-btn cursor-pointer'

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Modal } from 'antd';
+import { signOut } from 'firebase/auth';
+import { auth } from 'firebase/config';
 
 export default function LogoutModal(props) {
 	const { open, setOpen } = props;
@@ -32,7 +34,10 @@ export default function LogoutModal(props) {
 				</div>
 			</div>
 			<div className="px-15 pt-4 pb-9">
-				<button className="my-5 px-6 min-h-50 w-full bg-gradient-to-l from-coral to-hot-pink text-white uppercase rounded-25 font-medium text-base">
+				<button
+					className="my-5 px-6 min-h-50 w-full bg-gradient-to-l from-coral to-hot-pink text-white uppercase rounded-25 font-medium text-base"
+					onClick={() => signOut(auth)}
+				>
 					Logout
 				</button>
 				<button

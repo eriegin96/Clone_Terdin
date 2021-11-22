@@ -5,21 +5,23 @@ import About from './About';
 import SexualOrientation from './SexualOrientation';
 import Passions from './Passions';
 import Gender from './Gender';
-import JobTitle from './Job';
+import Job from './Job';
 import Place from './Place';
 import Social from './Social';
 import Control from './Control';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AuthContext } from 'context/AuthProvider';
 import { AppContext } from 'context/AppProvider';
 
 export default function Edit() {
-	const { photos, setDevModalOpen } = useContext(AppContext);
+	const { user } = useContext(AuthContext);
+	const { setDevModalOpen } = useContext(AppContext);
 
 	return (
 		<>
 			<div className="h-full pb-4 overflow-scroll rounded-lg">
 				<Row gutter={[8, 8]} className="p-1.5">
-					{photos.map((item, i) => (
+					{user.photos.map((item, i) => (
 						<Col key={i} span="8" className="h-40">
 							{item === '' ? (
 								<div
@@ -69,7 +71,7 @@ export default function Edit() {
 				</div>
 				<About />
 				<Passions />
-				<JobTitle />
+				<Job />
 				<Place />
 				<Social />
 				<Control />

@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import { VerifyingSvg } from 'utils/Svg';
 import ProfileCarousel from './ProfileCarousel';
 import Edit from './edit';
+import { AuthContext } from 'context/AuthProvider';
 
 function Main() {
+	const { user } = useContext(AuthContext);
+
 	return (
 		<>
 			<div className="h-full bg-white overflow-scroll rounded-lg">
@@ -13,22 +16,26 @@ function Main() {
 				<div className="pb-13 text-base text-text-secondary">
 					<div className="w-full py-2.5 px-4">
 						<div className="min-h-40 flex items-center text-text-primary">
-							<div className="pr-2 text-3xl font-semibold">Trương</div>
-							<div className="text-2xl">25</div>
+							<div className="pr-2 text-3xl font-semibold">{user.displayName.split(' ')[0]}</div>
+							<div className="text-2xl">{user.age}</div>
 							<VerifyingSvg className="ml-1 mb-0.5" />
 						</div>
-						<div className="flex">
-							<div>
-								<FontAwesomeIcon icon="fa-solid fa-graduation-cap" className="w-3.5 h-3.5 mr-1" />
+						{user.displayInfo.school && (
+							<div className="flex">
+								<div>
+									<FontAwesomeIcon icon="fa-solid fa-graduation-cap" className="w-3.5 h-3.5 mr-1" />
+								</div>
+								<div className="my-0.5">{user.displayInfo.school}</div>
 							</div>
-							<div className="my-0.5">Ho Chi Minh City University of Economics</div>
-						</div>
-						<div className="flex">
-							<div>
-								<FontAwesomeIcon icon="fa-solid fa-house" className="w-3.5 h-3.5 mr-1" />
+						)}
+						{user.displayInfo.location && (
+							<div className="flex">
+								<div>
+									<FontAwesomeIcon icon="fa-solid fa-house" className="w-3.5 h-3.5 mr-1" />
+								</div>
+								<div className="my-0.5">{user.displayInfo.location}</div>
 							</div>
-							<div className="my-0.5">Lives in Ho Chi Minh City</div>
-						</div>
+						)}
 						<div className="flex">
 							<div>
 								<FontAwesomeIcon icon="fa-solid fa-user" className="w-3.5 h-3.5 mr-1" />
@@ -36,21 +43,18 @@ function Main() {
 							<div className="my-0.5">Straight</div>
 						</div>
 					</div>
-					<div className="p-4 border-t border-b border-divider-primary">
-						Đang buồn đang chán ai tán iu lun
-					</div>
+					<div className="p-4 border-t border-b border-divider-primary">{user.status}</div>
 					<div className="p-4">
 						<h3 className="text-text-primary font-medium">Passions</h3>
 						<div className="mt-4">
-							<div className="inline-block mr-2 mb-2 px-2 py-1 border border-text-secondary rounded-25 text-13">
-								Gemini
-							</div>
-							<div className="inline-block mr-2 mb-2 px-2 py-1 border border-text-secondary rounded-25 text-13">
-								Travel
-							</div>
-							<div className="inline-block mr-2 mb-2 px-2 py-1 border border-text-secondary rounded-25 text-13">
-								Board Games
-							</div>
+							{user.passions.map((item, i) => (
+								<div
+									key={i}
+									className="inline-block mr-2 mb-2 px-2 py-1 border border-text-secondary rounded-25 text-13"
+								>
+									{item}
+								</div>
+							))}
 						</div>
 					</div>
 				</div>

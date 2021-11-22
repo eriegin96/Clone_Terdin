@@ -45,7 +45,7 @@ export default function HomePage() {
 						</span>
 						<span className="px-7">
 							<button
-								className="w-26 outline-none bg-white text-hover px-6 rounded-3 text-17 font-semibold leading-loose tracking-1"
+								className="outline-none bg-white text-hover px-6 rounded-3 text-17 font-semibold leading-loose tracking-1"
 								onClick={() => {
 									setHadAccount(true);
 									setLoginModalOpen(true);

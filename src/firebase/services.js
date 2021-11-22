@@ -9,37 +9,32 @@ import {
 	serverTimestamp,
 } from 'firebase/firestore';
 import { usersList } from 'resources/data/users-list';
+import { randomPassion, randomPhotos, randomStatus } from 'utils/randomize';
 
-const start = Math.floor(Math.random() * 40);
 export const createUsersData = () => {
-	for (let i = start; i < start + 10; i++) {
+	for (let i = 0; i < 10; i++) {
 		const {
-			cell,
-			dob: { age, date },
-			email,
+			dob: { age },
 			gender,
-			location: { city, country, state, street },
-			login: { password, username, uuid },
+			location: { city, state },
+			login: { uuid },
 			name: { first, last },
-			picture: { large },
 		} = usersList[i];
 		const userRef = doc(db, 'users', uuid);
 		async function asyncUsersData() {
 			await setDoc(userRef, {
-				cell,
 				age,
-				date,
-				email,
-				gender,
-				city,
-				country,
-				state,
-				street: `${street.number} ${street.name}`,
-				password,
-				username,
 				uid: uuid,
+				displayInfo: {
+					school: `${city} Univeristy`,
+					gender,
+					location: `${city}, ${state}`,
+					distance: '3 kilometers',
+				},
+				passions: randomPassion(),
+				status: randomStatus(),
 				displayName: `${first} ${last}`,
-				photoURL: large,
+				photos: randomPhotos(),
 				createdAt: serverTimestamp(),
 				modifiedAt: serverTimestamp(),
 			});
@@ -48,12 +43,12 @@ export const createUsersData = () => {
 	}
 };
 
-export const createRooms = (uid, friendId) => {
+export const createRooms = (uid, partnerId) => {
 	const roomRef = collection(db, 'rooms');
 
 	async function asyncRoomData() {
 		await addDoc(roomRef, {
-			members: [uid, friendId],
+			members: [uid, partnerId],
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
@@ -83,6 +78,15 @@ export const addUser = (uid, data) => {
 	async function asyncSetDoc() {
 		await setDoc(userRef, {
 			...data,
+			photos: randomPhotos(),
+			passions: randomPassion(),
+			status: randomStatus(),
+			displayInfo: {
+				school: '',
+				gender: '',
+				location: '',
+				distance: '',
+			},
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
@@ -104,37 +108,35 @@ export const updateUser = (uid, data) => {
 	asyncUpdateDoc();
 };
 
-export const addFriend = (uid, friendId) => {
+export const matchPartner = (uid, partnerId) => {
 	const userRef = doc(db, 'users', uid);
-	const friendOfFriendRef = doc(db, 'users', friendId, 'friends', uid);
-	const friendRef = doc(db, 'users', friendId);
-	const friendOfUserRef = doc(db, 'users', uid, 'friends', friendId);
+	const matchedOfPartnerRef = doc(db, 'users', partnerId, 'matched', uid);
+	const partnerRef = doc(db, 'users', partnerId);
+	const matchedOfUserRef = doc(db, 'users', uid, 'matched', partnerId);
 
-	async function asyncAddRoom() {
-		// add user to friend
+	async function asyncAddFriend() {
+		// add user to partner
 		const userSnap = await getDoc(userRef);
-		await setDoc(friendOfFriendRef, {
+		await setDoc(matchedOfPartnerRef, {
 			uid: uid,
-			photoURL: userSnap.data().photoURL,
+			photos: userSnap.data().photos,
 			displayName: userSnap.data().displayName,
-			cell: userSnap.data()?.cell || null,
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
 
-		// add friend to user
-		const friendSnap = await getDoc(friendRef);
-		await setDoc(friendOfUserRef, {
-			uid: friendId,
-			photoURL: friendSnap.data().photoURL,
+		// add partner to user
+		const friendSnap = await getDoc(partnerRef);
+		await setDoc(matchedOfUserRef, {
+			uid: partnerId,
+			photos: friendSnap.data().photos,
 			displayName: friendSnap.data().displayName,
-			cell: friendSnap.data()?.cell || null,
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
 	}
 
-	asyncAddRoom();
+	asyncAddFriend();
 };
 
 export const addRoom = (data) => {
@@ -143,6 +145,7 @@ export const addRoom = (data) => {
 	async function asyncAddRoom() {
 		await addDoc(roomRef, {
 			...data,
+			messagesCount: 0,
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
@@ -151,39 +154,12 @@ export const addRoom = (data) => {
 	asyncAddRoom();
 };
 
-export const createGroup = (data) => {
-	const roomRef = collection(db, 'rooms');
-
-	async function asyncAddGroup() {
-		await addDoc(roomRef, {
-			...data,
-			createdAt: serverTimestamp(),
-			modifiedAt: serverTimestamp(),
-		});
-	}
-
-	asyncAddGroup();
-};
-
-export const addUserToGroup = (roomId, friendIds) => {
+export const addMessage = (roomId, data) => {
+	const messageRef = collection(db, 'rooms', roomId, 'messages');
 	const roomRef = doc(db, 'rooms', roomId);
 
-	async function asyncAddGroup() {
-		const roomSnap = await getDoc(roomRef);
-		await updateDoc(roomRef, {
-			members: [...roomSnap.data().members, ...friendIds],
-			modifiedAt: serverTimestamp(),
-		});
-	}
-
-	asyncAddGroup();
-};
-
-export const addMessage = (uid, data) => {
-	const messageRef = collection(db, 'rooms', uid, 'messages');
-	const roomRef = doc(db, 'rooms', uid);
-
 	async function asyncAddMessage() {
+		const roomSnap = await getDoc(roomRef);
 		await addDoc(messageRef, {
 			...data,
 			createdAt: serverTimestamp(),
@@ -191,6 +167,8 @@ export const addMessage = (uid, data) => {
 		});
 
 		await updateDoc(roomRef, {
+			messagesCount: roomSnap.messagesCount + 1,
+			lastMessage: data.text,
 			modifiedAt: serverTimestamp(),
 		});
 	}

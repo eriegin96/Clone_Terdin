@@ -1,5 +1,4 @@
-import { AppContext } from 'context/AppProvider';
-import React, { useContext } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 
 function NextArrow(props) {
@@ -50,7 +49,7 @@ export default function ProfileCarousel({ photos }) {
 								key={i}
 								src={item}
 								alt=""
-								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
+								className="w-full h-full bg-gray-30 bg-center bg-cover bg-no-repeat rounded-t-lg"
 							></img>
 						)
 				)}

@@ -3,34 +3,9 @@ import { Avatar, Card, Col, Row, Tabs } from 'antd';
 import { Link, useLocation } from 'react-router-dom';
 import { AppContext } from 'context/AppProvider';
 
-const matchList = [
-	{ displayName: '1 Like' },
-	{ displayName: 'Dâu Dâu' },
-	{ displayName: 'Uyên' },
-	{ displayName: 'Truccshyy' },
-	{ displayName: 'Xuân' },
-	{ displayName: 'Anh' },
-	{ displayName: 'Anh' },
-	{ displayName: 'Tâm' },
-	{ displayName: 'Thuy' },
-];
-
 export default function RecsNav() {
 	const { pathname } = useLocation();
-	const chatList = [];
-	const { chatPartner } = useContext(AppContext);
-	chatPartner.forEach((item) => {
-		chatList.push({
-			id: item.id,
-			displayName: item.displayName,
-			messages: item.messages,
-			photoURL: item.photos[0],
-		});
-	});
-
-	function handleChange(key) {
-		console.log('NavTabs', key);
-	}
+	const { matchedList, recentList } = useContext(AppContext);
 
 	function handleClickMessage(i) {
 		const nodeList = document.querySelectorAll('.nav__message');
@@ -39,17 +14,20 @@ export default function RecsNav() {
 	}
 
 	return (
-		<Tabs defaultActiveKey="1" onChange={handleChange}>
+		<Tabs defaultActiveKey="1" onChange={() => {}}>
 			<Tabs.TabPane tab="Matches" key="1">
 				<Row gutter={[16, 16]}>
-					{matchList.map((item, i) => (
+					{matchedList.map((item, i) => (
 						<Col key={i} span={8}>
-							<Card
-								hoverable
-								style={{ backgroundImage: `url(https://picsum.photos/id/${i * 100}/100/120)` }}
-							>
-								<div className="text-white font-semibold">{item.displayName}</div>
-							</Card>
+							<Link to={`/app/messages/${item?.id}`}>
+								<Card
+									hoverable
+									className="bg-gray-30"
+									style={{ backgroundImage: `url(${item?.partner?.photos[0]})` }}
+								>
+									<div className="text-white font-semibold">{item?.partner?.displayName}</div>
+								</Card>
+							</Link>
 						</Col>
 					))}
 				</Row>
@@ -59,21 +37,19 @@ export default function RecsNav() {
 				key="2"
 				className={pathname.slice(5, 13) === 'messages' ? 'nav__tab-pane2--active' : ''}
 			>
-				{chatList.map((item, i) => (
+				{recentList.map((item, i) => (
 					<Link
 						key={i}
-						to={`/app/messages/${item.id}`}
+						to={`/app/messages/${item?.id}`}
 						className="nav__message mr-1.25 flex items-center border-transparent transition-all duration-200"
 						onClick={() => handleClickMessage(i)}
 					>
 						<div className="py-3 px-6">
-							<Avatar src={item.photoURL} size={74}>
-								{item.displayName.charAt(0)}
-							</Avatar>
+							<Avatar src={item?.partner?.photos[0]} size={74}></Avatar>
 						</div>
 						<div className="flex-grow text-text-primary">
-							<div className="text-17 font-semibold">{item.displayName}</div>
-							<div>{item.messages[item.messages.length - 1].message}</div>
+							<div className="text-17 font-semibold">{item?.partner?.displayName}</div>
+							{/* <div>{item?.messages[item?.messages?.length - 1].message}</div> */}
 						</div>
 					</Link>
 				))}

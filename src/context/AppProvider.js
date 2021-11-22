@@ -1,58 +1,56 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState, useMemo } from 'react';
 import { AuthContext } from 'context/AuthProvider';
-import axios from 'axios';
-import { CHAT_USER as chatPartner, USER as swipePartner } from 'utils/constants';
+import { useFirestoreAllList, useFirestoreSuggestList } from 'hooks/useFirestore';
+import { useFirestore } from '../hooks/useFirestore';
 
 export const AppContext = createContext();
 
 export default function AppProvider({ children }) {
-	const { user } = useContext(AuthContext);
+	const {
+		user: { uid },
+	} = useContext(AuthContext);
 	const [devModalOpen, setDevModalOpen] = useState(false);
-	const [email, setEmail] = useState('email@example.com');
-	const [phoneNumber, setPhoneNumber] = useState('0123456789');
 	const [preferAge, setPreferAge] = useState([18, 28]);
 	const [preferDistance, setPreferDistance] = useState(80);
 	const [preferGender, setPreferGender] = useState('women');
-	const [photos, setPhotos] = useState([
-		'https://picsum.photos/id/111/640/800',
-		'https://picsum.photos/id/112/640/800',
-		'https://picsum.photos/id/113/640/800',
-		'',
-		'',
-		'',
-		'',
-		'',
-		'',
-	]);
-	const [userPhotos, setUserPhotos] = useState([
-		'https://picsum.photos/id/121/640/800',
-		'https://picsum.photos/id/122/640/800',
-		'https://picsum.photos/id/123/640/800',
-	]);
+	const suggestList = useFirestoreSuggestList(uid || '0');
+	const allList = useFirestoreAllList(uid || '0');
 
-	useEffect(() => {
-		axios.get('https://loripsum.net/api/1/short/plaintext').then((res) => console.log(res.data));
-	}, []);
+	// Room
+	const roomsCondition = useMemo(() => {
+		return {
+			fieldName: 'members',
+			operator: 'array-contains',
+			compareValue: uid,
+		};
+	}, [uid]);
+	const rooms = useFirestore('rooms', roomsCondition);
+
+	const roomsList = rooms.map((room) => {
+		const appendItem = allList.find((item) => room.members.includes(item.uid));
+		return { ...room, partner: appendItem };
+	});
+	const recentList = roomsList.filter((item) => item.messagesCount !== 0);
+	const matchedList = roomsList.filter((item) => item.messagesCount === 0);
 
 	const value = {
 		devModalOpen,
 		setDevModalOpen,
-		email,
-		setEmail,
-		phoneNumber,
-		setPhoneNumber,
 		preferAge,
 		setPreferAge,
 		preferDistance,
 		setPreferDistance,
 		preferGender,
 		setPreferGender,
-		photos,
-		setPhotos,
-		userPhotos,
-		setUserPhotos,
-		chatPartner,
-		swipePartner,
+		suggestList,
+		matchedList,
+		recentList,
+		allList,
+		roomsList,
+		rooms,
+		// selectedRoom,
+		// selectedRoomId,
+		// setSelectedRoomId,
 	};
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

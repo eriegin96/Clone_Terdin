@@ -11,31 +11,26 @@ export default function AuthProvider({ children }) {
 	const [isAuthLoading, setIsAuthLoading] = useState(true);
 
 	useEffect(() => {
-		// const unsubscribed = onAuthStateChanged(auth, (user) => {
-		// 	if (user) {
-		// 		getUserData(user.uid).then((data) => {
-		// 			setUser(data);
-		// 			setIsAuthLoading(false);
-		// 		});
-		// 	} else {
-		// 		setUser({});
-		// 		setIsAuthLoading(false);
-		// 	}
-		// });
+		const unsubscribed = onAuthStateChanged(auth, (user) => {
+			if (user) {
+				getUserData(user.uid).then((data) => {
+					setUser(data);
+					setIsAuthLoading(false);
+				});
+			} else {
+				setUser({ displayName: '', photos: [], uid: '' });
+				setIsAuthLoading(false);
+			}
+		});
 
-				// setUser({});
-				setUser({uid: 1, displayName: 'Trương'});
-
-
-		// return () => {
-		// 	unsubscribed();
-		// };
+		return () => {
+			unsubscribed();
+		};
 	}, []);
 
 	return (
 		<AuthContext.Provider value={{ user }}>
-			{/* {isAuthLoading ? <Auth /> : children} */}
-			{children}
+			{isAuthLoading ? <Auth /> : children}
 		</AuthContext.Provider>
 	);
 }

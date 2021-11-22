@@ -1,6 +1,6 @@
-import { AppContext } from 'context/AppProvider';
 import React, { useContext } from 'react';
 import Slider from 'react-slick';
+import { AuthContext } from 'context/AuthProvider';
 
 function NextArrow(props) {
 	const { className, style, onClick } = props;
@@ -13,7 +13,7 @@ function PrevArrow(props) {
 }
 
 export default function ProfileCarousel() {
-	const { photos } = useContext(AppContext);
+	const { user } = useContext(AuthContext);
 
 	const settings = {
 		arrows: true,
@@ -45,14 +45,14 @@ export default function ProfileCarousel() {
 	return (
 		<>
 			<Slider {...settings}>
-				{photos.map(
+				{user.photos.map(
 					(item, i) =>
 						item !== '' && (
 							<img
 								key={i}
 								src={item}
 								alt=""
-								className="w-full h-full bg-center bg-cover bg-no-repeat rounded-t-lg"
+								className="w-full h-117 bg-gray-30 bg-center bg-cover bg-no-repeat rounded-t-lg"
 							></img>
 						)
 				)}

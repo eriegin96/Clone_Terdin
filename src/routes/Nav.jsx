@@ -6,6 +6,7 @@ import './nav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TinderWhiteSvg } from 'utils/Svg';
 import { AuthContext } from 'context/AuthProvider';
+import { createUsersData } from 'firebase/services';
 
 export default function Nav() {
 	const { user } = useContext(AuthContext);
@@ -22,7 +23,7 @@ export default function Nav() {
 							: 'p-1 mx-3 rounded-25 transition-all duration-300 ease-linear flex items-center hover:bg-bg4'
 					}
 				>
-					<Avatar size={32} src={user.photoURL} className="mr-2">
+					<Avatar size={32} src={user.photos[0]} className="mr-2">
 						{user.displayName.charAt(0)}
 					</Avatar>
 					<span className="mx-1 text-white">{user.displayName.split(' ')[0]}</span>
@@ -38,14 +39,17 @@ export default function Nav() {
 					>
 						<TinderWhiteSvg />
 					</Link>
-					<button className="w-9 h-9 p-1 mr-1 ml-2 bg-bg1 rounded-full transition-all duration-200 ease-linear leading-9 hover:bg-bg3">
+					<button
+						className="w-9 h-9 p-1 mr-1 ml-2 bg-bg1 rounded-full transition-all duration-200 ease-linear leading-9 hover:bg-bg3"
+						onClick={() => createUsersData()}
+					>
 						<FontAwesomeIcon icon="fa-solid fa-briefcase" className="text-white w-5 h-5" />
 					</button>
 				</div>
 			</div>
 			<div className="overflow-auto" style={{ height: 'calc(100% - 73px)' }}>
 				{/* <CSSTransition in={pathname === '/app/profile'} timeout={300} classNames="nav__left"> */}
-					<Outlet />
+				<Outlet />
 				{/* </CSSTransition> */}
 			</div>
 		</aside>

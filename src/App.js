@@ -81,13 +81,11 @@ library.add(
 );
 
 function App() {
-	const {
-		user: { uid },
-	} = useContext(AuthContext);
+	const { user } = useContext(AuthContext);
 
 	return (
 		<React.Fragment>
-			{uid ? (
+			{user.uid ? (
 				<div className="h-screen flex">
 					<>
 						<Routes>
@@ -95,8 +93,7 @@ function App() {
 								<Route index path="recs/*" element={<RecsNav />} />
 								<Route path="matches" element={<ProfileNav />} />
 								<Route path="profile/*" element={<ProfileNav />} />
-								<Route path="messages" element={<RecsNav />}>
-									<Route path=":id" />
+								<Route path="messages/*" element={<RecsNav />}>
 								</Route>
 								<Route path="product/subscription/*" element={<ProfileNav />} />
 								<Route path="settings/*" element={<SettingsNav />} />
@@ -111,8 +108,7 @@ function App() {
 								<Route path="recs/*" element={<RecsMain />} />
 								<Route path="matches" element={<ProfileMain />} />
 								<Route path="profile/*" element={<ProfileMain />} />
-								<Route path="messages">
-									<Route path=":id" element={<MessagesMain />} />
+								<Route path="messages/:id" element={<MessagesMain />}>
 								</Route>
 								<Route path="product/subscription/*" element={<ProductMain />} />
 								<Route path="settings/*" element={<ProfileMain />} />

@@ -40,9 +40,17 @@ export default function CardCarousel({ photos }) {
 
 	return (
 		<Slider {...settings}>
-			{photos.map((item, i) => (
-				<img key={i} src={item} alt="" className="w-full h-105 bg-center bg-cover bg-no-repeat" />
-			))}
+			{photos?.map(
+				(item, i) =>
+					item !== '' && (
+						<img
+							key={i}
+							src={item}
+							alt=""
+							className="w-full h-105 bg-gray-30 bg-center bg-cover bg-no-repeat"
+						/>
+					)
+			)}
 		</Slider>
 	);
 }
