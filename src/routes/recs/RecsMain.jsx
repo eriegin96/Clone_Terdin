@@ -15,7 +15,7 @@ export default function RecsMain() {
 				<Route
 					path="/"
 					element={
-						<RecsCard partner={suggestList[suggestList.length - 1]} suggestList={suggestList} />
+						<RecsCard suggestList={suggestList} />
 					}
 				></Route>
 				<Route

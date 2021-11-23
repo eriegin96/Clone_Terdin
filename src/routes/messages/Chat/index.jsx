@@ -35,7 +35,7 @@ export default function Chat({ partner, room }) {
 						{format(room?.createdAt?.seconds * 1000 || 0, 'dd/MM/yyyy')}
 					</div>
 				</div>
-				<Link to="/app/matches">
+				<Link to="/app/recs">
 					<FontAwesomeIcon
 						icon="fa-solid fa-circle-xmark"
 						className="w-7.5 h-7.5 text-divider-primary cursor-pointer transition-all duration-100 ease-in transform hover:-rotate-90"

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
 import { Avatar } from 'antd';
 import './nav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -48,9 +47,7 @@ export default function Nav() {
 				</div>
 			</div>
 			<div className="overflow-auto" style={{ height: 'calc(100% - 73px)' }}>
-				{/* <CSSTransition in={pathname === '/app/profile'} timeout={300} classNames="nav__left"> */}
 				<Outlet />
-				{/* </CSSTransition> */}
 			</div>
 		</aside>
 	);

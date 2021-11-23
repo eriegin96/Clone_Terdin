@@ -114,7 +114,7 @@ export const matchPartner = (uid, partnerId) => {
 	const partnerRef = doc(db, 'users', partnerId);
 	const matchedOfUserRef = doc(db, 'users', uid, 'matched', partnerId);
 
-	async function asyncAddFriend() {
+	async function asyncAddMatched() {
 		// add user to partner
 		const userSnap = await getDoc(userRef);
 		await setDoc(matchedOfPartnerRef, {
@@ -126,17 +126,36 @@ export const matchPartner = (uid, partnerId) => {
 		});
 
 		// add partner to user
-		const friendSnap = await getDoc(partnerRef);
+		const partnerSnap = await getDoc(partnerRef);
 		await setDoc(matchedOfUserRef, {
 			uid: partnerId,
-			photos: friendSnap.data().photos,
-			displayName: friendSnap.data().displayName,
+			photos: partnerSnap.data().photos,
+			displayName: partnerSnap.data().displayName,
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
 	}
 
-	asyncAddFriend();
+	asyncAddMatched();
+};
+
+export const seenPartner = (uid, partnerId) => {
+	const partnerRef = doc(db, 'users', partnerId);
+	const seenOfUserRef = doc(db, 'users', uid, 'seen', partnerId);
+
+	async function asyncAddSeen() {
+		// add partner to user
+		const partnerSnap = await getDoc(partnerRef);
+		await setDoc(seenOfUserRef, {
+			uid: partnerId,
+			photos: partnerSnap.data().photos,
+			displayName: partnerSnap.data().displayName,
+			createdAt: serverTimestamp(),
+			modifiedAt: serverTimestamp(),
+		});
+	}
+
+	asyncAddSeen();
 };
 
 export const addRoom = (data) => {

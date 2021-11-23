@@ -22,9 +22,9 @@ export const HOME_NAVS = [
 			{ title: 'Subscription Tiers' },
 			{
 				subList: [
-					{ title: 'Tinder Plus®' },
-					{ title: 'Tinder Gold™' },
-					{ title: 'Tinder Platinum™' },
+					{ title: 'Terdin Plus®' },
+					{ title: 'Terdin Gold™' },
+					{ title: 'Terdin Platinum™' },
 				],
 			},
 			{ title: 'Download' },
@@ -49,12 +49,12 @@ export const HOME_TESTIMONIALS = [
 	{
 		title: 'Shannon & Julian',
 		content:
-			'I was feeling lonely back in my hometown because most of my friends had started romantic relationships while I was abroad. We both decided to download Tinder and see what happened.\n\nWithout the app we may have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other couples together around the world. I will forever be grateful.',
+			'I was feeling lonely back in my hometown because most of my friends had started romantic relationships while I was abroad. We both decided to download Terdin and see what happened.\n\nWithout the app we may have never met and embarked on this wild, wonderful journey. Thank you for bringing us and so many other couples together around the world. I will forever be grateful.',
 	},
 	{
 		title: 'Courtney & Miranda',
 		content:
-			'Thanks to Tinder I have found the love of my life and we are to be married.\n\nAfter going on a few dates and having a few fun nights I came across Miranda. After reading her profile I couldn’t resist swiping right after reading her final sentence... ‘Looking for my super babe for life.’ After talking for about a week we went out on our first date and I knew there was something special about her!',
+			'Thanks to Terdin I have found the love of my life and we are to be married.\n\nAfter going on a few dates and having a few fun nights I came across Miranda. After reading her profile I couldn’t resist swiping right after reading her final sentence... ‘Looking for my super babe for life.’ After talking for about a week we went out on our first date and I knew there was something special about her!',
 	},
 	{
 		title: 'Gabriel & Fiance',
@@ -64,7 +64,7 @@ export const HOME_TESTIMONIALS = [
 	{
 		title: 'Kenneth & Elliot',
 		content:
-			'I honestly had been on many Tinder dates and was absolutely sure I was meeting a fling to get a free meal and have some fun…3 years and sooo many dates and memories later, I am married to my Tinder guy, Kenny!',
+			'I honestly had been on many Terdin dates and was absolutely sure I was meeting a fling to get a free meal and have some fun…3 years and sooo many dates and memories later, I am married to my Terdin guy, Kenny!',
 	},
 	{
 		title: 'Victoria and Bayleigh Rodriquez ❤️',
@@ -74,7 +74,7 @@ export const HOME_TESTIMONIALS = [
 	{
 		title: 'Ryan and Lindsey Walsh',
 		content:
-			'...just gotten out of a bad breakup and created a Tinder account to keep my mind off the breakup. After about a week of talking, we decided to meet up at a local bar for drinks...we decided to tie the knot in an 18 person ceremony in New Jersey on June 27th 2020.',
+			'...just gotten out of a bad breakup and created a Terdin account to keep my mind off the breakup. After about a week of talking, we decided to meet up at a local bar for drinks...we decided to tie the knot in an 18 person ceremony in New Jersey on June 27th 2020.',
 	},
 	{
 		title: 'Shannon Escobar',
@@ -89,7 +89,7 @@ export const HOME_TESTIMONIALS = [
 	{
 		title: 'Lauren Delarmente',
 		content:
-			'For all the single people out there, especially introverted ones like us: do not be afraid to travel outside of your comfort zone. That’s where you’ll make a genuine connection. Tinder brought us together and for that, I am forever grateful. ❤',
+			'For all the single people out there, especially introverted ones like us: do not be afraid to travel outside of your comfort zone. That’s where you’ll make a genuine connection. Terdin brought us together and for that, I am forever grateful. ❤',
 	},
 ];
 

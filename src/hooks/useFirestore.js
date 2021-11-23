@@ -77,7 +77,7 @@ export const useFirestoreSuggestList = (uid) => {
 
 	useEffect(() => {
 		let userRef = collection(db, 'users');
-		let partnerRef = collection(db, 'users', uid, 'matched');
+		let partnerRef = collection(db, 'users', uid, 'seen');
 
 		const userUnsubscribe = onSnapshot(userRef, (snapshot) => {
 			const data = snapshot.docs.map((doc) => ({

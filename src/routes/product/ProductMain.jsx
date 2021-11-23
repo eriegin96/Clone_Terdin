@@ -45,7 +45,7 @@ export default function ProductMain() {
 						<div className="w-full">
 							<div className="mb-5 text-center">
 								<h3 className={`mb-2 text-3xl font-medium text-${get.titleColor} leading-10`}>
-									Get Tinder {get.title}™
+									Get Terdin {get.title}™
 								</h3>
 								<div className="text-text-secondary">{get.sub}</div>
 							</div>

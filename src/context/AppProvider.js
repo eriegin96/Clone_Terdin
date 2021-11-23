@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useMemo } from 'react';
+import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
 import { AuthContext } from 'context/AuthProvider';
 import { useFirestoreAllList, useFirestoreSuggestList } from 'hooks/useFirestore';
 import { useFirestore } from '../hooks/useFirestore';
@@ -10,6 +10,8 @@ export default function AppProvider({ children }) {
 		user: { uid },
 	} = useContext(AuthContext);
 	const [devModalOpen, setDevModalOpen] = useState(false);
+	const [countdown, setCountdown] = useState(5);
+	const [likesCount, setLikesCount] = useState(0);
 	const [preferAge, setPreferAge] = useState([18, 28]);
 	const [preferDistance, setPreferDistance] = useState(80);
 	const [preferGender, setPreferGender] = useState('women');
@@ -33,9 +35,30 @@ export default function AppProvider({ children }) {
 	const recentList = roomsList.filter((item) => item.messagesCount !== 0);
 	const matchedList = roomsList.filter((item) => item.messagesCount === 0);
 
+	useEffect(() => {
+		if (likesCount === 5) {
+			const time = setTimeout(() => {
+				if (countdown !== 0) {
+					setCountdown((prev) => prev - 1);
+				} else {
+					setLikesCount(0);
+					setCountdown(5)
+				}
+			}, 1000);
+
+			return () => {
+				clearTimeout(time);
+			};
+		}
+	}, [likesCount, countdown]);
+
 	const value = {
 		devModalOpen,
 		setDevModalOpen,
+		countdown,
+		setCountdown,
+		likesCount,
+		setLikesCount,
 		preferAge,
 		setPreferAge,
 		preferDistance,
@@ -48,9 +71,6 @@ export default function AppProvider({ children }) {
 		allList,
 		roomsList,
 		rooms,
-		// selectedRoom,
-		// selectedRoomId,
-		// setSelectedRoomId,
 	};
 
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
