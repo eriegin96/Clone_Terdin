@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import imgPlatinum from 'resources/img/nav/tinder-platinum.svg';
-import imgGold from 'resources/img/nav/tinder-gold.svg';
-import imgPlus from 'resources/img/nav/tinder-plus.svg';
+import imgPlatinum from 'resources/img/nav/terdin-platinum.svg';
+import imgGold from 'resources/img/nav/terdin-gold.svg';
+import imgPlus from 'resources/img/nav/terdin-plus.svg';
 import { Link } from 'react-router-dom';
 import { BoostSvg, StarSvg } from 'utils/Svg';
 
