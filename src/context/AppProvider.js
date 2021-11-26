@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
 import { AuthContext } from 'context/AuthProvider';
-import { useFirestoreAllRoomList, useFirestoreAllList, useFirestoreSuggestList } from 'hooks/useFirestore';
+import { useFirestoreAllList, useFirestoreSuggestList } from 'hooks/useFirestore';
 import { useFirestore } from '../hooks/useFirestore';
 
 export const AppContext = createContext();
