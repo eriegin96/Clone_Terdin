@@ -19,7 +19,7 @@ export default function Edit() {
 
 	return (
 		<>
-			<div className="h-full pb-4 overflow-scroll rounded-lg">
+			<div className="h-full pb-4 overflow-auto rounded-lg">
 				<Row gutter={[8, 8]} className="p-1.5">
 					{user.photos.map((item, i) => (
 						<Col key={i} span="8" className="h-40">

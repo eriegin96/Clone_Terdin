@@ -7,6 +7,7 @@ import {
 	setDoc,
 	updateDoc,
 	serverTimestamp,
+	increment,
 } from 'firebase/firestore';
 import { usersList } from 'resources/data/users-list';
 import { randomPassion, randomPhotos, randomStatus } from 'utils/randomize';
@@ -165,6 +166,7 @@ export const addRoom = (data) => {
 		await addDoc(roomRef, {
 			...data,
 			messagesCount: 0,
+			lastMessage: '',
 			createdAt: serverTimestamp(),
 			modifiedAt: serverTimestamp(),
 		});
@@ -178,7 +180,6 @@ export const addMessage = (roomId, data) => {
 	const roomRef = doc(db, 'rooms', roomId);
 
 	async function asyncAddMessage() {
-		const roomSnap = await getDoc(roomRef);
 		await addDoc(messageRef, {
 			...data,
 			createdAt: serverTimestamp(),
@@ -186,8 +187,10 @@ export const addMessage = (roomId, data) => {
 		});
 
 		await updateDoc(roomRef, {
-			messagesCount: roomSnap.messagesCount + 1,
+			messagesCount: increment(1),
 			lastMessage: data.text,
+			lastSentBy: data.sentBy,
+			lastSentId: data.sentId,
 			modifiedAt: serverTimestamp(),
 		});
 	}

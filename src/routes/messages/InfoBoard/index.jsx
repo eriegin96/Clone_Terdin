@@ -3,7 +3,7 @@ import Info from './Info';
 
 export default function InfoBoard({ partner }) {
 	return (
-		<div className="hidden lg:block h-full w-1/3 min-w-325 border-l border-divider-primary overflow-scroll select-none">
+		<div className="hidden lg:block h-full w-1/3 min-w-325 border-l border-divider-primary overflow-auto select-none">
 			<div className="h-full flex flex-col items-center justify-center">
 				<Info partner={partner} />
 				<div className="w-full flex border-t border-divider-primary h-18 bg-bg-secondary">

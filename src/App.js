@@ -27,6 +27,7 @@ import {
 	faPlus,
 	faCircleInfo,
 	faCheckDouble,
+	faReply,
 } from '@fortawesome/free-solid-svg-icons';
 import {
 	faAddressBook,
@@ -77,7 +78,8 @@ library.add(
 	faSquareCaretUp,
 	faSquareCaretDown,
 	faCircleInfo,
-	faCheckDouble
+	faCheckDouble,
+	faReply
 );
 
 function App() {
@@ -93,8 +95,7 @@ function App() {
 								<Route index path="recs/*" element={<RecsNav />} />
 								<Route path="matches" element={<ProfileNav />} />
 								<Route path="profile/*" element={<ProfileNav />} />
-								<Route path="messages/*" element={<RecsNav />}>
-								</Route>
+								<Route path="messages/*" element={<RecsNav />}></Route>
 								<Route path="product/subscription/*" element={<ProfileNav />} />
 								<Route path="settings/*" element={<SettingsNav />} />
 								<Route path="settings/plus/passport" element={<ProfileNav />} />
@@ -108,8 +109,7 @@ function App() {
 								<Route path="recs/*" element={<RecsMain />} />
 								<Route path="matches" element={<ProfileMain />} />
 								<Route path="profile/*" element={<ProfileMain />} />
-								<Route path="messages/:id" element={<MessagesMain />}>
-								</Route>
+								<Route path="messages/:id" element={<MessagesMain />}></Route>
 								<Route path="product/subscription/*" element={<ProductMain />} />
 								<Route path="settings/*" element={<ProfileMain />} />
 								<Route path="settings/plus/passport" element={<SettingsMain />} />

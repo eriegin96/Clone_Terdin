@@ -5,7 +5,7 @@ import { formatRelative } from 'date-fns';
 
 export default function NewConv({ partner, room }) {
 	return (
-		<div className="py-2.5 px-5 flex-grow-2 overflow-scroll">
+		<div className="py-2.5 px-5 flex-grow-2 overflow-auto">
 			<div className="w-full flex justify-center items-center">
 				<div className="text-center">
 					<h3 className="max-w-340 mb-1 text-17">

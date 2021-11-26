@@ -27,7 +27,7 @@ export default function RecsMain() {
 				<button className="mx-1 py-1 px-4 bg-text-secondary uppercase text-white rounded-25 font-bold opacity-40 hover:opacity-100">
 					hide
 				</button>
-				<div className="max-w-730 min-h-50 flex opacity-60 text-text-secondary overflow-scroll">
+				<div className="max-w-730 min-h-50 flex opacity-60 text-text-secondary overflow-auto">
 					<div className="uppercase ml-3 flex items-center">
 						<FontAwesomeIcon icon="fa-regular fa-square-caret-left" className="w-6 h-6 mr-1" />
 						<div>Nope</div>

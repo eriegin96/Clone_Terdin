@@ -15,7 +15,7 @@ import Language from './language';
 export default function SettingsNav() {
 	return (
 		<div className="nav__settings relative h-full">
-			<div className="h-full pb-12.5 overflow-scroll">
+			<div className="h-full pb-12.5 overflow-auto">
 				<Routes>
 					<Route path="account" element={<Account />} />
 					<Route path="email-account" element={<EmailAccount />} />

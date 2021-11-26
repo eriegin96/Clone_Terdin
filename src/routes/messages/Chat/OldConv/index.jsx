@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { format } from 'date-fns';
@@ -24,13 +24,19 @@ export default function OldConv({ partner }) {
 
 	useEffect(() => {
 		if (messages[messages.length - 1]?.sentId === user.uid) {
-			axios.get('https://loripsum.net/api/1/short/plaintext').then((res) =>
-				addMessage(params.id, {
-					text: res.data,
-					sentBy: partner?.displayName,
-					sentId: partner?.uid,
-				})
-			);
+			const time = setTimeout(() => {
+				axios.get('https://loripsum.net/api/1/short/plaintext').then((res) =>
+					addMessage(params.id, {
+						text: res.data,
+						sentBy: partner?.displayName,
+						sentId: partner?.uid,
+					})
+				);
+			}, 2000);
+
+			return () => {
+				clearTimeout(time);
+			};
 		}
 	}, [messages, params, partner, user]);
 
@@ -39,7 +45,7 @@ export default function OldConv({ partner }) {
 	}, [messages, botDiv]);
 
 	return (
-		<div className="py-2.5 px-5 flex-grow-2 overflow-scroll">
+		<div className="py-2.5 px-5 flex-grow-2 overflow-auto">
 			<div className="w-full ">
 				{messages.map((item, i) => {
 					if (item?.sentId === user.uid) {

@@ -9,7 +9,7 @@ export default function RecsProfileCard({ partner }) {
 		<>
 			<div className="max-w-375 max-h-recs h-167 w-full mt-auto flex-grow">
 				<div className="relative h-full w-full flex">
-					<div className="h-full bg-white overflow-scroll rounded-lg">
+					<div className="h-full bg-white overflow-auto rounded-lg">
 						<ProfileCarousel photos={partner.photos} />
 						<div className="pb-25 text-base text-text-secondary divide-y divide-divider-primary border-b border-divider-primary select-none">
 							<div className="w-full py-2.5 px-4">

@@ -16,7 +16,7 @@ export default function ProductMain() {
 	return (
 		<>
 			<div className="h-full flex bg-white">
-				<div className="h-full flex-grow overflow-scroll border-r border-divider-primary cursor-default select-none">
+				<div className="h-full flex-grow overflow-auto border-r border-divider-primary cursor-default select-none">
 					<h3 className="py-5 mb-1 uppercase text-text-secondary font-semibold text-center tracking-widest">
 						Your Subscription includes
 					</h3>
@@ -40,7 +40,7 @@ export default function ProductMain() {
 						))}
 					</div>
 				</div>
-				<div className="h-full overflow-scroll min-w-364 w-2/5 flex-grow-0">
+				<div className="h-full overflow-auto min-w-364 w-2/5 flex-grow-0">
 					<div className="h-full pt-2.5 px-6 pb-6 ">
 						<div className="w-full">
 							<div className="mb-5 text-center">

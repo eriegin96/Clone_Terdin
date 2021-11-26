@@ -11,7 +11,7 @@ function Main() {
 
 	return (
 		<>
-			<div className="h-full bg-white overflow-scroll rounded-lg">
+			<div className="h-full bg-white overflow-auto rounded-lg">
 				<ProfileCarousel />
 				<div className="pb-13 text-base text-text-secondary">
 					<div className="w-full py-2.5 px-4">

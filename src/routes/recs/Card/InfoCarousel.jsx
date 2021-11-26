@@ -48,7 +48,7 @@ export default function InfoCarousel({ photos }) {
 								key={i}
 								src={item}
 								alt=''
-								className="w-full h-105 bg-gray-30 bg-center bg-cover bg-no-repeat rounded-t-lg"
+								className="w-full h-full bg-gray-30 bg-center bg-cover bg-no-repeat rounded-t-lg"
 							/>
 						)
 				)}

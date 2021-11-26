@@ -5,7 +5,7 @@ import CardCarousel from './CardCarousel';
 
 export default function Info({ partner }) {
 	return (
-		<div className="max-h-y-12 min-h-375 w-full h-full overflow-scroll bg-white">
+		<div className="max-h-y-12 min-h-375 w-full h-full overflow-auto bg-white">
 			<CardCarousel photos={partner?.photos} />
 			<div className="w-full pb-4 divide-y divide-divider-primary">
 				<div className="py-2.5 px-4 text-text-secondary text-17">
